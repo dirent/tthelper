@@ -1,0 +1,14 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>TT Helper</title>
+</head>
+
+<body>
+<h1>Game over</h1>
+
+<p>Congratulation, you guessed the right number.</p>
+
+<t:pagelink page="Start">Go to Start</t:pagelink>
+
+</body>
+</html>
