@@ -1,12 +1,11 @@
 package de.dirent.tthelper.pages;
 
 
-import java.util.Random;
-
 import org.apache.tapestry.annotations.InjectPage;
 
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.pokalmannschaft.CreatePokalMannschaft;
+import de.dirent.tthelper.pages.ranglistenspieler.CreateRanglistenSpieler;
 
 
 
@@ -15,20 +14,21 @@ import de.dirent.tthelper.pages.pokalmannschaft.CreatePokalMannschaft;
  */
 public class Start {
 	
-	private final Random random = new Random();
-
 	@InjectPage
 	private CreatePokalMannschaft createPokalMannschaft;
 
+	@InjectPage
+	private CreateRanglistenSpieler createRanglistenSpieler;
+
 	
-	protected int getInitialTarget() {
-		
-		return random.nextInt(10) + 1;
-	}
-
-
 	Object onActionFromPokalMeldung() {
 
-		return createPokalMannschaft.initialize( getInitialTarget(), Verein.SVG );
+		return createPokalMannschaft.initialize( Verein.SVG );
+	}
+
+	
+	Object onActionFromRanglistenMeldung() {
+
+		return createRanglistenSpieler.initialize( Verein.SVG );
 	}
 }

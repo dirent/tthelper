@@ -1,25 +1,25 @@
-package de.dirent.tthelper.pages.pokalmannschaft;
+package de.dirent.tthelper.pages.ranglistenspieler;
 
 
 import org.apache.tapestry.annotations.Persist;
 import org.apache.tapestry.annotations.Property;
 import org.apache.tapestry.annotations.SetupRender;
 
-import de.dirent.tthelper.model.PokalMannschaft;
+import de.dirent.tthelper.model.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 
 
-public class CreatePokalMannschaft {
+public class CreateRanglistenSpieler {
 
 	@Property @Persist
-	private PokalMannschaft mannschaft;	
+	private RanglistenSpieler spieler;	
 	
 	@SetupRender
 	public void validate() {
 		
-		if( this.mannschaft == null ) {
+		if( this.spieler == null ) {
 			
-			this.mannschaft = new PokalMannschaft();
+			this.spieler = new RanglistenSpieler();
 		}
 	}
 	
@@ -28,8 +28,8 @@ public class CreatePokalMannschaft {
 	
 	public Object initialize( Verein verein ) {
 	
-		this.mannschaft = new PokalMannschaft();
-		this.mannschaft.setVerein(verein);
+		this.spieler = new RanglistenSpieler();
+		this.spieler.setVerein(verein);
 
 		return this;
 	}

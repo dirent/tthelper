@@ -1,0 +1,47 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>Ranglistenmeldung</title>
+    <style>
+    #verein {
+    	width:250px;
+    }
+
+	#name {
+		width:250px;
+	}
+	
+	#birthdate {
+		width:250px;
+	}
+	
+	#konkurrenz {
+		width:250px;
+	}
+	
+	.t-beaneditor {
+    	width:600px;
+    }
+    
+    input.t-beaneditor-submit {
+    	float:right;
+    	position:relative;
+    	top:-2em;
+    	left:-1em;
+    }
+    </style>
+</head>
+
+<body>
+<h1>Ranglistenmeldung</h1>
+
+<t:beaneditform submitlabel="Ok" object="spieler">
+<t:parameter name="verein">
+	<t:label for="verein"/>
+	<t:select t:id="verein" disabled="true" value="spieler.verein" />
+</t:parameter>
+</t:beaneditform>
+
+<p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
+
+</body>
+</html>
