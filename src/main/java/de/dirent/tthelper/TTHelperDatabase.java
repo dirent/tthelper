@@ -3,6 +3,7 @@ package de.dirent.tthelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -44,17 +45,51 @@ public class TTHelperDatabase implements PersistenceManager {
 
 		checkIntegrity( pokalMannschaft.getVerein() );
 
+		pokalMannschaft.setId( System.currentTimeMillis() );
 		pokalMannschaften.get( pokalMannschaft.getVerein() ).add( pokalMannschaft.clone() );
 	}
 
-
+	public void removePokalMannschaft( long id ) {
+	
+		Iterator<List<PokalMannschaft>> listen = pokalMannschaften.values().iterator();   
+		while( listen.hasNext() ) {
+			
+			List<PokalMannschaft> toBeRemoved = new ArrayList<PokalMannschaft>();
+			List<PokalMannschaft> candidates = listen.next();
+			
+			for( PokalMannschaft pm : candidates ) {
+				
+				if( pm.getId() == id ) toBeRemoved.add(pm);
+			}
+			
+			candidates.removeAll( toBeRemoved );
+		}
+	}
+	
+	
 	public void add( RanglistenSpieler spieler ) {
 
 		checkIntegrity( spieler.getVerein() );
 		
+		spieler.setId( System.currentTimeMillis() );
 		ranglistenSpieler.get( spieler.getVerein() ).add( spieler.clone() );
 	}
 	
+	public void removeRanglistenSpieler( long id ) {
+		
+		Iterator<List<RanglistenSpieler>> listen = ranglistenSpieler.values().iterator();   
+		while( listen.hasNext() ) {
+			
+			List<RanglistenSpieler> toBeRemoved = new ArrayList<RanglistenSpieler>();
+			List<RanglistenSpieler> candidates = listen.next();
+			for( RanglistenSpieler rs : candidates ) {
+				
+				if( rs.getId() == id ) toBeRemoved.add(rs);
+			}
+			
+			candidates.removeAll( toBeRemoved );
+		}
+	}
 	
 	public List<PokalMannschaft> getPokalMannschaften( Verein verein ) {
 		

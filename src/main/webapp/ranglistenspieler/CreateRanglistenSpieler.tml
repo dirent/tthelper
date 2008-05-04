@@ -2,6 +2,10 @@
 <head>
     <title>Ranglistenmeldung</title>
     <style>
+	.t-data-grid {
+    	font-size:8pt;
+    }
+
     #verein {
     	width:250px;
     }
@@ -32,9 +36,20 @@
 </head>
 
 <body>
+<h1>Gemeldete Spieler</h1>
+
+<t:block id="empty">Es sind noch keine Spieler gemeldet.</t:block>
+
+<t:grid source="gemeldeteRanglistenSpieler" row="rs" model="model" empty="block:empty">
+<t:parameter name="deletecell">
+	<t:actionlink t:id="delete" context="rs.id">Löschen</t:actionlink>
+</t:parameter>
+</t:grid>
+
+
 <h1>Ranglistenmeldung</h1>
 
-<t:beaneditform submitlabel="Ok" object="spieler">
+<t:beaneditform t:id="spieler" submitlabel="Ok" object="spieler">
 <t:parameter name="verein">
 	<t:label for="verein"/>
 	<t:select t:id="verein" disabled="true" value="spieler.verein" />

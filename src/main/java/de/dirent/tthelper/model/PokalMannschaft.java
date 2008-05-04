@@ -19,7 +19,6 @@ public class PokalMannschaft implements Cloneable {
 	private String bemerkung;
 	
 	
-	
 	@NonVisual
 	public Long getId() {
 	

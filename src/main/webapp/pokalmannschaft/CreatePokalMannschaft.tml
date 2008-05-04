@@ -2,6 +2,11 @@
 <head>
     <title>Meldung Pokalmannschaft</title>
     <style>
+	.t-data-grid {
+    	font-size:8pt;
+    }
+    
+    
     #verein {
     	width:250px;
     }
@@ -39,11 +44,17 @@
 <body>
 <h1>Gemeldete Pokalmannschaften</h1>
 
-<t:grid source="gemeldetePokalMannschaften" row="pm" />
+<t:block id="empty">Es sind noch keine Mannschaften gemeldet.</t:block>
+
+<t:grid source="gemeldetePokalMannschaften" row="pm" model="model" empty="block:empty">
+<t:parameter name="deletecell">
+	<t:actionlink t:id="delete" context="pm.id">Löschen</t:actionlink>
+</t:parameter>
+</t:grid>
 
 <h1>Neue Pokalmannschaft melden</h1>
 
-<t:beaneditform t:id="CreateMannschaft" submitlabel="Ok" object="mannschaft">
+<t:beaneditform t:id="mannschaft" submitlabel="Ok" object="mannschaft">
 <t:parameter name="verein">
 	<t:label for="verein"/>
 	<t:select t:id="verein" disabled="true" value="mannschaft.verein" />
