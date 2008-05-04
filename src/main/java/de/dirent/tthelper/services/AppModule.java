@@ -32,6 +32,7 @@ import org.apache.tapestry.services.Response;
 import org.slf4j.Logger;
 
 import de.dirent.tap5.infrastructure.exception.RedirectException;
+import de.dirent.tthelper.TTHelperDatabase;
 
 /**
  * This module is automatically included as part of the Tapestry IoC Registry, it's a good place to
@@ -41,7 +42,7 @@ public class AppModule {
 	
     public static void bind(ServiceBinder binder) {
 
-        // binder.bind(MyServiceInterface.class, MyServiceImpl.class);
+        binder.bind( PersistenceManager.class, TTHelperDatabase.class );
         
         // Make bind() calls on the binder object to define most IoC services.
         // Use service builder methods (example below) when the implementation

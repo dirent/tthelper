@@ -37,9 +37,13 @@
 </head>
 
 <body>
+<h1>Gemeldete Pokalmannschaften</h1>
+
+<t:grid source="gemeldetePokalMannschaften" row="pm" />
+
 <h1>Neue Pokalmannschaft melden</h1>
 
-<t:beaneditform submitlabel="Ok" object="mannschaft">
+<t:beaneditform t:id="CreateMannschaft" submitlabel="Ok" object="mannschaft">
 <t:parameter name="verein">
 	<t:label for="verein"/>
 	<t:select t:id="verein" disabled="true" value="mannschaft.verein" />

@@ -7,7 +7,7 @@ import org.apache.tapestry.beaneditor.NonVisual;
 import org.apache.tapestry.beaneditor.Validate;
 
 
-public class PokalMannschaft {
+public class PokalMannschaft implements Cloneable {
 
 	private Long id;
 	private Date date = new Date();
@@ -88,5 +88,19 @@ public class PokalMannschaft {
 	}
 	public void setBemerkung(String bemerkung) {
 		this.bemerkung = bemerkung;
+	}
+	
+	public PokalMannschaft clone() {
+		
+		PokalMannschaft clone = new PokalMannschaft();
+		clone.id = id;
+		clone.date = date;
+		clone.name = name;
+		clone.verein = verein;
+		clone.pokalAnzahl = pokalAnzahl;
+		clone.wettbewerb = wettbewerb;
+		clone.bemerkung = bemerkung;
+		
+		return clone;
 	}
 }

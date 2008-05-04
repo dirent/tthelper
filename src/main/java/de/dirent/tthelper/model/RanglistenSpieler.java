@@ -7,7 +7,7 @@ import org.apache.tapestry.beaneditor.NonVisual;
 import org.apache.tapestry.beaneditor.Validate;
 
 
-public class RanglistenSpieler {
+public class RanglistenSpieler implements Cloneable {
 
 	private Long id;
 	private Date date = new Date();
@@ -95,5 +95,21 @@ public class RanglistenSpieler {
 	public void setTeilnahmeBezirksmeisterschaften(
 			boolean teilnahmeBezirksmeisterschaften) {
 		this.teilnahmeBezirksmeisterschaften = teilnahmeBezirksmeisterschaften;
+	}
+	
+	
+	public RanglistenSpieler clone() {
+		
+		RanglistenSpieler clone = new RanglistenSpieler();
+		clone.id = id;
+		clone.date = date;
+		clone.name = name;
+		clone.birthDate = birthDate;
+		clone.verein = verein;
+		clone.konkurrenz = konkurrenz;
+		clone.teilnahmeBezirksmeisterschaften = teilnahmeBezirksmeisterschaften;
+		clone.teilnahmeBezirksrangliste = teilnahmeBezirksrangliste;
+		
+		return clone;
 	}
 }
