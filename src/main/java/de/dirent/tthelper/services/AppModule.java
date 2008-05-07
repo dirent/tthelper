@@ -84,7 +84,7 @@ public class AppModule {
         
         configuration.add( "tapestry.supported-locales", "de" );
         
-        configuration.add( "acegi.failure.url", "/login" );
+        configuration.add("acegi.loginform.url", "/login");
         configuration.add( "acegi.password.encoder", 
         		"org.acegisecurity.providers.encoding.Md5PasswordEncoder" );
     }

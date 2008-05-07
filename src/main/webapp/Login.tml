@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>TT Helper - Login</title>
+</head>
+
+<body>
+<form method="post">
+<div style="text-align:center; padding:0px; width:100%">
+<div style="font-size:150%; margin-top:32px; font-weight:bold;">Pokal- und Ranglisten-Meldung des TT-Kreises Bielefeld-Halle</div>
+<div style="font-size:100%; margin-top:4px; margin-bottom:16px;">(Meldungen können nur nach Anmeldung mit dem Vereinslogin abgegeben werden.)</div>
+
+<fieldset style="display:block; width:305px; margin-left:33%; margin-right:33%"><legend> Anmeldung </legend>
+    <div style="margin-top:4px; margin-left:8px; margin-right:8px;"><label for="username" style="width:120px; text-align:left; float:left;">Benutzername:</label><input style="width:150px;" class="loginfield" name="username" type="text" /></div>
+    <div style="margin-top:4px; margin-left:8px; margin-right:8px; margin-bottom:4px;"><label for="userpass" style="width:120px; text-align:left; float:left;">Kennwort:</label><input style="width:150px;" class="loginfield" name="userpass" type="password" id="userpass" /></div>
+</fieldset>
+
+<input name="login" type="submit" id="login" value="Anmelden" style="margin-top:8px;" />
+
+</div>
+</form>
+</body>
+</html>
