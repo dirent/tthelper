@@ -16,7 +16,46 @@
             <artifactId>tapestry-core</artifactId>
             <version>${tapestry-release-version}</version>
         </dependency>
+        <dependency>
+        	<groupId>nu.localhost.tapestry</groupId>
+        	<artifactId>tapestry5-acegi</artifactId>
+        	<version>1.0.3</version>
+        </dependency>
+
+		<!-- Hibernate dependencies -->
+        <dependency>
+            <groupId>org.apache.tapestry</groupId>
+            <artifactId>tapestry-hibernate</artifactId>
+            <version>${tapestry-release-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.2.2.ga</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.2.1.ga</version>
+        </dependency>
+        <dependency>
+            <groupId>hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.8.0.7</version>
+        </dependency>
 		
+        <!-- Spring dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-dao</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+
         <!-- A dependency on either JUnit or TestNG is required, or the surefire plugin (which runs the tests)
              will fail, preventing Maven from packaging the WAR. Tapestry includes a large number
              of testing facilities designed for use with TestNG (http://testng.org/), so it's recommended. -->
@@ -135,6 +174,10 @@
       <id>openqa</id>
       <name>OpenQA Maven Repository</name>
       <url>http://maven.openqa.org/</url>
+    </repository>
+    <repository>
+    	<id>localhost.nu</id>
+    	<url>http://www.localhost.nu/java/mvn</url>
     </repository>
   </repositories>
   

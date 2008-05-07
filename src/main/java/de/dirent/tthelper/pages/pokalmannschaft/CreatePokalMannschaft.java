@@ -3,6 +3,7 @@ package de.dirent.tthelper.pages.pokalmannschaft;
 
 import java.util.List;
 
+import org.acegisecurity.annotation.Secured;
 import org.apache.tapestry.ComponentResources;
 import org.apache.tapestry.annotations.Persist;
 import org.apache.tapestry.annotations.Property;
@@ -16,6 +17,7 @@ import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.TTHelperPage;
 
 
+@Secured( "ROLE_USER" )
 public class CreatePokalMannschaft extends TTHelperPage {
 
 	public List<PokalMannschaft> getGemeldetePokalMannschaften() {

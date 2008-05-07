@@ -16,6 +16,10 @@ package de.dirent.tthelper.services;
 
 import java.io.IOException;
 
+import org.acegisecurity.providers.AuthenticationProvider;
+import org.acegisecurity.providers.dao.SaltSource;
+import org.acegisecurity.providers.encoding.PasswordEncoder;
+import org.acegisecurity.userdetails.UserDetailsService;
 import org.apache.tapestry.Link;
 import org.apache.tapestry.internal.services.LinkFactory;
 import org.apache.tapestry.internal.services.RequestPageCache;
@@ -23,12 +27,14 @@ import org.apache.tapestry.ioc.MappedConfiguration;
 import org.apache.tapestry.ioc.OrderedConfiguration;
 import org.apache.tapestry.ioc.ServiceBinder;
 import org.apache.tapestry.ioc.annotations.InjectService;
+import org.apache.tapestry.services.ApplicationInitializerFilter;
 import org.apache.tapestry.services.ComponentClassResolver;
 import org.apache.tapestry.services.Request;
 import org.apache.tapestry.services.RequestExceptionHandler;
 import org.apache.tapestry.services.RequestFilter;
 import org.apache.tapestry.services.RequestHandler;
 import org.apache.tapestry.services.Response;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 
 import de.dirent.tap5.infrastructure.exception.RedirectException;
@@ -44,13 +50,29 @@ public class AppModule {
 
         binder.bind( PersistenceManager.class, TTHelperDatabase.class );
         
+        binder.bind( UserDetailsService.class, UserDetailsServiceImpl.class );
+        
         // Make bind() calls on the binder object to define most IoC services.
         // Use service builder methods (example below) when the implementation
         // is provided inline, or requires more initialization than simply
         // invoking the constructor.
     }
     
+    public static UserDetailsService buildUserDetailsService( Session session ) {
+    	
+    	return new UserDetailsServiceImpl( session );
+    }
     
+    public static void contributeApplicationInitializer( OrderedConfiguration<ApplicationInitializerFilter> configuration,
+            final PasswordEncoder passwordEncoder, final SaltSource saltSource, final Session session) {
+        configuration.add("UserInitializer", new UserInitializerImpl( passwordEncoder, saltSource, session ) );
+    }
+    
+    public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,
+            @InjectService("DaoAuthenticationProvider") AuthenticationProvider daoAuthenticationProvider) {
+        configuration.add("daoAuthenticationProvider", daoAuthenticationProvider);
+    }
+
     public static void contributeApplicationDefaults(
             MappedConfiguration<String, String> configuration) {
 
@@ -61,6 +83,10 @@ public class AppModule {
         // the first locale name is the default when there's no reasonable match).
         
         configuration.add( "tapestry.supported-locales", "de" );
+        
+        configuration.add( "acegi.failure.url", "/login" );
+        configuration.add( "acegi.password.encoder", 
+        		"org.acegisecurity.providers.encoding.Md5PasswordEncoder" );
     }
     
 
