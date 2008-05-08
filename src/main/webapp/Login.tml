@@ -6,14 +6,16 @@
 </head>
 
 <body>
-<form method="post">
+<form method="post" action="${loginCheckUrl}" >
 <div style="text-align:center; padding:0px; width:100%">
 <div style="font-size:150%; margin-top:32px; font-weight:bold;">Pokal- und Ranglisten-Meldung des TT-Kreises Bielefeld-Halle</div>
 <div style="font-size:100%; margin-top:4px; margin-bottom:16px;">(Meldungen können nur nach Anmeldung mit dem Vereinslogin abgegeben werden.)</div>
 
+<t:if test="failed"><div style="font-size:100%; margin-top:4px; margin-bottom:16px; color:red;">Benutzername und/oder Kennwortfalsch</div></t:if>
+
 <fieldset style="display:block; width:305px; margin-left:33%; margin-right:33%"><legend> Anmeldung </legend>
-    <div style="margin-top:4px; margin-left:8px; margin-right:8px;"><label for="username" style="width:120px; text-align:left; float:left;">Benutzername:</label><input style="width:150px;" class="loginfield" name="username" type="text" /></div>
-    <div style="margin-top:4px; margin-left:8px; margin-right:8px; margin-bottom:4px;"><label for="userpass" style="width:120px; text-align:left; float:left;">Kennwort:</label><input style="width:150px;" class="loginfield" name="userpass" type="password" id="userpass" /></div>
+    <div style="margin-top:4px; margin-left:8px; margin-right:8px;"><label for="j_username" style="width:120px; text-align:left; float:left;">Benutzername:</label><input style="width:150px;" class="loginfield" name="j_username" type="text" /></div>
+    <div style="margin-top:4px; margin-left:8px; margin-right:8px; margin-bottom:4px;"><label for="j_password" style="width:120px; text-align:left; float:left;">Kennwort:</label><input style="width:150px;" class="loginfield" name="j_password" type="password" /></div>
 </fieldset>
 
 <input name="login" type="submit" id="login" value="Anmelden" style="margin-top:8px;" />

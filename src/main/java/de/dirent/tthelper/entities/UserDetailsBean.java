@@ -28,6 +28,8 @@ import org.acegisecurity.userdetails.UserDetails;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
+import de.dirent.tthelper.model.Verein;
+
 /**
  * @author James Carman
  */
@@ -37,6 +39,8 @@ public class UserDetailsBean extends AbstractEntity implements UserDetails {
     
     private String password;
     private String username;
+    private Verein verein;
+    private String email;
     private boolean accountNonExpired = true;
     private boolean accountNonLocked = true;
     private boolean credentialsNonExpired = true;
@@ -120,4 +124,22 @@ public class UserDetailsBean extends AbstractEntity implements UserDetails {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    
+	public Verein getVerein() {
+		return verein;
+	}
+
+	public void setVerein(Verein verein) {
+		this.verein = verein;
+	}
+
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }

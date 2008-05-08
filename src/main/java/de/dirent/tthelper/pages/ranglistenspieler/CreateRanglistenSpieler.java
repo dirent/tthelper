@@ -11,7 +11,6 @@ import org.apache.tapestry.beaneditor.BeanModel;
 import org.apache.tapestry.ioc.annotations.Inject;
 import org.apache.tapestry.services.BeanModelSource;
 
-import de.dirent.tthelper.model.PokalMannschaft;
 import de.dirent.tthelper.model.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.TTHelperPage;

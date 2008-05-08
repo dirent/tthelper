@@ -25,10 +25,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			throws UsernameNotFoundException, DataAccessException {
 		
 		final Query query = session.createQuery( "SELECT x FROM UserDetailsBean x where x.username = :username" );
+        query.setParameter( "username", username );
 		final UserDetailsBean bean = (UserDetailsBean) query.uniqueResult();
 		if( bean == null ) {
 			throw new UsernameNotFoundException(username);
 		}
-		return null;
+		return bean;
 	}
 }

@@ -17,8 +17,6 @@ package de.dirent.tthelper.services;
 import java.io.IOException;
 
 import org.acegisecurity.providers.AuthenticationProvider;
-import org.acegisecurity.providers.dao.SaltSource;
-import org.acegisecurity.providers.encoding.PasswordEncoder;
 import org.acegisecurity.userdetails.UserDetailsService;
 import org.apache.tapestry.Link;
 import org.apache.tapestry.internal.services.LinkFactory;
@@ -27,7 +25,6 @@ import org.apache.tapestry.ioc.MappedConfiguration;
 import org.apache.tapestry.ioc.OrderedConfiguration;
 import org.apache.tapestry.ioc.ServiceBinder;
 import org.apache.tapestry.ioc.annotations.InjectService;
-import org.apache.tapestry.services.ApplicationInitializerFilter;
 import org.apache.tapestry.services.ComponentClassResolver;
 import org.apache.tapestry.services.Request;
 import org.apache.tapestry.services.RequestExceptionHandler;
@@ -63,11 +60,6 @@ public class AppModule {
     	return new UserDetailsServiceImpl( session );
     }
     
-    public static void contributeApplicationInitializer( OrderedConfiguration<ApplicationInitializerFilter> configuration,
-            final PasswordEncoder passwordEncoder, final SaltSource saltSource, final Session session) {
-        configuration.add("UserInitializer", new UserInitializerImpl( passwordEncoder, saltSource, session ) );
-    }
-    
     public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,
             @InjectService("DaoAuthenticationProvider") AuthenticationProvider daoAuthenticationProvider) {
         configuration.add("daoAuthenticationProvider", daoAuthenticationProvider);
@@ -85,8 +77,11 @@ public class AppModule {
         configuration.add( "tapestry.supported-locales", "de" );
         
         configuration.add("acegi.loginform.url", "/login");
+        configuration.add("acegi.failure.url", "/login/failed");
         configuration.add( "acegi.password.encoder", 
         		"org.acegisecurity.providers.encoding.Md5PasswordEncoder" );
+        configuration.add("acegi.password.saltsource", "org.acegisecurity.providers.dao.salt.SystemWideSaltSource");
+        configuration.add("acegi.password.salt", "");
     }
     
 

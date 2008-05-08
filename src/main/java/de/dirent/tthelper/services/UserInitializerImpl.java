@@ -23,8 +23,6 @@ import org.apache.tapestry.services.ApplicationInitializerFilter;
 import org.apache.tapestry.services.Context;
 import org.hibernate.Session;
 
-import de.dirent.tthelper.entities.UserDetailsBean;
-
 /**
  * @author James Carman
  * @author Robin Helgelin
@@ -41,13 +39,18 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
     }
     
     public void initializeApplication(Context context, ApplicationInitializer applicationInitializer) {
+
+    	/*
         final UserDetailsBean ud = new UserDetailsBean();
         ud.setUsername("test");
         ud.setPassword(passwordEncoder.encodePassword("test", saltSource.getSalt(ud)));
+        ud.setVerein( Verein.VFL_OLDENTRUP );
+        ud.setEmail( "hschwan@gmx.de" );
         ud.addRole("ROLE_USER");
         ud.addRole("ROLE_ADMIN");
         session.save(ud);
-        
+		*/
+    	
         applicationInitializer.initializeApplication(context);
     }
 }
