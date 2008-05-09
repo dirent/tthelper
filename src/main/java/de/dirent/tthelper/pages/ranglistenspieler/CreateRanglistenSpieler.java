@@ -35,8 +35,9 @@ public class CreateRanglistenSpieler extends TTHelperPage {
 		if( this.spieler == null ) {
 			
 			this.spieler = new RanglistenSpieler();
-			this.spieler.setVerein( getCurrentVerein() );
 		}
+		
+		this.spieler.setVerein( getCurrentVerein() );
 	}
 	
 	public Object initialize( Verein verein ) {

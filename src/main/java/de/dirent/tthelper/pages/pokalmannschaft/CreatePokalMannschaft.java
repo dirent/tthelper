@@ -39,8 +39,9 @@ public class CreatePokalMannschaft extends TTHelperPage {
 		if( this.mannschaft == null ) {
 			
 			this.mannschaft = new PokalMannschaft();
-			this.mannschaft.setVerein( getCurrentVerein() );
 		}
+		
+		this.mannschaft.setVerein( getCurrentVerein() );
 	}
 	
 	public Object initialize( Verein verein ) {
