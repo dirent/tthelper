@@ -25,6 +25,7 @@ import org.apache.tapestry.ioc.MappedConfiguration;
 import org.apache.tapestry.ioc.OrderedConfiguration;
 import org.apache.tapestry.ioc.ServiceBinder;
 import org.apache.tapestry.ioc.annotations.InjectService;
+import org.apache.tapestry.services.ApplicationStateManager;
 import org.apache.tapestry.services.ComponentClassResolver;
 import org.apache.tapestry.services.Request;
 import org.apache.tapestry.services.RequestExceptionHandler;
@@ -55,9 +56,9 @@ public class AppModule {
         // invoking the constructor.
     }
     
-    public static UserDetailsService buildUserDetailsService( Session session ) {
+    public static UserDetailsService buildUserDetailsService( ApplicationStateManager asm, Session session ) {
     	
-    	return new UserDetailsServiceImpl( session );
+    	return new UserDetailsServiceImpl( asm, session );
     }
     
     public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,

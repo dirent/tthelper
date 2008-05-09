@@ -1,10 +1,8 @@
 package de.dirent.tthelper.pages;
 
 
-import org.acegisecurity.annotation.Secured;
 import org.apache.tapestry.annotations.InjectPage;
 
-import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.pokalmannschaft.CreatePokalMannschaft;
 import de.dirent.tthelper.pages.ranglistenspieler.CreateRanglistenSpieler;
 
@@ -13,8 +11,7 @@ import de.dirent.tthelper.pages.ranglistenspieler.CreateRanglistenSpieler;
 /**
  * Start page of application expense-manager.
  */
-@Secured( "ROLE_USER" )
-public class Start {
+public class Start extends TTHelperPage {
 	
 	@InjectPage
 	private CreatePokalMannschaft createPokalMannschaft;
@@ -25,12 +22,12 @@ public class Start {
 	
 	Object onActionFromPokalMeldung() {
 
-		return createPokalMannschaft.initialize( Verein.SVG );
+		return createPokalMannschaft.initialize( getCurrentVerein() );
 	}
 
 	
 	Object onActionFromRanglistenMeldung() {
 
-		return createRanglistenSpieler.initialize( Verein.SVG );
+		return createRanglistenSpieler.initialize( getCurrentVerein() );
 	}
 }

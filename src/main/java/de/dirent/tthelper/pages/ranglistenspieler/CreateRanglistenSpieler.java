@@ -20,7 +20,7 @@ public class CreateRanglistenSpieler extends TTHelperPage {
 
 	public List<RanglistenSpieler> getGemeldeteRanglistenSpieler() {
 		
-		return getPersistenceManager().getRanglistenSpieler( Verein.SVG );
+		return getPersistenceManager().getRanglistenSpieler( getCurrentVerein() );
 	}	
 	@Property
 	private RanglistenSpieler rs;
@@ -35,7 +35,7 @@ public class CreateRanglistenSpieler extends TTHelperPage {
 		if( this.spieler == null ) {
 			
 			this.spieler = new RanglistenSpieler();
-			this.spieler.setVerein( Verein.SVG );
+			this.spieler.setVerein( getCurrentVerein() );
 		}
 	}
 	
