@@ -76,6 +76,7 @@ public class AppModule {
         // the first locale name is the default when there's no reasonable match).
         
         configuration.add( "tapestry.supported-locales", "de" );
+        configuration.add( "tapestry.response-encoding", "iso-8859-1" );
         
         configuration.add("acegi.loginform.url", "/login");
         configuration.add("acegi.failure.url", "/login/failed");
