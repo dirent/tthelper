@@ -1,15 +1,28 @@
-package de.dirent.tthelper.model;
+package de.dirent.tthelper.entities;
 
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
 import org.apache.tapestry.beaneditor.NonVisual;
 import org.apache.tapestry.beaneditor.Validate;
 
+import de.dirent.tthelper.model.PokalWettbewerb;
+import de.dirent.tthelper.model.Verein;
 
-public class PokalMannschaft implements Cloneable {
 
-	private Long id;
+@Entity
+public class PokalMannschaft
+
+		extends AbstractEntity implements Cloneable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6252188767976858677L;
+	
+	
 	private Date date = new Date();
 	
 	private Verein verein;
@@ -18,17 +31,6 @@ public class PokalMannschaft implements Cloneable {
 	private Integer pokalAnzahl = 1;
 	private String bemerkung;
 	
-	
-	@NonVisual
-	public Long getId() {
-	
-		return id;
-	}
-	public void setId(Long id) {
-	
-		this.id = id;
-	}
-
 	
 	@NonVisual
 	public Date getDate() {
@@ -92,7 +94,7 @@ public class PokalMannschaft implements Cloneable {
 	public PokalMannschaft clone() {
 		
 		PokalMannschaft clone = new PokalMannschaft();
-		clone.id = id;
+		clone.setId( getId() );
 		clone.date = date;
 		clone.name = name;
 		clone.verein = verein;

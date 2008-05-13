@@ -23,6 +23,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import org.apache.tapestry.beaneditor.NonVisual;
+
 /**
  * @author James Carman
  */
@@ -35,6 +37,7 @@ public class AbstractEntity implements Serializable, Comparable {
         return String.valueOf(this).compareTo(String.valueOf(o));
     }
 
+    @NonVisual
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {

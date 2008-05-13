@@ -1,15 +1,29 @@
-package de.dirent.tthelper.model;
+package de.dirent.tthelper.entities;
 
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
 import org.apache.tapestry.beaneditor.NonVisual;
 import org.apache.tapestry.beaneditor.Validate;
 
+import de.dirent.tthelper.model.RanglistenKonkurrenz;
+import de.dirent.tthelper.model.Verein;
 
-public class RanglistenSpieler implements Cloneable {
 
-	private Long id;
+@Entity
+public class RanglistenSpieler 
+
+		extends AbstractEntity implements Cloneable {
+
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -471822420963322708L;
+
+	
 	private Date date = new Date();
 	
 	private Verein verein;
@@ -19,17 +33,6 @@ public class RanglistenSpieler implements Cloneable {
 	private boolean teilnahmeBezirksrangliste = false;
 	private boolean teilnahmeBezirksmeisterschaften = false;
 	
-	
-	@NonVisual
-	public Long getId() {
-	
-		return id;
-	}
-	public void setId(Long id) {
-	
-		this.id = id;
-	}
-
 	
 	@NonVisual
 	public Date getDate() {
@@ -101,7 +104,7 @@ public class RanglistenSpieler implements Cloneable {
 	public RanglistenSpieler clone() {
 		
 		RanglistenSpieler clone = new RanglistenSpieler();
-		clone.id = id;
+		clone.setId( getId() );
 		clone.date = date;
 		clone.name = name;
 		clone.birthDate = birthDate;

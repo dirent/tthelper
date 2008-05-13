@@ -36,7 +36,7 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 
 import de.dirent.tap5.infrastructure.exception.RedirectException;
-import de.dirent.tthelper.TTHelperDatabase;
+import de.dirent.tthelper.TTHelperDAO;
 
 /**
  * This module is automatically included as part of the Tapestry IoC Registry, it's a good place to
@@ -46,7 +46,7 @@ public class AppModule {
 	
     public static void bind(ServiceBinder binder) {
 
-        binder.bind( PersistenceManager.class, TTHelperDatabase.class );
+        binder.bind( PersistenceManager.class, TTHelperDAO.class );
         
         binder.bind( UserDetailsService.class, UserDetailsServiceImpl.class );
         
@@ -56,9 +56,14 @@ public class AppModule {
         // invoking the constructor.
     }
     
-    public static UserDetailsService buildUserDetailsService( ApplicationStateManager asm, Session session ) {
+    public static PersistenceManager buildPersistenceManager( Session session ) {
     	
-    	return new UserDetailsServiceImpl( asm, session );
+    	return new TTHelperDAO( session );
+    }
+    
+    public static UserDetailsService buildUserDetailsService( Session session ) {
+    	
+    	return new UserDetailsServiceImpl( session );
     }
     
     public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,

@@ -4,7 +4,6 @@ package de.dirent.tthelper.services;
 import org.acegisecurity.userdetails.UserDetails;
 import org.acegisecurity.userdetails.UserDetailsService;
 import org.acegisecurity.userdetails.UsernameNotFoundException;
-import org.apache.tapestry.services.ApplicationStateManager;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.dao.DataAccessException;
@@ -17,7 +16,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	private final Session session;
 	
 	
-	public UserDetailsServiceImpl( ApplicationStateManager asm, Session session ) {
+	public UserDetailsServiceImpl( Session session ) {
 		
 		this.session = session;
 	}

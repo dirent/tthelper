@@ -3,8 +3,8 @@ package de.dirent.tthelper.services;
 
 import java.util.List;
 
-import de.dirent.tthelper.model.PokalMannschaft;
-import de.dirent.tthelper.model.RanglistenSpieler;
+import de.dirent.tthelper.entities.PokalMannschaft;
+import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 
 

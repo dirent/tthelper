@@ -4,7 +4,6 @@ package de.dirent.tthelper.pages.pokalmannschaft;
 import java.util.List;
 
 import org.apache.tapestry.ComponentResources;
-import org.apache.tapestry.annotations.ApplicationState;
 import org.apache.tapestry.annotations.Persist;
 import org.apache.tapestry.annotations.Property;
 import org.apache.tapestry.annotations.SetupRender;
@@ -12,8 +11,7 @@ import org.apache.tapestry.beaneditor.BeanModel;
 import org.apache.tapestry.ioc.annotations.Inject;
 import org.apache.tapestry.services.BeanModelSource;
 
-import de.dirent.tthelper.entities.UserDetailsBean;
-import de.dirent.tthelper.model.PokalMannschaft;
+import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.TTHelperPage;
 
@@ -21,7 +19,7 @@ import de.dirent.tthelper.pages.TTHelperPage;
 public class CreatePokalMannschaft extends TTHelperPage {
 
 	public List<PokalMannschaft> getGemeldetePokalMannschaften() {
-		
+
 		return getPersistenceManager().getPokalMannschaften( getCurrentVerein() );
 	}	
 	@Property
@@ -30,8 +28,7 @@ public class CreatePokalMannschaft extends TTHelperPage {
 	@Property @Persist
 	private PokalMannschaft mannschaft;	
 	
-	@ApplicationState
-	private UserDetailsBean user;
+
 	
 	@SetupRender
 	public void validate() {

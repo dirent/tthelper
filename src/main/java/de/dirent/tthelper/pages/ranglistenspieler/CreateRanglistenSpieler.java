@@ -11,7 +11,7 @@ import org.apache.tapestry.beaneditor.BeanModel;
 import org.apache.tapestry.ioc.annotations.Inject;
 import org.apache.tapestry.services.BeanModelSource;
 
-import de.dirent.tthelper.model.RanglistenSpieler;
+import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.TTHelperPage;
 
@@ -25,9 +25,9 @@ public class CreateRanglistenSpieler extends TTHelperPage {
 	@Property
 	private RanglistenSpieler rs;
 	
-
 	@Property @Persist
 	private RanglistenSpieler spieler;	
+
 	
 	@SetupRender
 	public void validate() {
@@ -75,6 +75,7 @@ public class CreateRanglistenSpieler extends TTHelperPage {
     
     
     public void onActionFromDelete( long id ) {
+    	
         getPersistenceManager().removeRanglistenSpieler( id );
     }  
 }
