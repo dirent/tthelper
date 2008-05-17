@@ -60,7 +60,7 @@
 	<t:select t:id="verein" disabled="true" value="mannschaft.verein" />
 </t:parameter>
 <t:parameter name="bemerkung">
-	<t:label for="bemerkung"/>
+	<div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/> <br /> (abweichender Spieltag, <br /><span style="margin-right:0.25em;">verspäteter Halleneinlass o.ä.)</span></div>
 	<t:textarea t:id="bemerkung" rows="4" value="mannschaft.bemerkung" />
 </t:parameter>
 </t:beaneditform>

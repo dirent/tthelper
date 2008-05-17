@@ -54,15 +54,6 @@ public class PokalMannschaft
 	}
 	
 
-	@Validate( "required,maxlength=32")
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
 	@Validate( "required" )
 	public PokalWettbewerb getWettbewerb() {
 	
@@ -74,6 +65,15 @@ public class PokalMannschaft
 	}
 	
 
+	@Validate( "required,maxlength=32")
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 	@Validate( "min=0,max=3" )
 	public Integer getPokalAnzahl() {
 		return pokalAnzahl;
