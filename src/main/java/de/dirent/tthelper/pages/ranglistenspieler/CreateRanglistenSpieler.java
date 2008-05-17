@@ -1,6 +1,7 @@
 package de.dirent.tthelper.pages.ranglistenspieler;
 
 
+import java.text.Format;
 import java.util.List;
 
 import org.apache.tapestry.ComponentResources;
@@ -14,6 +15,7 @@ import org.apache.tapestry.services.BeanModelSource;
 import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.TTHelperPage;
+import de.dirent.tthelper.utils.BooleanFormat;
 
 
 public class CreateRanglistenSpieler extends TTHelperPage {
@@ -70,6 +72,14 @@ public class CreateRanglistenSpieler extends TTHelperPage {
     }    
     public BeanModel getModel() { 
     	return this.model; 
+    }
+    
+    
+	private Format booleanFormat = new BooleanFormat( "Ja", "Nein" );
+	
+    public Format getBooleanFormat() {
+    	
+    	return booleanFormat;
     }
     
     

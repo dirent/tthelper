@@ -41,6 +41,12 @@
 <t:block id="empty">Es sind noch keine Spieler gemeldet.</t:block>
 
 <t:grid source="gemeldeteRanglistenSpieler" row="rs" model="model" empty="block:empty">
+<t:parameter name="teilnahmeBezirksranglisteCell">
+	<t:output t:format="booleanFormat" t:value="rs.teilnahmeBezirksrangliste" />
+</t:parameter>
+<t:parameter name="teilnahmeBezirksmeisterschaftenCell">
+	<t:output t:format="booleanFormat" t:value="rs.teilnahmeBezirksmeisterschaften" />
+</t:parameter>
 <t:parameter name="deletecell">
 	<t:actionlink t:id="delete" context="rs.id">Löschen</t:actionlink>
 </t:parameter>
