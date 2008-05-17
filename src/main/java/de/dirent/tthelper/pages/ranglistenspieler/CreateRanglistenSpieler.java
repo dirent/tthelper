@@ -30,7 +30,6 @@ public class CreateRanglistenSpieler extends TTHelperPage {
 	@Property @Persist
 	private RanglistenSpieler spieler;	
 
-	
 	@SetupRender
 	public void validate() {
 		

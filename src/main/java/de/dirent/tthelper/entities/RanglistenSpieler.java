@@ -30,6 +30,9 @@ public class RanglistenSpieler
 	private String name;
 	private Date birthDate;
 	private RanglistenKonkurrenz konkurrenz;
+	private String mannschaft;
+	private String spielklasse;
+	private boolean teilnahmeKreisrangliste = true;
 	private boolean teilnahmeBezirksrangliste = false;
 	private boolean teilnahmeBezirksmeisterschaften = false;
 	
@@ -83,6 +86,30 @@ public class RanglistenSpieler
 	}
 	
 	
+	
+	public String getMannschaft() {
+		return mannschaft;
+	}
+	public void setMannschaft(String mannschaft) {
+		this.mannschaft = mannschaft;
+	}
+	
+	
+	public String getSpielklasse() {
+		return spielklasse;
+	}
+	public void setSpielklasse(String spielklasse) {
+		this.spielklasse = spielklasse;
+	}
+	
+	
+	public boolean isTeilnahmeKreisrangliste() {
+		return teilnahmeKreisrangliste;
+	}
+	public void setTeilnahmeKreisrangliste(boolean teilnahmeKreisrangliste) {
+		this.teilnahmeKreisrangliste = teilnahmeKreisrangliste;
+	}
+
 	
 	public boolean isTeilnahmeBezirksrangliste() {
 		return teilnahmeBezirksrangliste;
