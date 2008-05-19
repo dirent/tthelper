@@ -58,7 +58,7 @@
 
 <t:block id="empty">Es sind noch keine Spieler gemeldet.</t:block>
 
-<t:grid source="gemeldeteRanglistenSpieler" row="rs" model="model" empty="block:empty">
+<t:grid source="gemeldeteRanglistenSpieler" row="rs" model="model" empty="block:empty" exclude="verein">
 <t:parameter name="teilnahmeKreisranglisteCell">
 	<t:output t:format="booleanFormat" t:value="rs.teilnahmeKreisrangliste" /> 
 </t:parameter>
@@ -79,7 +79,7 @@
 <t:beaneditform t:id="spieler" submitlabel="Ok" object="spieler">
 <t:parameter name="birthDate">
 	<t:label for="birthDate"/>
-	<t:datefield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" value="spieler.birthDate" />
+	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" translate="dateTranslator" value="spieler.birthDate" />
 </t:parameter>
 <t:parameter name="verein">
 	<t:label for="verein"/>

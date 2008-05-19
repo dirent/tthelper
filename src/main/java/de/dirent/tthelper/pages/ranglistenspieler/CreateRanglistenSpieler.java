@@ -2,9 +2,11 @@ package de.dirent.tthelper.pages.ranglistenspieler;
 
 
 import java.text.Format;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.tapestry.ComponentResources;
+import org.apache.tapestry.Translator;
 import org.apache.tapestry.annotations.Persist;
 import org.apache.tapestry.annotations.Property;
 import org.apache.tapestry.annotations.SetupRender;
@@ -16,6 +18,7 @@ import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.TTHelperPage;
 import de.dirent.tthelper.utils.BooleanFormat;
+import de.dirent.tthelper.validate.DateTranslator;
 
 
 public class CreateRanglistenSpieler extends TTHelperPage {
@@ -81,6 +84,10 @@ public class CreateRanglistenSpieler extends TTHelperPage {
     	return booleanFormat;
     }
     
+    public Translator<Date> getDateTranslator() {
+    	
+    	return new DateTranslator( "dd.MM.yyyy" );
+    }
     
     
     public void onActionFromDelete( long id ) {

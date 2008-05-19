@@ -59,6 +59,10 @@
 	<t:label for="verein"/>
 	<t:select t:id="verein" disabled="true" value="mannschaft.verein" />
 </t:parameter>
+<t:parameter name="name">
+	<t:label for="name" />
+	<t:textfield t:id="name" label="Bezeichnung (z.B. 1. Herren)" value="mannschaft.name" />
+</t:parameter>
 <t:parameter name="bemerkung">
 	<div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/> <br /> (abweichender Spieltag, <br /><span style="margin-right:0.25em;">verspäteter Halleneinlass o.ä.)</span></div>
 	<t:textarea t:id="bemerkung" rows="4" value="mannschaft.bemerkung" />
