@@ -4,6 +4,7 @@ package de.dirent.tthelper.pages;
 import nu.localhost.tapestry.acegi.services.LogoutService;
 
 import org.apache.tapestry.annotations.InjectPage;
+import org.apache.tapestry.annotations.Property;
 import org.apache.tapestry.ioc.annotations.Inject;
 
 import de.dirent.tthelper.pages.pokalmannschaft.CreatePokalMannschaft;
@@ -41,5 +42,15 @@ public class Start extends TTHelperPage {
     public void onActionFromLogout() {
     	
         logoutService.logout();
+    }
+    
+    @Property
+    private String ranglistenAusrichtung;
+    
+    public boolean isRanglistenMeldungAvailable() {
+    	
+    	String ra = getPersistenceManager().getRanglistenAusrichtung( getCurrentVerein() );
+    	
+    	return ra != null  &&  ra.length() > 0;
     }
 }

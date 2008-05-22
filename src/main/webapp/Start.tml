@@ -17,7 +17,19 @@
 
 <h2>Ranglistenspieler</h2>
 
+<p>
+Vereine, die Spieler für die Kreisrangliste melden möchten, müssen einen Termin benennen, an dem eine Rangliste ausgerichtet werden kann.
+</p>
+
+<p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:form t:id="ausrichtungsform">
+<t:label for="ausrichtung"/> (z.B. Montag, 19.30 Uhr) <t:textfield t:id="ausrichtung" t:label="Ranglistenausrichtung" validate="required" value="ranglistenAusrichtung" />
+<t:submit t:id="saveAusrichtung" value="Ok" />
+</t:form>
+</p>
+
+<t:if test="ranglistenMeldungAvailable">
 <p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:actionlink t:id="RanglistenMeldung">Spieler für Kreisrangliste melden</t:actionlink></p>
+</t:if>
 
 <p style="width:100%; text-align:right;"><a t:type="actionlink" t:id="logout">Abmelden</a></p>
 

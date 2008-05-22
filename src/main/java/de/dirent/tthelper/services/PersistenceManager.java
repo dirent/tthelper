@@ -10,6 +10,9 @@ import de.dirent.tthelper.model.Verein;
 
 public interface PersistenceManager {
 
+	public String getRanglistenAusrichtung( Verein verein );
+
+	
 	public void add( PokalMannschaft mannschaft );	
 	public void add( RanglistenSpieler spieler );
 	

@@ -7,6 +7,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 import de.dirent.tthelper.entities.PokalMannschaft;
+import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.services.PersistenceManager;
@@ -61,5 +62,17 @@ public class TTHelperDAO implements PersistenceManager {
 	public List<RanglistenSpieler> getRanglistenSpieler( Verein verein ) {
 		
 		return session.createQuery( "SELECT x FROM RanglistenSpieler x where x.verein = " + verein.value() ).list();
+	}
+	
+	public String getRanglistenAusrichtung( Verein verein ) {
+		
+		Query query =
+			session.createQuery( "SELECT x FROM RanglistenAusrichtung  x where x.verein = " + verein.value() );
+		
+		RanglistenAusrichtung ra = (RanglistenAusrichtung) query.uniqueResult();
+		
+		if( ra == null ) return "";
+		
+		return ra.getDescription();
 	}
 }
