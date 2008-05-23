@@ -43,4 +43,9 @@ public class TTHelperPage {
 		
 		return userDetailsBean.getVerein();
 	}
+	
+	protected boolean isUserAuthenticated() {
+		
+		return requestGlobals.getHTTPServletRequest().getUserPrincipal() != null;
+	}
 }

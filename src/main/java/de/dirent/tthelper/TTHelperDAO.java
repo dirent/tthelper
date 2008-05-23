@@ -75,4 +75,19 @@ public class TTHelperDAO implements PersistenceManager {
 		
 		return ra.getDescription();
 	}
+	
+	public void saveRanglistenAusrichtung( Verein verein, String ranglistenAusrichtung ) {
+		
+		Query query =
+			session.createQuery( "SELECT x FROM RanglistenAusrichtung  x where x.verein = " + verein.value() );
+		
+		RanglistenAusrichtung ra = (RanglistenAusrichtung) query.uniqueResult();
+		if( ra == null ) {
+			ra = new RanglistenAusrichtung();
+			ra.setVerein(verein);
+		}
+		ra.setDescription( ranglistenAusrichtung );
+		
+		session.save(ra);
+	}
 }
