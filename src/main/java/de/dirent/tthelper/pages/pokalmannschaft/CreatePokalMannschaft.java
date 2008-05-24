@@ -73,7 +73,7 @@ public class CreatePokalMannschaft extends TTHelperPage {
     
     
     
-    public void onActionFromDelete( long id ) {
-        getPersistenceManager().removePokalMannschaft( id );
+    public void onActionFromDelete( long id ) {    	
+        getPersistenceManager().removePokalMannschaft( id, getCurrentVerein() );
     }  
 }

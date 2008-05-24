@@ -17,8 +17,8 @@ public interface PersistenceManager {
 	public void add( PokalMannschaft mannschaft );	
 	public void add( RanglistenSpieler spieler );
 	
-	public void removePokalMannschaft( long id );
-	public void removeRanglistenSpieler( long id );
+	public void removePokalMannschaft( long id, Verein verein );
+	public void removeRanglistenSpieler( long id, Verein verein );
 	
 	
 	public List<PokalMannschaft> getPokalMannschaften( Verein verein );

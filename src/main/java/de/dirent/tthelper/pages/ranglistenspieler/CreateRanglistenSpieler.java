@@ -92,6 +92,6 @@ public class CreateRanglistenSpieler extends TTHelperPage {
     
     public void onActionFromDelete( long id ) {
     	
-        getPersistenceManager().removeRanglistenSpieler( id );
+        getPersistenceManager().removeRanglistenSpieler( id, getCurrentVerein() );
     }  
 }

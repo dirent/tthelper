@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
@@ -19,6 +21,8 @@ import de.dirent.tthelper.services.PersistenceManager;
  */ 
 public class TTHelperDAO implements PersistenceManager {
 
+    private final Logger logger = LoggerFactory.getLogger(TTHelperDAO.class);
+
 	private Session session;
 	
 	public TTHelperDAO( Session session ) {
@@ -32,12 +36,16 @@ public class TTHelperDAO implements PersistenceManager {
 		session.save( pokalMannschaft );
 	}
 
-	public void removePokalMannschaft( long id ) {
+	public void removePokalMannschaft( long id, Verein verein ) {
 	
 		final Query query = session.createQuery( "SELECT x FROM PokalMannschaft x where x.id = :id" );
         query.setParameter( "id", id );
 
-        session.delete( query.uniqueResult() );
+        PokalMannschaft toBeDeleted = (PokalMannschaft) query.uniqueResult();
+        
+        // consistency check
+        if( verein == toBeDeleted.getVerein() ) session.delete( toBeDeleted );
+        else logger.warn( "Blocked illegal try to delete PokalMannschaft " + toBeDeleted + " by " + verein );
 	}
 	
 	
@@ -46,12 +54,16 @@ public class TTHelperDAO implements PersistenceManager {
 		session.save( spieler );
 	}
 	
-	public void removeRanglistenSpieler( long id ) {
+	public void removeRanglistenSpieler( long id, Verein verein ) {
 		
 		final Query query = session.createQuery( "SELECT x FROM RanglistenSpieler x where x.id = :id" );
         query.setParameter( "id", id );
 		
-		session.delete( query.uniqueResult() );
+        RanglistenSpieler toBeDeleted = (RanglistenSpieler) query.uniqueResult();
+        
+        // consistency check
+        if( verein == toBeDeleted.getVerein() ) session.delete( toBeDeleted );
+        else logger.warn( "Blocked illegal try to delete RanglistenSpieler " + toBeDeleted + " by " + verein );
 	}
 	
 	public List<PokalMannschaft> getPokalMannschaften( Verein verein ) {
