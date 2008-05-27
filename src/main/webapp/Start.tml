@@ -22,7 +22,7 @@ Vereine, die Spieler für die Kreisrangliste melden möchten, müssen einen Term
 </p>
 
 <p><t:form t:id="ausrichtungsform">
-<t:label for="ausrichtung"/> (z.B. Montag, 19.30 Uhr) <t:textfield t:id="ausrichtung" t:label="Ranglistenausrichtung" validate="required" value="ranglistenAusrichtung" />
+<t:label for="ausrichtung"/> (z.B. Montag, 19.30 Uhr) <t:textarea t:id="ausrichtung" t:label="Ranglistenausrichtung" validate="required" value="ranglistenAusrichtung" rows="3" style="width:300px; vertical-align:top;" />
 <t:submit t:id="saveAusrichtung" value="Ok" />
 </t:form>
 </p>
