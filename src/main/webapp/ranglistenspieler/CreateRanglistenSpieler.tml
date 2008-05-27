@@ -40,6 +40,10 @@
 		width:250px;
 	}
 	
+    #bemerkung {
+    	width:250px;
+    }
+    
 	.t-beaneditor {
     	width:600px;
     }
@@ -84,6 +88,10 @@
 <t:parameter name="verein">
 	<t:label for="verein"/>
 	<t:select t:id="verein" disabled="true" value="spieler.verein" />
+</t:parameter>
+<t:parameter name="bemerkung">
+	<div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/> <br /> (z.B. Stärkeeinstufung <br /><span style="margin-right:0.25em;">für neue Spieler, o.ä.)</span></div>
+	<t:textarea t:id="bemerkung" rows="3" value="spieler.bemerkung" />
 </t:parameter>
 </t:beaneditform>
 

@@ -32,10 +32,10 @@ public class RanglistenSpieler
 	private RanglistenKonkurrenz konkurrenz;
 	private String mannschaft;
 	private String spielklasse;
+	private String bemerkung;
 	private boolean teilnahmeKreisrangliste = true;
 	private boolean teilnahmeBezirksrangliste = false;
 	private boolean teilnahmeBezirksmeisterschaften = false;
-	
 	
 	@NonVisual
 	public Date getDate() {
@@ -103,6 +103,15 @@ public class RanglistenSpieler
 	}
 	
 	
+	@Validate( "maxlength=512" )
+	public String getBemerkung() {
+		return bemerkung;
+	}
+	public void setBemerkung(String bemerkung) {
+		this.bemerkung = bemerkung;
+	}
+	
+
 	public boolean isTeilnahmeKreisrangliste() {
 		return teilnahmeKreisrangliste;
 	}
@@ -126,8 +135,8 @@ public class RanglistenSpieler
 			boolean teilnahmeBezirksmeisterschaften) {
 		this.teilnahmeBezirksmeisterschaften = teilnahmeBezirksmeisterschaften;
 	}
-	
-	
+
+		
 	public RanglistenSpieler clone() {
 		
 		RanglistenSpieler clone = new RanglistenSpieler();
@@ -136,6 +145,9 @@ public class RanglistenSpieler
 		clone.name = name;
 		clone.birthDate = birthDate;
 		clone.verein = verein;
+		clone.mannschaft = mannschaft;
+		clone.spielklasse = spielklasse;
+		clone.bemerkung = bemerkung;
 		clone.konkurrenz = konkurrenz;
 		clone.teilnahmeBezirksmeisterschaften = teilnahmeBezirksmeisterschaften;
 		clone.teilnahmeBezirksrangliste = teilnahmeBezirksrangliste;
