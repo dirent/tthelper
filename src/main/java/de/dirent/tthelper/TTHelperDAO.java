@@ -34,6 +34,7 @@ public class TTHelperDAO implements PersistenceManager {
 	public void add( PokalMannschaft pokalMannschaft ) {
 
 		session.save( pokalMannschaft );
+		logger.info( "Verein " + pokalMannschaft.getVerein() + " has added PokalMannschaft " + pokalMannschaft + "." );
 	}
 
 	public void removePokalMannschaft( long id, Verein verein ) {
@@ -44,14 +45,22 @@ public class TTHelperDAO implements PersistenceManager {
         PokalMannschaft toBeDeleted = (PokalMannschaft) query.uniqueResult();
         
         // consistency check
-        if( verein == toBeDeleted.getVerein() ) session.delete( toBeDeleted );
-        else logger.warn( "Blocked illegal try to delete PokalMannschaft " + toBeDeleted + " by " + verein );
+        if( verein == toBeDeleted.getVerein() ) {
+        	
+        	session.delete( toBeDeleted );
+        	logger.info( "Verein " + verein + " has deleted PokalMannschaft " + toBeDeleted + "." );
+        	
+        } else {
+        	
+        	logger.warn( "Blocked illegal try to delete PokalMannschaft " + toBeDeleted + " by " + verein );
+        }
 	}
 	
 	
 	public void add( RanglistenSpieler spieler ) {
 
 		session.save( spieler );
+		logger.info( "Verein " + spieler.getVerein() + " has added RanglistenSpieler " + spieler + "." );
 	}
 	
 	public void removeRanglistenSpieler( long id, Verein verein ) {
@@ -62,8 +71,15 @@ public class TTHelperDAO implements PersistenceManager {
         RanglistenSpieler toBeDeleted = (RanglistenSpieler) query.uniqueResult();
         
         // consistency check
-        if( verein == toBeDeleted.getVerein() ) session.delete( toBeDeleted );
-        else logger.warn( "Blocked illegal try to delete RanglistenSpieler " + toBeDeleted + " by " + verein );
+        if( verein == toBeDeleted.getVerein() ) {
+        	
+        	session.delete( toBeDeleted );
+        	logger.info( "Verein " + verein + " has deleted RanglistenSpieler " + toBeDeleted + "." );
+
+        } else {
+        	
+        	logger.warn( "Blocked illegal try to delete RanglistenSpieler " + toBeDeleted + " by " + verein );
+        }
 	}
 	
 	public List<PokalMannschaft> getPokalMannschaften( Verein verein ) {
@@ -101,5 +117,6 @@ public class TTHelperDAO implements PersistenceManager {
 		ra.setDescription( ranglistenAusrichtung );
 		
 		session.save(ra);
+		logger.info( "Verein " + verein + " has set RanglistenAusrichtung to " + ranglistenAusrichtung + "." );
 	}
 }
