@@ -82,11 +82,21 @@ public class TTHelperDAO implements PersistenceManager {
         }
 	}
 	
+	public List<PokalMannschaft> getAllPokalMannschaften() {
+		
+		return session.createQuery( "SELECT x FROM PokalMannschaft x" ).list();
+	}
+	
 	public List<PokalMannschaft> getPokalMannschaften( Verein verein ) {
 		
 		return session.createQuery( "SELECT x FROM PokalMannschaft x where x.verein = " + verein.value() ).list();
 	}
 	
+	public List<RanglistenSpieler> getAllRanglistenSpieler() {
+		
+		return session.createQuery( "SELECT x FROM RanglistenSpieler x" ).list();
+	}
+
 	public List<RanglistenSpieler> getRanglistenSpieler( Verein verein ) {
 		
 		return session.createQuery( "SELECT x FROM RanglistenSpieler x where x.verein = " + verein.value() ).list();

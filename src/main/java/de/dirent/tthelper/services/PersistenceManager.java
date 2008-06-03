@@ -21,6 +21,9 @@ public interface PersistenceManager {
 	public void removeRanglistenSpieler( long id, Verein verein );
 	
 	
+	public List<PokalMannschaft> getAllPokalMannschaften();
 	public List<PokalMannschaft> getPokalMannschaften( Verein verein );
+	
+	public List<RanglistenSpieler> getAllRanglistenSpieler();
 	public List<RanglistenSpieler> getRanglistenSpieler( Verein verein );
 }

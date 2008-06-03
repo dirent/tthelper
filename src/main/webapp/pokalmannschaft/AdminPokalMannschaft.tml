@@ -1,0 +1,22 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>Meldung Pokalmannschaft</title>
+    <style>
+	.t-data-grid {
+    	font-size:8pt;
+    }
+    </style>
+</head>
+
+<body>
+<h1>Gemeldete Pokalmannschaften</h1>
+
+<t:block id="empty">Es sind noch keine Mannschaften gemeldet.</t:block>
+
+<t:grid source="gemeldetePokalMannschaften" empty="block:empty">
+</t:grid>
+
+<p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>Ranglistenmeldung</title>
+    <style>
+    .teilnahmeKreisrangliste {
+    	text-align:center;
+    }
+    .teilnahmeBezirksrangliste {
+    	text-align:center;
+    }
+    .teilnahmeBezirksmeisterschaften {
+    	text-align:center;
+    }
+    
+	.t-data-grid {
+    	font-size:8pt;
+    }
+    </style>
+</head>
+
+<body>
+<h1>Gemeldete Spieler</h1>
+
+<t:block id="empty">Es sind noch keine Spieler gemeldet.</t:block>
+
+<t:grid source="gemeldeteRanglistenSpieler" row="rs" empty="block:empty">
+<t:parameter name="teilnahmeKreisranglisteCell">
+	<t:output t:format="booleanFormat" t:value="rs.teilnahmeKreisrangliste" /> 
+</t:parameter>
+<t:parameter name="teilnahmeBezirksranglisteCell">
+	<t:output t:format="booleanFormat" t:value="rs.teilnahmeBezirksrangliste" />
+</t:parameter>
+<t:parameter name="teilnahmeBezirksmeisterschaftenCell">
+	<t:output t:format="booleanFormat" t:value="rs.teilnahmeBezirksmeisterschaften" />
+</t:parameter>
+</t:grid>
+
+
+<p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
+
+</body>
+</html>

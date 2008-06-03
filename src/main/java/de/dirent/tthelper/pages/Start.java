@@ -8,7 +8,9 @@ import org.apache.tapestry.annotations.Property;
 import org.apache.tapestry.annotations.SetupRender;
 import org.apache.tapestry.ioc.annotations.Inject;
 
+import de.dirent.tthelper.pages.pokalmannschaft.AdminPokalMannschaft;
 import de.dirent.tthelper.pages.pokalmannschaft.CreatePokalMannschaft;
+import de.dirent.tthelper.pages.ranglistenspieler.AdminRanglistenSpieler;
 import de.dirent.tthelper.pages.ranglistenspieler.CreateRanglistenSpieler;
 
 
@@ -71,4 +73,23 @@ public class Start extends TTHelperPage {
     	
     	getPersistenceManager().saveRanglistenAusrichtung( getCurrentVerein(), this.ranglistenAusrichtung );
     }
+    
+    // Adminstration
+    
+    @InjectPage
+    private AdminPokalMannschaft adminPokalMannschaft;
+
+    @InjectPage
+    private AdminRanglistenSpieler adminRanglistenSpieler;
+    
+
+    Object onActionFromAdminPokalMeldung() {
+
+		return adminPokalMannschaft;
+	}
+
+    Object onActionFromAdminRanglistenMeldung() {
+
+		return adminRanglistenSpieler;
+	}
 }
