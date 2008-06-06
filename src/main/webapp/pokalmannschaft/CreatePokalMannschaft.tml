@@ -52,6 +52,7 @@
 </t:parameter>
 </t:grid>
 
+<t:timeif pattern="06/11/2008">
 <h1>Neue Pokalmannschaft melden</h1>
 
 <t:beaneditform t:id="mannschaft" submitlabel="Ok" object="mannschaft">
@@ -68,6 +69,7 @@
 	<t:textarea t:id="bemerkung" rows="4" value="mannschaft.bemerkung" />
 </t:parameter>
 </t:beaneditform>
+</t:timeif>
 
 <p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
 

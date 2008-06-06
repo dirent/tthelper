@@ -78,6 +78,7 @@
 </t:grid>
 
 
+<t:timeif pattern="06/11/2008">
 <h1>Ranglistenmeldung</h1>
 
 <t:beaneditform t:id="spieler" submitlabel="Ok" object="spieler">
@@ -94,6 +95,7 @@
 	<t:textarea t:id="bemerkung" rows="3" value="spieler.bemerkung" />
 </t:parameter>
 </t:beaneditform>
+</t:timeif>
 
 <p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
 
