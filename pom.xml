@@ -101,7 +101,7 @@
 					<include>**/*.properties</include>
 					<include>**/*.library</include>
 					<include>**/*.jwc</include>
-					<include>**/*.html</include>
+					<include>**/*.tml</include>
 				</includes>
 			</resource>
 			<resource>
