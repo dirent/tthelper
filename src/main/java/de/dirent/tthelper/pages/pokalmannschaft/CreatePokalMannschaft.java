@@ -10,18 +10,24 @@ import org.apache.tapestry.annotations.SetupRender;
 import org.apache.tapestry.beaneditor.BeanModel;
 import org.apache.tapestry.ioc.annotations.Inject;
 import org.apache.tapestry.services.BeanModelSource;
+import org.apache.tapestry.services.RequestGlobals;
 
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.model.Verein;
+import de.dirent.tthelper.pages.MeldePage;
 import de.dirent.tthelper.pages.TTHelperPage;
 
 
-public class CreatePokalMannschaft extends TTHelperPage {
+public class CreatePokalMannschaft extends MeldePage {
 
 	public List<PokalMannschaft> getGemeldetePokalMannschaften() {
 
-		return getPersistenceManager().getPokalMannschaften( getCurrentVerein() );
-	}	
+		if( isNotAdmin() )
+			return getPersistenceManager().getPokalMannschaften( getCurrentVerein() );
+		
+		return getPersistenceManager().getAllPokalMannschaften();
+	}
+	
 	@Property
 	private PokalMannschaft pm;
 	
@@ -29,7 +35,6 @@ public class CreatePokalMannschaft extends TTHelperPage {
 	private PokalMannschaft mannschaft;	
 	
 
-	
 	@SetupRender
 	public void validate() {
 		
@@ -73,7 +78,11 @@ public class CreatePokalMannschaft extends TTHelperPage {
     
     
     
-    public void onActionFromDelete( long id ) {    	
-        getPersistenceManager().removePokalMannschaft( id, getCurrentVerein() );
+    public void onActionFromDelete( long id ) {
+    	
+    	if( isNotAdmin() )
+    		getPersistenceManager().removePokalMannschaft( id, getCurrentVerein() );
+    	else
+    		getPersistenceManager().removePokalMannschaft( id );
     }  
 }

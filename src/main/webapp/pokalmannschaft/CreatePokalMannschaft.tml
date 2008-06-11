@@ -58,7 +58,7 @@
 <t:beaneditform t:id="mannschaft" submitlabel="Ok" object="mannschaft">
 <t:parameter name="verein">
 	<t:label for="verein"/>
-	<t:select t:id="verein" disabled="true" value="mannschaft.verein" />
+	<t:select t:id="verein" disabled="notAdmin" value="mannschaft.verein" />
 </t:parameter>
 <t:parameter name="name">
 	<t:label for="name" />

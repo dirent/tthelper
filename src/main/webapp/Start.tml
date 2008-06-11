@@ -38,6 +38,8 @@ Vereine, die Spieler für die Kreisrangliste melden möchten, müssen einen Term
 
 <p style="width:100%;"><t:actionlink t:id="AdminPokalMeldung">Gemeldete Pokalmannschaften ansehen</t:actionlink></p>
 
+<p style="width:100%;"><t:actionlink t:id="AdminRanglistenAusrichtung">Termine für Ranglisten-Ausrichtung  ansehen</t:actionlink></p>
+
 <p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:actionlink t:id="AdminRanglistenMeldung">Gemeldete Ranglistenspieler ansehen</t:actionlink></p>
 </t:security.ifrole>
 

@@ -88,7 +88,7 @@
 </t:parameter>
 <t:parameter name="verein">
 	<t:label for="verein"/>
-	<t:select t:id="verein" disabled="true" value="spieler.verein" />
+	<t:select t:id="verein" disabled="notAdmin" value="spieler.verein" />
 </t:parameter>
 <t:parameter name="bemerkung">
 	<div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/> <br /> (z.B. Stärkeeinstufung <br /><span style="margin-right:0.25em;">für neue Spieler, o.ä.)</span></div>

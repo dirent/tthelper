@@ -10,6 +10,7 @@ import org.apache.tapestry.ioc.annotations.Inject;
 
 import de.dirent.tthelper.pages.pokalmannschaft.AdminPokalMannschaft;
 import de.dirent.tthelper.pages.pokalmannschaft.CreatePokalMannschaft;
+import de.dirent.tthelper.pages.ranglistenspieler.AdminRanglistenAusrichtung;
 import de.dirent.tthelper.pages.ranglistenspieler.AdminRanglistenSpieler;
 import de.dirent.tthelper.pages.ranglistenspieler.CreateRanglistenSpieler;
 
@@ -82,6 +83,9 @@ public class Start extends TTHelperPage {
     @InjectPage
     private AdminRanglistenSpieler adminRanglistenSpieler;
     
+    @InjectPage
+    private AdminRanglistenAusrichtung adminRanglistenAusrichtung;
+    
 
     Object onActionFromAdminPokalMeldung() {
 
@@ -91,5 +95,10 @@ public class Start extends TTHelperPage {
     Object onActionFromAdminRanglistenMeldung() {
 
 		return adminRanglistenSpieler;
+	}
+
+    Object onActionFromAdminRanglistenAusrichtung() {
+
+		return adminRanglistenAusrichtung;
 	}
 }

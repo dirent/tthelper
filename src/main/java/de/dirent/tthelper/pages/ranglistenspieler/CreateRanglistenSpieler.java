@@ -16,17 +16,22 @@ import org.apache.tapestry.services.BeanModelSource;
 
 import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
+import de.dirent.tthelper.pages.MeldePage;
 import de.dirent.tthelper.pages.TTHelperPage;
 import de.dirent.tthelper.utils.BooleanFormat;
 import de.dirent.tthelper.validate.DateTranslator;
 
 
-public class CreateRanglistenSpieler extends TTHelperPage {
+public class CreateRanglistenSpieler extends MeldePage {
 
 	public List<RanglistenSpieler> getGemeldeteRanglistenSpieler() {
 		
-		return getPersistenceManager().getRanglistenSpieler( getCurrentVerein() );
-	}	
+		if( isNotAdmin() )
+			return getPersistenceManager().getRanglistenSpieler( getCurrentVerein() );
+		
+		return getPersistenceManager().getAllRanglistenSpieler();
+	}
+	
 	@Property
 	private RanglistenSpieler rs;
 	
@@ -92,6 +97,9 @@ public class CreateRanglistenSpieler extends TTHelperPage {
     
     public void onActionFromDelete( long id ) {
     	
-        getPersistenceManager().removeRanglistenSpieler( id, getCurrentVerein() );
+    	if( isNotAdmin() )
+    		getPersistenceManager().removeRanglistenSpieler( id, getCurrentVerein() );
+    	else 
+    		getPersistenceManager().removePokalMannschaft( id );
     }  
 }

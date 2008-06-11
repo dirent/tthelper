@@ -38,7 +38,7 @@ public class TTHelperDAO implements PersistenceManager {
 	}
 
 	public void removePokalMannschaft( long id, Verein verein ) {
-	
+		
 		final Query query = session.createQuery( "SELECT x FROM PokalMannschaft x where x.id = :id" );
         query.setParameter( "id", id );
 
@@ -54,6 +54,17 @@ public class TTHelperDAO implements PersistenceManager {
         	
         	logger.warn( "Blocked illegal try to delete PokalMannschaft " + toBeDeleted + " by " + verein );
         }
+	}
+	
+	public void removePokalMannschaft( long id ) {
+		
+		final Query query = session.createQuery( "SELECT x FROM PokalMannschaft x where x.id = :id" );
+        query.setParameter( "id", id );
+
+        PokalMannschaft toBeDeleted = (PokalMannschaft) query.uniqueResult();
+        
+    	session.delete( toBeDeleted );
+    	logger.info( "Deleted PokalMannschaft " + toBeDeleted + "." );
 	}
 	
 	
@@ -80,6 +91,18 @@ public class TTHelperDAO implements PersistenceManager {
         	
         	logger.warn( "Blocked illegal try to delete RanglistenSpieler " + toBeDeleted + " by " + verein );
         }
+	}
+	
+	public void removeRanglistenSpieler( long id ) {
+		
+		final Query query = session.createQuery( "SELECT x FROM RanglistenSpieler x where x.id = :id" );
+        query.setParameter( "id", id );
+		
+        RanglistenSpieler toBeDeleted = (RanglistenSpieler) query.uniqueResult();
+
+        removeRanglistenSpieler(id);
+    	session.delete( toBeDeleted );
+    	logger.info( "Deleted RanglistenSpieler " + toBeDeleted + "." );
 	}
 	
 	public List<PokalMannschaft> getAllPokalMannschaften() {
@@ -128,5 +151,11 @@ public class TTHelperDAO implements PersistenceManager {
 		
 		session.save(ra);
 		logger.info( "Verein " + verein + " has set RanglistenAusrichtung to " + ranglistenAusrichtung + "." );
+	}
+	
+	
+	public List<RanglistenAusrichtung> getAllRanglistenAusrichtung() {
+		
+		return session.createQuery( "SELECT x FROM RanglistenAusrichtung  x" ).list();
 	}
 }
