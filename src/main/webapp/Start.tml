@@ -6,15 +6,15 @@
 </head>
 
 <body>
-<h1>Pokal- und Ranglisten-Meldung des TT-Kreises Bielefeld-Halle</h1>
+<h1>Online-Services des TT-Kreises Bielefeld-Halle</h1>
 
 
-<h2>Pokalmannschaften</h2>
+<h2>Helfermeldung für die Deutschen Tischtennismeisterschaften 2009 in Bielefeld</h2>
 
-<p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:actionlink t:id="PokalMeldung">Pokalmannschaft melden</t:actionlink></p>
+<p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:actionlink t:id="HelferMeldung">Helfer melden</t:actionlink></p>
 
 
-
+<t:security.ifrole role="ROLE_USER">
 <h2>Ranglistenspieler</h2>
 
 <p>
@@ -44,6 +44,7 @@ Vereine, die Spieler für die Kreisrangliste melden möchten, müssen einen Term
 </t:security.ifrole>
 
 <p style="width:100%; text-align:right;"><a t:type="actionlink" t:id="logout">Abmelden</a></p>
+</t:security.ifrole>
 
 </body>
 </html>

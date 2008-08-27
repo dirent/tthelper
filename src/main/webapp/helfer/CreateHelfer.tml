@@ -1,0 +1,73 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>Meldung Helfer</title>
+    <style>
+	.t-data-grid {
+    	font-size:8pt;
+    }    
+    
+    #verein {
+    	width:250px;
+    }
+    
+    #birthdate {
+    	width:250px;
+    }
+    
+    #name {
+    	width:250px;
+    }
+    
+    #anschrift {
+    	width:250px;
+    }
+    
+    #telefonnummer {
+    	width:250px;
+    }
+    
+    #email {
+    	width:250px;
+    }
+    
+    #bemerkung {
+    	width:250px;
+    }
+    
+    .t-beaneditor {
+    	width:600px;
+    }
+    
+    input.t-beaneditor-submit {
+    	float:right;
+    	position:relative;
+    	top:-2em;
+    	left:-1em;
+    }
+    </style>
+</head>
+
+<body>
+<h1>Helfer melden</h1>
+
+<p>Hinweis: Die angegebenen Daten werden vertraulich behandelt. In der öffentlichen Liste erscheint nur der Name und der Verein.</p>
+
+<t:beaneditform t:id="helfer" submitlabel="Ok" object="helfer">
+<t:parameter name="birthDate">
+	<t:label for="birthDate"/>
+	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" translate="dateTranslator" value="helfer.birthDate" />
+</t:parameter>
+<t:parameter name="anschrift">
+	<div style="display:inline; float:left; text-align:right;"><t:label for="anschrift"/></div>
+	<t:textarea t:id="anschrift" rows="2" value="helfer.anschrift" />
+</t:parameter>
+<t:parameter name="bemerkung">
+	<div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/></div>
+	<t:textarea t:id="bemerkung" rows="4" value="helfer.bemerkung" />
+</t:parameter>
+</t:beaneditform>
+
+<p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
+
+</body>
+</html>
