@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import de.dirent.tthelper.entities.Helfer;
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
@@ -158,4 +159,17 @@ public class TTHelperDAO implements PersistenceManager {
 		
 		return session.createQuery( "SELECT x FROM RanglistenAusrichtung  x" ).list();
 	}
+	
+	
+	// Helfermeldung
+	public void add( Helfer helfer ) {
+
+		session.save( helfer );
+		logger.info( "Helfer " + helfer.getName() + " of verein " + helfer.getVerein() + " was successfully added." );
+	}
+
+	public List<Helfer> getAllHelfer() {
+		
+		return session.createQuery( "SELECT x FROM Helfer x" ).list();
+	}	
 }

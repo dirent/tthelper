@@ -3,6 +3,24 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
 <head>
     <title>TT Helper</title>
+
+    <style>
+	.t-data-grid {
+    	font-size:8pt;
+    }
+    
+    #verein {
+    	width:300px;
+    }
+
+    #name {
+    	width:300px;
+    }
+    
+    #bemerkung {
+    	width:300px;
+    }
+    </style>
 </head>
 
 <body>
@@ -13,6 +31,28 @@
 
 <p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:actionlink t:id="HelferMeldung">Helfer melden</t:actionlink></p>
 
+
+<h2>Gemeldete Helfer</h2>
+
+<t:block id="empty">Es sind noch keine Helfer gemeldet.</t:block>
+
+<t:grid source="gemeldeteHelfer" row="helfer" model="model" empty="block:empty">
+<t:parameter name="kannDoCell">
+	<t:output t:format="booleanFormat" t:value="helfer.kannDo" /> 
+</t:parameter>
+<t:parameter name="kannFrCell">
+	<t:output t:format="booleanFormat" t:value="helfer.kannFr" /> 
+</t:parameter>
+<t:parameter name="kannSaCell">
+	<t:output t:format="booleanFormat" t:value="helfer.kannSa" /> 
+</t:parameter>
+<t:parameter name="kannSoCell">
+	<t:output t:format="booleanFormat" t:value="helfer.kannSo" /> 
+</t:parameter>
+<t:parameter name="kannMoCell">
+	<t:output t:format="booleanFormat" t:value="helfer.kannMo" /> 
+</t:parameter>
+</t:grid>
 
 </body>
 </html>
