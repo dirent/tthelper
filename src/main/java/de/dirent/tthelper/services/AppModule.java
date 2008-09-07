@@ -16,16 +16,19 @@ package de.dirent.tthelper.services;
 
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
+
 import org.acegisecurity.providers.AuthenticationProvider;
 import org.acegisecurity.userdetails.UserDetailsService;
 import org.apache.tapestry.Link;
+import org.apache.tapestry.hibernate.HibernateConfigurer;
 import org.apache.tapestry.internal.services.LinkFactory;
 import org.apache.tapestry.internal.services.RequestPageCache;
 import org.apache.tapestry.ioc.MappedConfiguration;
 import org.apache.tapestry.ioc.OrderedConfiguration;
 import org.apache.tapestry.ioc.ServiceBinder;
 import org.apache.tapestry.ioc.annotations.InjectService;
-import org.apache.tapestry.services.ApplicationStateManager;
+import org.apache.tapestry.services.ApplicationGlobals;
 import org.apache.tapestry.services.ComponentClassResolver;
 import org.apache.tapestry.services.Request;
 import org.apache.tapestry.services.RequestExceptionHandler;
@@ -69,6 +72,12 @@ public class AppModule {
     public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,
             @InjectService("DaoAuthenticationProvider") AuthenticationProvider daoAuthenticationProvider) {
         configuration.add("daoAuthenticationProvider", daoAuthenticationProvider);
+    }
+
+    public static void contributeHibernateSessionSource( OrderedConfiguration<HibernateConfigurer> config,
+    		ApplicationGlobals globals ) {
+    	
+    	config.add( "TTHelper", new TTHelperHibernateConfigurer( globals ), "before:Default*" );
     }
 
     public static void contributeApplicationDefaults(
