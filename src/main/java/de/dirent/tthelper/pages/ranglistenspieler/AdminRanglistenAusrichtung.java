@@ -6,11 +6,11 @@ import java.util.List;
 import org.acegisecurity.annotation.Secured;
 
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
-import de.dirent.tthelper.pages.TTHelperPage;
+import de.dirent.tthelper.pages.SecuredPage;
 
 
 @Secured( "ROLE_ADMIN" )
-public class AdminRanglistenAusrichtung extends TTHelperPage {
+public class AdminRanglistenAusrichtung extends SecuredPage {
 
 	public List<RanglistenAusrichtung> getGemeldeteRanglistenAusrichtung() {
 		

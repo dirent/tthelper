@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+<head>
+    <title>TT Helper</title>
+</head>
+
+<body>
+<h1>Online-Services des TT-Kreises Bielefeld-Halle</h1>
+
+<t:security.ifrole role="ROLE_USER">
+<h2>Ranglistenspieler</h2>
+
+<p>
+Vereine, die Spieler für die Kreisrangliste melden möchten, müssen einen Termin benennen, an dem eine Rangliste ausgerichtet werden kann.
+</p>
+
+<p><t:form t:id="ausrichtungsform">
+<t:label for="ausrichtung"/> (z.B. Montag, 19.30 Uhr) <t:textarea t:id="ausrichtung" t:label="Ranglistenausrichtung" validate="required" value="ranglistenAusrichtung" rows="3" style="width:300px; vertical-align:top;" />
+<t:submit t:id="saveAusrichtung" value="Ok" />
+</t:form>
+</p>
+
+<p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;">
+<t:if test="ranglistenMeldungAvailable">
+<t:actionlink t:id="RanglistenMeldung">Spieler für Kreisrangliste melden</t:actionlink>
+</t:if>
+</p>
+
+<t:security.ifrole role="ROLE_ADMIN">
+<h2>Administrationsbereich</h2>
+
+<p style="width:100%;"><t:actionlink t:id="AdminPokalMeldung">Gemeldete Pokalmannschaften ansehen</t:actionlink></p>
+
+<p style="width:100%;"><t:actionlink t:id="AdminRanglistenAusrichtung">Termine für Ranglisten-Ausrichtung  ansehen</t:actionlink></p>
+
+<p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:actionlink t:id="AdminRanglistenMeldung">Gemeldete Ranglistenspieler ansehen</t:actionlink></p>
+</t:security.ifrole>
+
+<p style="width:100%; text-align:right;"><a t:type="actionlink" t:id="logout">Abmelden</a></p>
+</t:security.ifrole>
+
+</body>
+</html>

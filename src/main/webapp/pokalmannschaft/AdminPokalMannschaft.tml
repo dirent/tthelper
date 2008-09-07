@@ -16,7 +16,7 @@
 <t:grid source="gemeldetePokalMannschaften" empty="block:empty">
 </t:grid>
 
-<p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
+<p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="StartSecured">Home</t:pagelink></p>
 
 </body>
 </html>

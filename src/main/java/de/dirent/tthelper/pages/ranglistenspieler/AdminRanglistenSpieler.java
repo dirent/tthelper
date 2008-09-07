@@ -8,12 +8,12 @@ import org.acegisecurity.annotation.Secured;
 import org.apache.tapestry.annotations.Property;
 
 import de.dirent.tthelper.entities.RanglistenSpieler;
-import de.dirent.tthelper.pages.TTHelperPage;
+import de.dirent.tthelper.pages.SecuredPage;
 import de.dirent.tthelper.utils.BooleanFormat;
 
 
 @Secured( "ROLE_ADMIN" )
-public class AdminRanglistenSpieler extends TTHelperPage {
+public class AdminRanglistenSpieler extends SecuredPage {
 
 	@Property
 	private RanglistenSpieler rs;
