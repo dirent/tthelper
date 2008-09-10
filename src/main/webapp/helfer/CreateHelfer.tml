@@ -31,11 +31,11 @@
     }
     
     #bemerkung {
-    	width:250px;
+    	width:350px;
     }
     
     .t-beaneditor {
-    	width:600px;
+    	width:800px;
     }
     
     input.t-beaneditor-submit {
@@ -53,6 +53,10 @@
 <p>Hinweis: Die angegebenen Daten werden vertraulich behandelt. In der öffentlichen Liste erscheint nur der Name und der Verein.</p>
 
 <t:beaneditform t:id="helfer" submitlabel="Ok" object="helfer">
+<t:parameter name="kannMo">
+	<div style="display:inline; float:left; text-align:right;"><t:label for="kannMo"/><br /><span style="margin-right:0.25em;">(9.3. vormittags beim Abtransport)</span></div>
+	<t:checkbox t:id="kannMo" value="helfer.kannMo" />
+</t:parameter>
 <t:parameter name="birthDate">
 	<t:label for="birthDate"/>
 	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" translate="dateTranslator" value="helfer.birthDate" />
@@ -62,8 +66,8 @@
 	<t:textarea t:id="anschrift" rows="2" value="helfer.anschrift" />
 </t:parameter>
 <t:parameter name="bemerkung">
-	<div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/></div>
-	<t:textarea t:id="bemerkung" rows="4" value="helfer.bemerkung" />
+	<div style="width:100%;margin-top:1em;" /><div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/><br /> (Zeiteinschränkungen oder<br /><span style="margin-right:0.25em;">besondere Kenntnisse:</span><br /><span style="margin-right:0.25em;">Führerschein, Fahrdienst, o.ä.</span><br /><span style="margin-right:0.25em;">Computerkenntnisse, etc.)</span></div>
+	<t:textarea t:id="bemerkung" rows="5" value="helfer.bemerkung" />
 </t:parameter>
 </t:beaneditform>
 

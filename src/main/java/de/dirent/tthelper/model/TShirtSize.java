@@ -3,11 +3,13 @@ package de.dirent.tthelper.model;
 
 public enum TShirtSize {
 
-	S(0),
-	L(1),
-	XL(2),
-	XXL(3),
-	XXXL(4);
+	XS(0),
+	S(1),
+	M(2),
+	L(3),
+	XL(4),
+	XXL(5),
+	XXXL(6);
 	
 	private final int value;
 	TShirtSize( int value ) { this.value = value; }
