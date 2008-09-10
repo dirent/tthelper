@@ -2,10 +2,6 @@
 <head>
     <title>Meldung Helfer</title>
     <style>
-	.t-data-grid {
-    	font-size:8pt;
-    }    
-    
     #verein {
     	width:250px;
     }
@@ -36,6 +32,7 @@
     
     .t-beaneditor {
     	width:800px;
+    	font-size:small;
     }
     
     input.t-beaneditor-submit {
@@ -66,7 +63,7 @@
 	<t:textarea t:id="anschrift" rows="2" value="helfer.anschrift" />
 </t:parameter>
 <t:parameter name="bemerkung">
-	<div style="width:100%;margin-top:1em;" /><div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/><br /> (Zeiteinschränkungen oder<br /><span style="margin-right:0.25em;">besondere Kenntnisse:</span><br /><span style="margin-right:0.25em;">Führerschein, Fahrdienst, o.ä.</span><br /><span style="margin-right:0.25em;">Computerkenntnisse, etc.)</span></div>
+	<div style="width:100%;margin-top:1.5em;" /><div style="display:inline; float:left; text-align:right;"><t:label for="bemerkung"/><br /> (Zeiteinschränkungen oder<br /><span style="margin-right:0.25em;">besondere Kenntnisse:</span><br /><span style="margin-right:0.25em;">Führerschein, Fahrdienst, o.ä.</span><br /><span style="margin-right:0.25em;">Computerkenntnisse, etc.)</span></div>
 	<t:textarea t:id="bemerkung" rows="5" value="helfer.bemerkung" />
 </t:parameter>
 </t:beaneditform>
