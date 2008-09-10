@@ -1,7 +1,7 @@
 package de.dirent.tthelper.model;
 
 
-public enum TShirtSize {
+public enum SweatShirtSize {
 
 	XS(0),
 	S(1),
@@ -12,6 +12,6 @@ public enum TShirtSize {
 	XXXL(6);
 	
 	private final int value;
-	TShirtSize( int value ) { this.value = value; }
+	SweatShirtSize( int value ) { this.value = value; }
 	public int value() { return this.value; }
 }

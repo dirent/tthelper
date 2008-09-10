@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import org.apache.tapestry.beaneditor.NonVisual;
 import org.apache.tapestry.beaneditor.Validate;
 
-import de.dirent.tthelper.model.TShirtSize;
+import de.dirent.tthelper.model.SweatShirtSize;
 import de.dirent.tthelper.model.Verein;
 
 
@@ -32,7 +32,7 @@ public class Helfer
 	private String telefonnummer;
 	private Date birthDate;
 	private String email;
-	private TShirtSize size = TShirtSize.XL;
+	private SweatShirtSize size = SweatShirtSize.XL;
 	private boolean kannDo = true;
 	private boolean kannFr = true;
 	private boolean kannSa = true;
@@ -117,11 +117,11 @@ public class Helfer
 
 	
 	@Validate( "required" )
-	public TShirtSize getSize() {
+	public SweatShirtSize getSize() {
 	
 		return size;
 	}	
-	public void setSize(TShirtSize size) {
+	public void setSize(SweatShirtSize size) {
 	
 		this.size = size;
 	}
