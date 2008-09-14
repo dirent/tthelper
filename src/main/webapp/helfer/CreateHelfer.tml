@@ -50,10 +50,6 @@
 <p>Hinweis: Die angegebenen Daten werden vertraulich behandelt. In der öffentlichen Liste erscheint nur der Name und der Verein.</p>
 
 <t:beaneditform t:id="helfer" submitlabel="Ok" object="helfer">
-<t:parameter name="kannMo">
-	<div style="display:inline; float:left; text-align:right;"><t:label for="kannMo"/><br /><span style="margin-right:0.25em;">(9.3. vormittags beim Abtransport)</span></div>
-	<t:checkbox t:id="kannMo" value="helfer.kannMo" />
-</t:parameter>
 <t:parameter name="birthDate">
 	<t:label for="birthDate"/>
 	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" translate="dateTranslator" value="helfer.birthDate" />

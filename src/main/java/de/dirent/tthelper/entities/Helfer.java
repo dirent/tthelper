@@ -37,7 +37,6 @@ public class Helfer
 	private boolean kannFr = true;
 	private boolean kannSa = true;
 	private boolean kannSo = true;
-	private boolean kannMo = true;
 	
 	private String bemerkung;
 	
@@ -167,15 +166,6 @@ public class Helfer
 		this.kannSo = kannSo;
 	}
 	
-	public boolean isKannMo() {
-	
-		return kannMo;
-	}
-	public void setKannMo(boolean kannMo) {
-	
-		this.kannMo = kannMo;
-	}
-	
 	
 	@Validate( "maxlength=512" )
 	public String getBemerkung() {
@@ -202,7 +192,6 @@ public class Helfer
 		clone.kannFr = kannFr;
 		clone.kannSa = kannSa;
 		clone.kannSo = kannSo;
-		clone.kannMo = kannMo;
 		clone.bemerkung = bemerkung;
 		
 		return clone;

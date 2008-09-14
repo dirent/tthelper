@@ -49,9 +49,6 @@
 <t:parameter name="kannSoCell">
 	<t:output t:format="booleanFormat" t:value="helfer.kannSo" /> 
 </t:parameter>
-<t:parameter name="kannMoCell">
-	<t:output t:format="booleanFormat" t:value="helfer.kannMo" /> 
-</t:parameter>
 </t:grid>
 
 </body>
