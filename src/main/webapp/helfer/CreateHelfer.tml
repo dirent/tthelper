@@ -47,6 +47,7 @@
 <body>
 <h1>Helfer melden</h1>
 
+<t:timeif pattern="11/20/2008">
 <p>Hinweis: Die angegebenen Daten werden vertraulich behandelt. In der öffentlichen Liste erscheint nur der Name und der Verein.</p>
 
 <t:beaneditform t:id="helfer" submitlabel="Ok" object="helfer">
@@ -63,6 +64,7 @@
 	<t:textarea t:id="bemerkung" rows="5" value="helfer.bemerkung" />
 </t:parameter>
 </t:beaneditform>
+</t:timeif>
 
 <p style="width:100%; text-align:right; margin-right:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:pagelink page="Start">Home</t:pagelink></p>
 

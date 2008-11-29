@@ -29,7 +29,9 @@
 
 <h2>Helfermeldung für die Deutschen Tischtennismeisterschaften 2009 in Bielefeld</h2>
 
-<p><t:actionlink t:id="HelferMeldung">Ja, ich möchte bei den Deutschen Meisterschaften 2009 in Bielefeld mithelfen</t:actionlink></p>
+<p>Die Meldefrist ist abgelaufen.</p>
+
+<p style="display:none;"><t:actionlink t:id="HelferMeldung">Ja, ich möchte bei den Deutschen Meisterschaften 2009 in Bielefeld mithelfen</t:actionlink></p>
 
 <p style="width:100%; margin-top:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;">Hinweise, Rückfragen und Probleme bitte an <a href="mailto:ttkreis@bitel.net">ttkreis@bitel.net</a> richten.</p> 
 
