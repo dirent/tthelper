@@ -1,8 +1,10 @@
 package de.dirent.tthelper.services;
 
+
 import java.io.IOException;
 
 import nu.localhost.tapestry.acegi.services.SaltSourceService;
+import nu.localhost.tapestry.acegi.services.SecurityModule;
 
 import org.acegisecurity.providers.AuthenticationProvider;
 import org.acegisecurity.providers.encoding.PasswordEncoder;
@@ -18,6 +20,7 @@ import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.InjectService;
+import org.apache.tapestry5.ioc.annotations.SubModule;
 import org.apache.tapestry5.services.ApplicationGlobals;
 import org.apache.tapestry5.services.ApplicationInitializerFilter;
 import org.apache.tapestry5.services.ComponentClassResolver;
@@ -33,10 +36,8 @@ import de.dirent.tap5.infrastructure.exception.RedirectException;
 import de.dirent.tthelper.TTHelperDAO;
 import de.dirent.tthelper.validate.DateTranslator;
 
-/**
- * This module is automatically included as part of the Tapestry IoC Registry, it's a good place to
- * configure and extend Tapestry, or to place your own service definitions.
- */
+
+@SubModule(SecurityModule.class)
 public class AppModule {
 	
     public static void bind(ServiceBinder binder) {
