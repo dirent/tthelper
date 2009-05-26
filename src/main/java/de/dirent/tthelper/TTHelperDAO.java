@@ -8,7 +8,6 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import de.dirent.tthelper.entities.AbstractRanglistenAusrichtung;
 import de.dirent.tthelper.entities.Helfer;
 import de.dirent.tthelper.entities.JugendRanglistenAusrichtung;
 import de.dirent.tthelper.entities.PokalMannschaft;
@@ -185,13 +184,14 @@ public class TTHelperDAO implements PersistenceManager {
 	}
 	
 	
-	public List<AbstractRanglistenAusrichtung> getAllRanglistenAusrichtung() {
+	public List<RanglistenAusrichtung> getAllRanglistenAusrichtung() {
 		
-		List<AbstractRanglistenAusrichtung> all = session.createQuery( "SELECT x FROM RanglistenAusrichtung  x" ).list();
+		return session.createQuery( "SELECT x FROM RanglistenAusrichtung  x" ).list();
+	}
+	
+	public List<JugendRanglistenAusrichtung> getAllJugendRanglistenAusrichtung() {
 		
-		all.addAll( session.createQuery( "SELECT x FROM JugendRanglistenAusrichtung  x" ).list() );
-		
-		return all;
+		return session.createQuery( "SELECT x FROM JugendRanglistenAusrichtung  x" ).list();
 	}
 	
 	

@@ -3,9 +3,10 @@ package de.dirent.tthelper.services;
 
 import java.util.List;
 
-import de.dirent.tthelper.entities.AbstractRanglistenAusrichtung;
 import de.dirent.tthelper.entities.Helfer;
+import de.dirent.tthelper.entities.JugendRanglistenAusrichtung;
 import de.dirent.tthelper.entities.PokalMannschaft;
+import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 
@@ -37,7 +38,8 @@ public interface PersistenceManager {
 	public List<RanglistenSpieler> getAllRanglistenSpieler();
 	public List<RanglistenSpieler> getRanglistenSpieler( Verein verein );
 	
-	public List<AbstractRanglistenAusrichtung> getAllRanglistenAusrichtung();
+	public List<RanglistenAusrichtung> getAllRanglistenAusrichtung();
+	public List<JugendRanglistenAusrichtung> getAllJugendRanglistenAusrichtung();
 	
 	
 	// Helfermeldung

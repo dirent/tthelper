@@ -13,7 +13,14 @@
 
 <t:block id="empty">Es wurden keine Termine erfasst.</t:block>
 
+<h2>Damen und Herren</h2>
+
 <t:grid source="gemeldeteRanglistenAusrichtung" empty="block:empty">
+</t:grid>
+
+<h2>Jugend</h2>
+
+<t:grid source="gemeldeteJugendRanglistenAusrichtung" empty="block:empty">
 </t:grid>
 
 

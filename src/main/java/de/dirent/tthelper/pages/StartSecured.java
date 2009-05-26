@@ -84,8 +84,13 @@ public class StartSecured extends SecuredPage {
     @CommitAfter
     public void onSuccessFromAusrichtungsform() {
     	
-    	getPersistenceManager().saveRanglistenAusrichtung( getCurrentVerein(), this.ranglistenAusrichtung );
-    	getPersistenceManager().saveJugendRanglistenAusrichtung( getCurrentVerein(), this.jugendRanglistenAusrichtung );
+    	if( this.ranglistenAusrichtung != null  &&  this.ranglistenAusrichtung.length() > 0 ) {
+    		getPersistenceManager().saveRanglistenAusrichtung( getCurrentVerein(), this.ranglistenAusrichtung );
+    	}
+    	
+    	if( this.jugendRanglistenAusrichtung != null  &&  this.jugendRanglistenAusrichtung.length() > 0 ) {
+    		getPersistenceManager().saveJugendRanglistenAusrichtung( getCurrentVerein(), this.jugendRanglistenAusrichtung );
+    	}
     }
     
     // Adminstration
