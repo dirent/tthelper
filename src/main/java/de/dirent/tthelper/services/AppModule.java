@@ -96,7 +96,7 @@ public class AppModule {
         		"org.acegisecurity.providers.encoding.Md5PasswordEncoder" );
     }
     
-    public static void contributeFieldTranslatorSource( Configuration<Translator> configuration ) {
+    public static void contributeTranslatorSource( Configuration<Translator> configuration ) {
 
     	configuration.add( new DateTranslator( "dd.MM.yyyy" ) );
     }

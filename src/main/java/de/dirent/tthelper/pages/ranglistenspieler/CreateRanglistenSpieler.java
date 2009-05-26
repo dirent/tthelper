@@ -9,6 +9,7 @@ import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SetupRender;
 import org.apache.tapestry5.beaneditor.BeanModel;
+import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.BeanModelSource;
 
@@ -54,6 +55,7 @@ public class CreateRanglistenSpieler extends MeldePage {
 	}
 	
 	
+	@CommitAfter
 	public void onSuccessFromSpieler() {
 
 		getPersistenceManager().add( this.spieler );
@@ -86,6 +88,7 @@ public class CreateRanglistenSpieler extends MeldePage {
     }
     
     
+    @CommitAfter
     public void onActionFromDelete( long id ) {
     	
     	if( isNotAdmin() )

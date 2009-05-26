@@ -53,7 +53,7 @@
 <t:beaneditform t:id="helfer" submitlabel="Ok" object="helfer">
 <t:parameter name="birthDate">
 	<t:label for="birthDate"/>
-	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" translate="dateTranslator" value="helfer.birthDate" />
+	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" value="helfer.birthDate" />
 </t:parameter>
 <t:parameter name="anschrift">
 	<div style="display:inline; float:left; text-align:right;"><t:label for="anschrift"/></div>

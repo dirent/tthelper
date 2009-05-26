@@ -31,7 +31,9 @@ public class TTHelperPage {
 
 	private boolean userDetailsBeanExists;
 	
-	protected Verein getCurrentVerein() {
+	public Verein getCurrentVerein() {
+		
+		if( !isUserAuthenticated() ) return null;
 		
 		if( !userDetailsBeanExists ) {
 			
@@ -45,5 +47,13 @@ public class TTHelperPage {
 	protected boolean isUserAuthenticated() {
 		
 		return requestGlobals.getHTTPServletRequest().getUserPrincipal() != null;
+	}
+	
+	public String getCurrentUsername() {
+		
+		if( !isUserAuthenticated() ) return null;
+		
+		
+		return requestGlobals.getHTTPServletRequest().getUserPrincipal().getName();
 	}
 }

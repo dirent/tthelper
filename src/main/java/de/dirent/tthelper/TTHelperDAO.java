@@ -8,7 +8,9 @@ import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import de.dirent.tthelper.entities.AbstractRanglistenAusrichtung;
 import de.dirent.tthelper.entities.Helfer;
+import de.dirent.tthelper.entities.JugendRanglistenAusrichtung;
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
@@ -154,10 +156,42 @@ public class TTHelperDAO implements PersistenceManager {
 		logger.info( "Verein " + verein + " has set RanglistenAusrichtung to " + ranglistenAusrichtung + "." );
 	}
 	
-	
-	public List<RanglistenAusrichtung> getAllRanglistenAusrichtung() {
+	public String getJugendRanglistenAusrichtung( Verein verein ) {
 		
-		return session.createQuery( "SELECT x FROM RanglistenAusrichtung  x" ).list();
+		Query query =
+			session.createQuery( "SELECT x FROM JugendRanglistenAusrichtung  x where x.verein = " + verein.value() );
+		
+		JugendRanglistenAusrichtung jra = (JugendRanglistenAusrichtung) query.uniqueResult();
+		
+		if( jra == null ) return "";
+		
+		return jra.getDescription();
+	}
+	
+	public void saveJugendRanglistenAusrichtung( Verein verein, String ranglistenAusrichtung ) {
+		
+		Query query =
+			session.createQuery( "SELECT x FROM JugendRanglistenAusrichtung  x where x.verein = " + verein.value() );
+		
+		JugendRanglistenAusrichtung jra = (JugendRanglistenAusrichtung) query.uniqueResult();
+		if( jra == null ) {
+			jra = new JugendRanglistenAusrichtung();
+			jra.setVerein(verein);
+		}
+		jra.setDescription( ranglistenAusrichtung );
+		
+		session.save(jra);
+		logger.info( "Verein " + verein + " has set JugendRanglistenAusrichtung to " + ranglistenAusrichtung + "." );
+	}
+	
+	
+	public List<AbstractRanglistenAusrichtung> getAllRanglistenAusrichtung() {
+		
+		List<AbstractRanglistenAusrichtung> all = session.createQuery( "SELECT x FROM RanglistenAusrichtung  x" ).list();
+		
+		all.addAll( session.createQuery( "SELECT x FROM JugendRanglistenAusrichtung  x" ).list() );
+		
+		return all;
 	}
 	
 	

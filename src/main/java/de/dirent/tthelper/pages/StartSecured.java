@@ -6,6 +6,7 @@ import nu.localhost.tapestry.acegi.services.LogoutService;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import de.dirent.tthelper.pages.pokalmannschaft.AdminPokalMannschaft;
@@ -20,6 +21,7 @@ import de.dirent.tthelper.pages.ranglistenspieler.CreateRanglistenSpieler;
  * Start page of secured services
  */
 public class StartSecured extends SecuredPage {
+	
 	
 	@InjectPage
 	private CreatePokalMannschaft createPokalMannschaft;
@@ -49,6 +51,12 @@ public class StartSecured extends SecuredPage {
 			this.ranglistenAusrichtung = 
 				getPersistenceManager().getRanglistenAusrichtung( getCurrentVerein() );
 		}
+
+		if( this.jugendRanglistenAusrichtung == null ) {
+			
+			this.jugendRanglistenAusrichtung = 
+				getPersistenceManager().getJugendRanglistenAusrichtung( getCurrentVerein() );
+		}
 	}
 
     @Inject
@@ -62,17 +70,22 @@ public class StartSecured extends SecuredPage {
     @Property
     private String ranglistenAusrichtung;
     
+    @Property
+    private String jugendRanglistenAusrichtung;
+    
     public boolean isRanglistenMeldungAvailable() {
     	
     	String ra = getPersistenceManager().getRanglistenAusrichtung( getCurrentVerein() );
-    	
-    	return ra != null  &&  ra.length() > 0;
+    	String jra = getPersistenceManager().getJugendRanglistenAusrichtung( getCurrentVerein() );
+    	return (ra != null  &&  ra.length() > 0) ||  (jra != null  &&  jra.length() > 0);
     }
     
     
+    @CommitAfter
     public void onSuccessFromAusrichtungsform() {
     	
     	getPersistenceManager().saveRanglistenAusrichtung( getCurrentVerein(), this.ranglistenAusrichtung );
+    	getPersistenceManager().saveJugendRanglistenAusrichtung( getCurrentVerein(), this.jugendRanglistenAusrichtung );
     }
     
     // Adminstration
