@@ -145,13 +145,25 @@ public class TTHelperDAO implements PersistenceManager {
 			session.createQuery( "SELECT x FROM RanglistenAusrichtung  x where x.verein = " + verein.value() );
 		
 		RanglistenAusrichtung ra = (RanglistenAusrichtung) query.uniqueResult();
-		if( ra == null ) {
-			ra = new RanglistenAusrichtung();
-			ra.setVerein(verein);
-		}
-		ra.setDescription( ranglistenAusrichtung );
 		
-		session.save(ra);
+		if( isBlank( ranglistenAusrichtung ) ) {
+			
+			if( ra != null ) {
+				
+				session.delete(ra);
+			}
+			
+		} else {
+
+			if( ra == null ) {
+				ra = new RanglistenAusrichtung();
+				ra.setVerein(verein);
+			}
+			ra.setDescription( ranglistenAusrichtung );
+			
+			session.save(ra);
+		}
+
 		logger.info( "Verein " + verein + " has set RanglistenAusrichtung to " + ranglistenAusrichtung + "." );
 	}
 	
@@ -173,13 +185,26 @@ public class TTHelperDAO implements PersistenceManager {
 			session.createQuery( "SELECT x FROM JugendRanglistenAusrichtung  x where x.verein = " + verein.value() );
 		
 		JugendRanglistenAusrichtung jra = (JugendRanglistenAusrichtung) query.uniqueResult();
-		if( jra == null ) {
-			jra = new JugendRanglistenAusrichtung();
-			jra.setVerein(verein);
-		}
-		jra.setDescription( ranglistenAusrichtung );
 		
-		session.save(jra);
+		if( isBlank( ranglistenAusrichtung ) ) {
+			
+			if( jra != null ) {
+				
+				session.delete(jra);
+			}
+			
+		} else {
+
+
+			if( jra == null ) {
+				jra = new JugendRanglistenAusrichtung();
+				jra.setVerein(verein);
+			}
+			jra.setDescription( ranglistenAusrichtung );
+			
+			session.save(jra);
+		}
+
 		logger.info( "Verein " + verein + " has set JugendRanglistenAusrichtung to " + ranglistenAusrichtung + "." );
 	}
 	
@@ -205,5 +230,11 @@ public class TTHelperDAO implements PersistenceManager {
 	public List<Helfer> getAllHelfer() {
 		
 		return session.createQuery( "SELECT x FROM Helfer x" ).list();
-	}	
+	}
+	
+	
+	public static boolean isBlank( String value ) {
+		
+		return value == null  ||  value.length() == 0;
+	}
 }
