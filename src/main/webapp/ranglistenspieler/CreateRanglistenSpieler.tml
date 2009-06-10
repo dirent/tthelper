@@ -78,7 +78,7 @@
 </t:grid>
 
 
-<t:timeif pattern="06/30/2009">
+<t:timeif pattern="06/12/2009">
 <h1>Ranglistenmeldung</h1>
 
 <t:beaneditform t:id="spieler" submitlabel="Ok" object="spieler">

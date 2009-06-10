@@ -13,13 +13,13 @@
 
 <h2>Meldungen von Pokalmannschaften für die Saison 2009 / 2010</h2>
 
-<t:timeif pattern="06/30/2009">
+<t:timeif pattern="06/12/2009">
 <p style="width:100%; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;"><t:actionlink t:id="PokalMeldung">Pokalmannschaft melden</t:actionlink></p>
 </t:timeif>
 
 <h2>Meldung von Ranglistenspieler/innen der Saison 2009 / 2010</h2>
 
-<t:timeif pattern="06/30/2009">
+<t:timeif pattern="06/12/2009">
 <p>
 Vereine, die Spieler für die Kreisrangliste melden möchten, müssen einen Termin benennen, an dem eine Rangliste ausgerichtet werden kann. 
 Jugendspieler können erst gemeldet werden, wenn auch ein Termin für die Ausrichtung einer Jugendrangliste angegeben wurde.
