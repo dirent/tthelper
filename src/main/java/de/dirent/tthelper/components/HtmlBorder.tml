@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" xml:lang='en' lang='en'>
+
+<head>
+<title>Homepage des Tischtenniskreises Bielefeld/Halle</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<link rel="stylesheet" media="all" href="${context:styles/main.css}" />
+<link rel="stylesheet" media="all" href="${context:styles/theme.css}" />
+<link rel="stylesheet" media="print" href="${context:styles/print.css}" />
+</head>
+<body>
+
+    <div id="header">
+
+        <div id="top_menu">
+            <div id="top_menu_container">
+                <div class="date">Stand: 3. Juli 2009 - 9.35 Uhr</div>
+                <form id="searchform">
+                <ul>
+                    <li><t:pagelink page="termine">Termine</t:pagelink></li>
+                    <li><t:pagelink page="vereine">Vereine</t:pagelink></li>
+                    <li><t:pagelink page="vorstand">Vorstand</t:pagelink></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="archiv.html">Archiv</a></li>
+                    <li><a href="http://www.tthelper.de/fotoarchiv/" target="_blank">Fotoarchiv</a></li>
+                    <li><a href="http://gb.dirent8080.de/gbuch.php" target="_blank">Gästebuch</a></li>
+                    <li id="searchfield_container"><div id="searchfield_label">Suche:</div> <input id="searchfield" type="text" size="12" /></li>
+                </ul>
+                </form>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div id="header_bottom">
+            <div id="logo_banner_container">
+                <div id="logo">
+                    <h1 style="margin-left: 1em;"><a class="homeLink" href="index.gsp">Tischtenniskreis Bielefeld / Halle</a></h1>
+                </div>
+                <div id="banner">
+                    <a href="http://www.wttv.de/"> <img src="images/wttv.gif" /> </a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main_container">
+
+        <div id="left_column">
+
+            <div class="left_menu_top">
+                <div class="left_menu_bottom">
+                    <h5>Spielbetrieb - 2009/2010</h5>
+                    <div class="content">
+                        <ul class="left_menu">
+                            <li class="none"><a href="jugend0910.html">Jugend</a></li>
+                            <li class="none"><a href="spielbetrieb0910.html">Damen und Herren</a></li>
+                            <li class="none"><a href="senioren0910.html">Senioren</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="left_menu_top">
+                <div class="left_menu_bottom">
+                    <h5>Turniere</h5>
+                    <div class="content">
+                        <ul class="left_menu">
+                            <li class="none"><a href="turniere.html#km">Kreismeisterschaften</a></li>
+                            <li class="none"><a href="turniere.html#esv">ESV-Turnier</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="left_menu_top">
+                <div class="left_menu_bottom">
+                    <h5>Links</h5>
+                    <div class="content">
+                        <ul class="left_menu">
+                            <li><a class="newWindow" href="http://wttv.click-tt.de/cgi-bin/WebObjects/ClickWTTV.woa/wa/leaguePage?championship=K181+09%2F10" target="_blank">click-tt</a></li>
+                            <li><a class="externalLink" href="http://www.wttv.de/">WTTV</a></li>
+                            <li><a class="newWindow" href="http://www.tt-owl.de/" target="_blank">Bezirk OWL</a></li>
+                            <li><a class="newWindow" href="http://www.wttv.de/kreis/bielefeld-halle/index.html" target="_blank">alte Homepage</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="powered_by">
+                      <a href="http://tapestry.apache.org/" title="Powered by Tapestry 5" class="poweredBy" target="_blank">
+                        <img alt="Powered by Tapestry 5" width="200" src="http://tapestry.apache.org/tapestry5.1/images/tapestry_banner.gif"></img>
+                      </a>
+            </div> <!-- close powered_by -->
+
+            <div class="clear"></div>
+
+        </div>
+
+        <div id="body_column">
+            <div><t:body /></div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+
+    <div id="footer">
+        <div class="copyright">
+            <p>Gestaltet und erstellt von Dirk Entgelmeier für den Tischtenniskreis Bielefeld/Halle<br />
+            basierend auf dem Design des <a href="http://myfaces.apache.org/" target="_blank">Apache Myfaces Projekts</a></p>
+            <p class="impressumLine"><a href="impressum.html">Impressum</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

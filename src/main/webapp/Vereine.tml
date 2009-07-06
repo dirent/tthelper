@@ -1,0 +1,442 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+    <div class="section">
+
+        <h2>Vereinsanschriften</h2>
+
+        <div class="section">
+
+            <table class="bodyTable">
+                
+                <tr class="a">
+                    <th>Verein</th>
+                    <th>Abteilungsleiter/in</th>
+                    <th>Damenwart/in</th>
+                    <th>Jugendwart/in</th>
+                    <th>Turnhalle</th>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.btg-bielefeld.de" target="_blank">BTG von 1848</a></td>
+                    <td><a href="mailto:MarieLuiseRisse&#64;aol.com">Marie-Luise Risse</a><br />
+                    Geschwister-Scholl-Str. 16, 33613 Bielefeld<br />
+                    Tel.: 0521/885220</td>
+                    <td><a href="mailto:sarah.hafner.bielefeld&#64;freenet.de">Sarah Hafner</a><br />
+                    Pfälzer Str. 39, 33613 Bielefeld<br />
+                    Tel.: 0521/893582</td>
+                    <td>Christel Thiem<br />
+                    Schelpsheide 10, 33613 Bielefeld<br />
+                    Tel.: 0521/891292</td>
+                    <td>Turnhalle Brodhagenschule<br />
+                    Am Brodhagen 50<br />
+                    33613 Bielefeld</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">CVJM Heepen</td>
+                    <td><a href="mailto:Fritz46&#64;gmx.de">Fritz Happek</a><br />
+                    Schneidemühler Str. 88a, 33605 Bielefeld<br />
+                    Tel.: 0521/9248437 (p), 0173/6436394 (m)</td>
+                    <td></td>
+                    <td></td>
+                    <td>Turnhalle Wellbachschule<br />
+                    Am Wellbach 21<br />
+                    33609 Bielefeld-Baumheide</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">DJK BW Bielefeld</td>
+                    <td><a href="mailto:Helmut.Schrage&#64;web.de">Helmut Schrage</a><br />
+                    Alexanderstr. 9, 33649 Bielefeld<br />
+                    Tel.: 0521/450797 (p), 0160/95158631 (m)</td>
+                    <td></td>
+                    <td><a href="mailto:DennisRoehlig&#64;arcor.de">Dennis Röhlig</a><br />
+                    Jöllheide 3, 33609 Bielefeld<br />
+                    Tel.: 0521/37682 (p), 0170/6928138 (m)</td>
+                    <td>Sporthalle Hellingskampschule<br />
+                    Herforder Str. 263<br />
+                    33602 Bielefeld</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://www.esv-bielefeld.de/" target="_blank">ESV Bielefeld</a></td>
+                    <td><a href="mailto:olaf.stockmann&#64;arcor.de">Olaf Stockmann</a><br />
+                    Schelpsheide 53, 33613 Bielefeld<br />
+                    Tel.: 0521/131075</td>
+                    <td><a href="mailto:binner&#64;versanet.de">Bettina Binner</a><br />
+                    Sudbrackstr. 77a, 33611 Bielefeld<br />
+                    Tel.: 0521/891223</td>
+                    <td><a href="mailto:thomas.terfloth&#64;o2online.de">Thomas Terfloth</a><br />
+                    Universitätsstr. 15 - App. 3205, 33615 Bielefeld<br />
+                    Tel.: 0521/4307301 (p), 0176/23991607 (m)</td>
+                    <td>Turnhalle der Brodhagenschule II / Gutenbergschule<br />
+                    Gutenbergstr. 19<br />
+                    33615 Bielefeld<br /><br />
+
+                    Turnhalle Luisenschule<br />
+                    Paulusstr. 11<br />
+                    33602 Bielefeld</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.gtbsport.de" target="_blank">Gadderbaumer TV</a></td>
+                    <td><a href="mailto:Marco.Knapp&#64;web.de">Marco Knapp</a><br />
+                    Quellenhofweg 1,<br />
+                    33617 Bielefeld<br />
+                    Tel.: 0521/9146249, 0170/9679641 (m)</td>
+                    <td><a href="mailto:Susan.Stanke&#64;web.de">Susan Stanke</a><br />
+                    Roggenkamp 4a, 33818 Leopoldshöhe<br />
+                    Tel.: 05208/7201</td>
+                    <td><a href="mailto:Marco.Knapp&#64;web.de">Marco Knapp</a><br />
+                    Quellenhofweg 1,<br />
+                    33617 Bielefeld<br />
+                    Tel.: 0521/9146249, 0170/9679641 (m)</td>
+                    <td>Turnhalle Martinschule<br />
+                    Deckertstr. 1<br />
+                    33617 Bielefeld-Gadderbaum<br /><br />
+
+                    Turnhalle der ehemaligen Hauptschule<br />
+                    Ramaweg 6<br />
+                    33617 Bielefeld-Bethel<br /><br />
+
+                    Turnhalle der Sareptaschule<br />
+                    Am Zionswald<br />
+                    33617 Bielefeld</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://www.scbabenhausen.de/tischtennis" target="_blank">SC Babenhausen</a></td>
+                    <td><a href="mailto:Tischtennis&#64;SCBabenhausen.de">Karsten Siefert</a><br />
+                    Puntheide 11, 33619 Bielefeld<br />
+                    Tel.: 0521/160652 (p), Vilsen0171/8724361 (m), 0521/9723636 (g)</td>
+                    <td><a href="mailto:Tischtennis&#64;SCBabenhausen.de">Anita Ewert</a><br />
+                    Hainteichstr. 74, 33613 Bielefeld<br />
+                    Tel.: 0521/883860</td>
+                    <td><a href="mailto:BerndSchatschneiderTT&#64;web.de">Bernd Schatschneider</a><br />
+                    Rügener Str.  26, 33729 Bielefeld<br />
+                    Tel.: 0521/7724173 (p), 0174/2966477 (m)</td>
+                    <td>Sporthalle Leineweberschule<br />
+                    Babenhauser Str. 155<br />
+                    33619 Bielefeld-Babenhausen</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.scb04-26.de/html/tischtennis.html" target="_blank">SC Bielefeld 04/26</a></td>
+                    <td><a href="mailto:Rainer.Spiekerkoetter&#64;thyssenkrupp.com">Rainer Spiekerkötter</a><br />
+					Husumer Str. 166, 33729 Bielefeld<br />
+					Tel.: 0521/761937 (p), 0521/1451341 (g)</td>
+                    <td>Sigrid Kampmann<br />
+					Schröttinghauser Str. 210, 33739 Bielefeld<br />
+					Tel.: 05203/902738</td>
+                    <td>Jörg Zorn<br />
+					Westerfeldstr. 136, 33613 Bielefeld<br />
+					Tel.: 0521/885246</td>
+                    <td>Sporthalle Sudbrackschule<br />
+					Klarhorststraße 8<br />
+					33613 Bielefeld</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://www.sc-halle.de" target="blank">SC Halle 1919 e.V.</a></td>
+                    <td>Gerhard Stoppenbrink<br />
+					Niederfeldstr. 4, 33790 Halle<br />
+					Tel.: 05425/6188 (p), 0521/291462 (g)</td>
+                    <td></td>
+                    <td><a href="mailto:Chabnedak&#64;gmx.de">Ralf Kadenbach</a><br />
+					Samlandweg 129, 33790 Halle<br />
+					Tel.: 05201/5770</td>
+                    <td>Turnhalle Kreis-Gymnasium Halle<br />
+					Alleestraße/Neustädter Str. 2<br />
+					33790 Halle</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.sportfreunde-sennestadt.de/" target="_blank">SF Sennestadt</a></td>
+                    <td>Bernd Völkel<br />
+					Eisgrundstr. 3, 33699 Bielefeld<br />
+					Tel.: 05202/6776</td>
+                    <td></td>
+                    <td><a href="mailto:AKVogel&#64;t-online.de">Klaus Vogel</a><br />
+					Altmühlstr. 15 c, 33689 Bielefeld<br />
+					Tel./Fax: 05205/6244</td>
+                    <td>Sporthalle Süd<br />
+					Wintersheide 32<br />
+					33689 Bielefeld-Sennestadt</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">SG Altstadt</td>
+                    <td><a href="mailto:SCAltstadt&#64;web.de">Jan Munkelt</a><br />
+					Am Speksel 62, 33649 Bielefeld<br />
+					Tel.: 0521/3994172, 0171/3221440</td>
+                    <td></td>
+                    <td></td>
+                    <td>Turnhalle Luisenschule<br />
+					Paulusstr. 11<br />
+					33602 Bielefeld</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.sv-heepen.com/" target="_blank">Spvg Heepen</a></td>
+                    <td><a href="mailto:tischtennis&#64;sv-heepen.com">Michael Stieghorst</a><br />
+					Kusenweg 19, 33719 Bielefeld<br />
+					Tel.: 0521/332816 (p), 0521/331875 (d)<br />
+					Fax: 0521/3369748</td>
+                    <td>Desiree Stieghorst<br />
+					Kusenweg 19, 33719 Bielefeld<br />
+					Tel.: 0521/332816, 0151/15589724 (m)</td>
+                    <td><a href="mailto:i-beckmeier&#64;t-online.de">Ingo Beckmeier</a><br />
+					Stieglitzweg 2a, 33607 Bielefeld<br />
+					Tel.: 0521/2603856, 0173/1573175 (m)<br />
+					Fax: 0521/2705854</td>
+                    <td>Hauptschule Heepen<br />
+					Beckerstraße 7-9<br />
+					33719 Bielefeld-Heepen<br /><br />
+
+					Turnhalle Tieplatzschule<br />
+					Altenhagener Str. 8<br />
+					33719 Bielefeld-Heepen</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://spvg-steinhagen.de/index.php?id=12" target="_blank">Spvg Steinhagen</a></td>
+                    <td><a href="mailto:reinhard.marquart&#64;t-online.de">Reinhard Marquart</a><br />
+					Webers Kamp 1, 33824 Werther<br />
+					Tel.: 05203/4708 (p), 0521/9420822 (g)</td>
+                    <td><a href="mailto:HeikeSterthoff&#64;BiTel.net">Heike Sterthoff</a><br />
+					Nimmersatter Str. 16, 33803 Steinhagen</td>
+                    <td><a href="mailto:wboek&#64;t-online.de">Wolfgang Bök</a><br />
+					Lisztstr. 11, 33803 Steinhagen<br />
+					Tel.: 05204/6527 (p), 0171/6542254 (m)</td>
+                    <td>Aula Grundschule Steinhagen<br />
+					Pestalozzistr. 1<br />
+					33803 Steinhagen</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.svb-tt.de" target="_blank">SV Brackwede</a></td>
+                    <td><a href="mailto:Thorsten.List&#64;web.de">Thorsten List</a><br />
+	 				Grabenstraße 2, 33647 Bielefeld<br />
+					Tel.: 0521/429816 (p), 0177/4918620 (m)</td>
+                    <td></td>
+                    <td><a href="mailto:Thorsten.List&#64;web.de">Thorsten List</a><br />
+	 				Grabenstraße 2, 33647 Bielefeld<br />
+					Tel.: 0521/429816 (p), 0177/4918620 (m)</td>
+                    <td>Alte Turnhalle Vogelruthschule<br />
+					Vogelruth<br />
+					33647 Bielefeld-Brackwede<br /><br />
+					
+					Neue Turnhalle Vogelruthschule<br />
+					Vogelruth<br />
+					33647 Bielefeld-Brackwede</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://www.svgadderbaum-tischtennis.de/" target="_blank">SV Gadderbaum</a></td>
+                    <td><a href="mailto:karinkruse&#64;web.de">Karin Kruse</a><br />		
+					Dornberger Str. 39a, 33615 Bielefeld<br />		
+					Tel.: 0521/34810</td>
+                    <td><a href="mailto:karinkruse&#64;web.de">Karin Kruse</a><br />		
+					Dornberger Str. 39a, 33615 Bielefeld<br />		
+					Tel.: 0521/34810</td>
+                    <td><a href="mailto:karinkruse&#64;web.de">Karin Kruse</a><br />		
+					Dornberger Str. 39a, 33615 Bielefeld<br />		
+					Tel.: 0521/34810</td>
+                    <td>Turnhalle Martinschule<br />					
+					Deckertstr. 1<br />					
+					33617 Bielefeld-Gadderbaum<br /><br />					
+		
+					Turnhalle der ehemaligen Hauptschule<br />					
+					Ramaweg 6<br />					
+					33617 Bielefeld-Bethel</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">SG Hesseln eV 1957</td>
+                    <td><a href="mailto:Uwe.Maiwald&#64;lenze-maiwald.de">Uwe Maiwald</a><br />
+					Voßhof 7, 33803 Steinhagen<br />
+					Tel.: 05204/9249883</td>
+                    <td></td>
+                    <td></td>
+                    <td>Turnhalle Kreis-Gymnasium Halle<br />
+					Alleestraße/Neustädter Str. 2<br />
+					33790 Halle</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://www.sv-ubbedissen.de" target="_blank">SV Ubbedissen</a></td>
+                    <td>Frank Tapper<br />
+					Westerfeldstr. 188a, 33613 Bielefeld<br />
+					Tel.: 0177/3942306</td>
+                    <td></td>
+                    <td>Helmut Müller<br />
+					Myrtenweg 15, 33699 Bielefeld<br />
+					Tel.: 05202/80685</td>
+                    <td>Turnhalle Grundschule Ubbedissen<br />
+					Detmolder Str. 697<br />
+					33699 Bielefeld-Ubbedissen</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.tsve-tt.de/" target="_blank">TSVE 1890 Bielefeld</a></td>
+                    <td><a href="mailto:Liz.Lane-Woehrmann&#64;wolff-arzneimittel.de">Liz Lane-Wöhrmann</a><br />
+					Am Recksiek 35, 33719 Bielefeld<br />
+					Tel.: 0521/2080491 (p)  0521/8808-393 (d),<br />
+					<span style="margin-left: 2.25em;">0174/4767517</span></td>
+                    <td><a href="mailto:Ch.Messinger&#64;gmx.net">Charlotte Messinger</a><br />
+					Am Kruge 8, 33611 Bielefeld<br />
+					Tel.: 0521/130364, 0175/7834004 (m)</td>
+                    <td><a href="mailto:o.pade&#64;gmx.de">Oliver Pade</a><br />
+					Braker Str. 8, 32052 Herford <br />
+					Tel.: 05221/139878, 01577/1899194 (m)</td>
+                    <td>Turnhalle der Gutenbergschule / MPG II <br />
+					Gutenbergstr. 19<br />
+					33615 Bielefeld</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">TTC Altenhagen</td>
+                    <td>Klaus Böcker<br />
+					Kerksiekweg 41, 33729 Bielefeld<br />
+					Tel.: 0521/77580(p), 0521/171876 (d)</td>
+                    <td></td>
+                    <td>Carsten Seidel<br />
+					Wolfsheide 65, 33729 Bielefeld<br />
+					Tel.: 0521/392376</td>
+                    <td>Turnhalle Grundschule Am Homersen<br />
+					Rüggesiek 11<br />
+					33719 Bielefeld-Heepen</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">TTC Dornberg</td>
+                    <td><a href="mailto:axel.gerber&#64;gmx.de">Axel Gerber</a><br />
+					Barlachstraße 15, 33613 Bielefeld<br />
+					Tel.: 0521/143462</td>
+                    <td></td>
+                    <td></td>
+                    <td>Turnhalle Grundschule Dornberg<br />
+					Großer Kamp 47<br />
+					33619 Bielefeld-Dornberg</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">TTG Versmold 1981</td>
+                    <td><a href="mailto:Wolfgang_Sander&#64;t-online.de">Wolfgang Sander</a><br />
+					Hohlweg 8, 33775 Versmold<br />
+					Tel.: 05423/42282</td>
+                    <td></td>
+                    <td><a href="mailto:Wolfgang_Sander&#64;t-online.de">Wolfgang Sander</a><br />
+					Hohlweg 8, 33775 Versmold<br />
+					Tel.: 05423/42282</td>
+                    <td>Turnhalle Hauptschule<br />
+					Schulstraße 14<br />
+					33775 Versmold<br /><br />
+					
+					Turnhalle Grundschule Bockhorst<br />
+					Eschkamp 30<br />
+					33775 Versmold-Bockhorst</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.tura06.de" target="_blank">TuRa 06 Bielefeld</a></td>
+                    <td>Peter Schmidt<br />
+					Rohrteichstraße 41, 33602 Bielefeld<br />
+					Tel.: 0171/7871465</td>
+                    <td></td>
+                    <td>Manfred Scholz<br />
+					Reichenberger Str. 9b, 33605 Bielefeld<br />
+					Tel.: 0521/204524</td>
+                    <td>Kleine Sporthalle Gesamtschule<br />
+					Am Wortkamp 1<br />
+					33605 Bielefeld-Stieghorst<br /><br />
+
+					Sporthalle 2 Ceciliengymnasium<br />
+					Niedermühlenkamp 17<br />
+					33604 Bielefeld</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://tus08senne.de/" target="_blank">TuS 08 Senne</a></td>
+                    <td><a href="mailto:CuP.Rosenthal&#64;arcor.de">Peter Rosenthal</a><br />
+					Speerweg 4, 33659 Bielefeld<br />
+					Tel.: 0521/429300</td>
+                    <td></td>
+                    <td><a href="mailto:michazx&#64;web.de">Michael Vogel</a><br />
+					Fresienweg 8, 33659 Bielefeld</td>
+                    <td>Hermann-Windel-Halle<br />
+					Am Waldbad 72<br />
+					33659 Bielefeld</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.infowebnet.de/tusbrake/" target="_blank">TuS Brake</a></td>
+                    <td><a href="mailto:andreas.boesel&#64;bielefeld.de">Andreas Bösel</a><br />
+					Husumer Straße 4, 33729 Bielefeld<br />
+					Tel.: 0521/761742 (p), 0521/512810 (g)</td>
+                    <td>Sabine Bösel<br />
+					Husumer Straße 4, 33729 Bielefeld<br />
+					Tel.: 0521/761742 (p)</td>
+                    <td>Christian Wysiecki<br />
+					Krabbenstr. 8, 33729 Bielefeld<br />
+					Tel.: 0521/7707697</td>
+                    <td>Turnhalle ehem. Grundschule Brake<br />
+					Spiekeroogstr. 6<br />
+					33729 Bielefeld-Brake</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://www.tus-eintracht.de" target="_blank">TuS Eintracht Bielefeld</a></td>
+                    <td>Karl-Heinz Korbanek<br />
+					<br />
+					Tel.: 0521/2081538 (p), 0171/7269361 (m)</td>
+                    <td></td>
+                    <td>Thomas Gößling<br />
+					Am Südhang 28, 33739 Bielefeld<br />
+					Tel.: 0521/892633</td>
+                    <td>Sporthalle Osningschule<br />
+					Neue Straße 13-15<br />
+					33605 Bielefeld-Sieker</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position"><a href="http://www.tus-hillegossen.de" target="_blank">TuS Hillegossen</a></td>
+                    <td><a href="mailto:jan&#64;schaefernolte.de">Jan Schäfernolte</a><br />
+					Hörster Str. 105, 33699 Bielefeld<br />
+					Tel.: 0171/8533818</td>
+                    <td></td>
+                    <td><a href="mailto:robert&#64;tt-trainer.info">Robert Rischmüller</a><br />
+					Weissenburger Str. 21, 33607 Bielefeld<br />
+					Tel.: 0521/7849492 (p), 01577/4735581 (m)</td>
+                    <td>Alte Turnhalle Stieghorstschule<br />
+					Detmolder Straße 415<br />
+					33605 Bielefeld-Stieghorst<br /><br />
+		
+					Sporthalle Grundschule Hillegossen<br />
+					Detmolder Straße 613<br />
+					33699 Bielefeld-Hillegossen</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position"><a href="http://www.tus-joellenbeck.de/" target="_blank">TuS Jöllenbeck</a></td>
+                    <td><a href="mailto:OliverPielsticker&#64;t-online.de">Oliver Pielsticker</a><br />
+					Dithfurthstr. 91, 33611 Bielefeld<br />
+					Tel.: 0521/5602311 (p), 0160/94848917 (m)</td>
+                    <td>Silvia Steinsiek<br />
+					Stegeisen 2, 33739 Bielefeld<br />
+					Tel.: 05206/5747</td>
+                    <td><a href="mailto:lkm_leopolt&#64;web.de">Christian Komnick</a><br />
+					Jupiterstr. 10, 33739 Bielefeld<br />
+					Tel.: 05206/4351 (p), 0160/5739095 (m)</td>
+                    <td>Sporthalle Grundschule<br />
+					Am Waldschlößchen 66<br />
+					33739 Bielefeld-Jöllenbeck</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</t:htmlborder>

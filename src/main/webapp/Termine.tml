@@ -1,0 +1,30 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+    <div class="section">
+        <h2>Terminkalender <span class="subtitle">(alle Angaben ohne Gewähr)</span></h2>
+    </div>
+
+    <div class="section">
+        <h3>2.7.2009 - 14.8.2009</h3>
+        <p>Sommerferien</p>
+    </div>
+
+    <div class="section">
+        <h3>22.8.2009</h3>
+        <p>Kreismeisterschaften der Seniorinnen und Senioren in der Carl-Severing-Schule, Sporthalle II
+        (<a class="newWindow" href="http://www.dirent8080.de/kreis-homepage/turniere/Ausschreibung_KM2009.pdf" target="_blank">zur Ausschreibung</a>).
+        Ausrichter: TSVE Bielefeld.</p>
+    </div>
+
+    <div class="section">
+        <h3>12.9.2009 / 13.9.2009</h3>
+        <p>Kreismeisterschaften der Damen, Herren und Jugend in der Seidensticker Halle 
+        (<a class="newWindow" href="http://www.dirent8080.de/kreis-homepage/turniere/Ausschreibung_KM2009.pdf" target="_blank">zur Ausschreibung</a>).
+        Ausrichter: TSVE Bielefeld.</p>
+    </div>
+
+    <div class="section">
+        <h3 class="infoLine">Der Rahmenterminplan 2009/2010 folgt in Kürze.</h3>
+    </div>
+
+</t:htmlborder>

@@ -1,0 +1,191 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+    <div class="section">
+
+        <h2>Vorstandsmitglieder</h2>
+
+        <div class="section">
+
+            <table class="bodyTable">
+                
+                <tr class="a">
+                    <th>Position</th>
+                    <th>Vorstandsmitglied</th>
+                    <th>Verein</th>
+                    <th>Adresse</th>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Kreisvorsitzender</td>
+                    <td><a href="mailto:HSchwan&#64;gmx.de">Holger Schwan</a></td>
+                    <td>VfL Oldentrup</td>
+                    <td>Lerchenstr. 64, 33607 Bielefeld<br />
+                    Tel.: 0170/2 25 40 56 (m), 0521/287944</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">stellv.<br />
+                    Kreisvorsitzender</td>
+                    <td><a href="mailto:AKVogel&#64;t-online.de">Klaus Vogel</a></td>
+                    <td>SF Sennestadt</td>
+                    <td>Altmühlstr. 15c, 33689 Bielefeld<br />
+                    Tel.: 05205/6244</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Kassenwartin</td>
+                    <td><a href="mailto:Nannyogg02&#64;aol.com">Ivonne Linneweber</a></td>
+                    <td>SV Gadderbaum</td>
+                    <td>Bleichstr. 152 a, 33607 Bielefeld<br />
+                    Tel: 0179/5365073 (m), 0521/34994 (p)</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">Sportwart</td>
+                    <td><a href="mailto:ReinPusch&#64;aol.com">Reinhard Pusch</a></td>
+                    <td>Gadderbaumer TV</td>
+                    <td>Brönningshauser Str. 33, 33729 Bielefeld<br />
+                    Tel.: 0176/53188306 (p), 0521/4282280 (p) <br />
+                    <span style="margin-left: 2.25em;">0521/9380313 (g)</span></td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Pressewartin</td>
+                    <td><a href="mailto:ingrid.tt.mueller&#64;t-online.de">Ingrid Müller</a></td>
+                    <td>VfB Fichte Bielefeld</td>
+                    <td>Brückenstr. 50 a, 33607 Bielefeld<br />
+                    Tel.: 0521/170169 (p), 0173/8761904 (m)</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">Damenwartin</td>
+                    <td>Annette Middendorf</td>
+                    <td>VfL Oldentrup</td>
+                    <td>Zirkelstr. 26, 33729 Bielefeld<br />
+                    Tel.: 0521/202258</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Jugendwart</td>
+                    <td><a href="mailto:joachim.middendorf&#64;bielefeld.de">Joachim Middendorf</a></td>
+                    <td>VfL Oldentrup</td>
+                    <td>Zirkelstr. 26, 33729 Bielefeld<br />
+                    Tel.: 0521/202258</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">stellv. Jugendwart</td>
+                    <td><a href="mailto:TTRunde&#64;aol.com">Siegbert Runde</a></td>
+                    <td>SV Gadderbaum</td>
+                    <td>Siekbreede 25, 33649 Bielefeld<br />
+                    Tel.: 0521/452362</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Staffelleiterin<br />
+                    Damen Kreisliga</td>
+                    <td><a href="mailto:TTRunde&#64;aol.com">Regina Runde</a></td>
+                    <td>SV Gadderbaum</td>
+                    <td>Siekbreede 25, 33649 Bielefeld<br />
+                    Tel.: 0521/452362</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">Staffelleiter<br />
+                    Herren KL, 1KK und 2KK</td>
+                    <td><a href="mailto:ReinPusch&#64;aol.com">Reinhard Pusch</a></td>
+                    <td>Gadderbaumer TV</td>
+                    <td>Brönningshauser Str. 33, 33729 Bielefeld<br />
+                    Tel.: 0176/53188306 (p), 0521/4282280 (p) <br />
+                    <span style="margin-left: 2.25em;">0521/9380313 (g)</span></td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Staffelleiter<br />
+                    Herren 3KK</td>
+                    <td><a href="mailto:staffelleiter3kk&#64;arcor.de">Marc Antons</a></td>
+                    <td>Gadderbaumer TV</td>
+                    <td>Teutoburger Str. 11, 33604 Bielefeld<br />
+                    Tel.: 0521/7849001 (p), 0176 / 811 25 708 (m)</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">Staffelleiter<br />
+                    Mädchen</td>
+                    <td><a href="mailto:tt-breitensport&#64;web.de">Marco Knapp</a></td>
+                    <td>Gadderbaumer TV</td>
+                    <td>Quellenhofweg 1, 33617 Bielefeld<br />
+                    Tel.: 0170/9679641 (m), 0521/9146249</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Staffelleiter<br />
+                    Jungen</td>
+                    <td><a href="mailto:Susan.Stanke&#64;web.de">Susan Stanke</a></td>
+                    <td>Gadderbaumer TV</td>
+                    <td>Roggenkamp 4a, 33818 Leopoldshöhe<br />
+                    Tel.: 05208/7201</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">Staffelleiter<br />
+                    Schüler</td>
+                    <td><a href="mailto:TTRunde&#64;aol.com">Siegbert Runde</a></td>
+                    <td>SV Gadderbaum</td>
+                    <td>Siekbreede 25, 33649 Bielefeld<br />
+                    Tel.: 0521/452362</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Vorsitzender<br />
+                    Spruchausschuss</td>
+                    <td><a href="mailto:Wolfgang_Sander&#64;t-online.de">Wolfgang Sander</a></td>
+                    <td>TTG Versmold</td>
+                    <td>Hohlweg 8, 33775 Versmold<br />
+                    Tel.: 05423/42282</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">Vorsitzender<br />
+                    Schiedsrichterausschuss</td>
+                    <td><a href="mailto:ReinPusch&#64;aol.com">Reinhard Pusch</a></td>
+                    <td>Gadderbaumer TV</td>
+                    <td>Brönningshauser Str. 33, 33729 Bielefeld<br />
+                    Tel.: 0176/53188306 (p), 0521/4282280 (p) <br />
+                    <span style="margin-left: 2.25em;">0521/9380313 (g)</span></td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Beirat im<br />
+                    Jugendausschuss</td>
+                    <td>Annette Middendorf</td>
+                    <td>VfL Oldentrup</td>
+                    <td>Zirkelstr. 26, 33729 Bielefeld<br />
+                    Tel.: 0521/202258</td>
+                </tr>
+
+                <tr class="a">
+                    <td class="position">Beauftragte für<br />
+                    Seniorensport</td>
+                    <td><a href="mailto:Ch.Messinger&#64;gmx.net">Charlotte Messinger</a></td>
+                    <td>TSVE 1890 Bielefeld</td>
+                    <td>Am Kruge 8; 33611 Bielefeld<br />
+                    Tel.: 0521/130364</td>
+                </tr>
+
+                <tr class="b">
+                    <td class="position">Beauftragter für<br />
+                    Breitensport</td>
+                    <td><a href="mailto:tt-breitensport&#64;web.de">Marco Knapp</a></td>
+                    <td>Gadderbaumer TV</td>
+                    <td>Quellenhofweg 1, 33617 Bielefeld<br />
+                    Tel.: 0170/9679641 (m), 0521/9146249</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</t:htmlborder>

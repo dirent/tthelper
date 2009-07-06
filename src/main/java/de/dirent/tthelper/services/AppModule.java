@@ -13,7 +13,6 @@ import org.apache.tapestry5.Link;
 import org.apache.tapestry5.Translator;
 import org.apache.tapestry5.hibernate.HibernateConfigurer;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
-import org.apache.tapestry5.internal.services.LinkFactory;
 import org.apache.tapestry5.internal.services.RequestPageCache;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
@@ -168,7 +167,6 @@ public class AppModule {
     public static RequestExceptionHandler decorateRequestExceptionHandler( final Object delegate, 
     		final Response response,
     		final RequestPageCache requestPageCache, 
-    		final LinkFactory linkFactory,
     		final ComponentClassResolver resolver) {
     	
         return new RequestExceptionHandler() {

@@ -1,61 +1,19 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
 
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
-<head>
-    <title>TT Helper</title>
+    <div class="section">
+        <h2>Herzlich willkommen auf der Homepage des Tischtenniskreises Bielefeld/Halle</h2>
+        <p>Auf dieser Seite werden Neuigkeiten rund um Tischtennis in Bielefeld und Halle veröffentlicht.</p>
+    </div>
 
-    <style>
-	.t-data-grid {
-    	font-size:8pt;
-    }
-    
-    #verein {
-    	width:300px;
-    }
+    <div class="section">
+        <h3>6. Juli 2009 Start der 'neuen' Homepage</h3>
+        <p>Nach fast acht Jahren war es mal wieder an der Zeit, das Design der Kreis-Homepage
+        gründlich aufzufrischen. Gleichzeitig
+        wurde die Struktur überarbeitet: Im Kopfbereich befinden sich Links
+        auf allgemeine Informationen wie beispielsweise der Terminkalender
+        oder Vereinsadressen. Links zum Spielbetrieb sind nun
+        im linken Bereich angeordnet.
+        </p>
+    </div>
 
-    #name {
-    	width:300px;
-    }
-    
-    #bemerkung {
-    	width:300px;
-    }
-    </style>
-</head>
-
-<body>
-<h1>Online-Services des TT-Kreises Bielefeld-Halle</h1>
-
-<p>
-Sie befinden sich im <strong>öffentlichen</strong> Bereich. 
-<t:pagelink page="startsecured">Zum geschützten Bereich wechseln.</t:pagelink>
-</p>
-
-
-<h2>Helfermeldung für die Deutschen Tischtennismeisterschaften 2009 in Bielefeld</h2>
-
-<t:timeif pattern="11/20/2008">
-<p><t:actionlink t:id="HelferMeldung">Ja, ich möchte bei den Deutschen Meisterschaften 2009 in Bielefeld mithelfen</t:actionlink></p>
-
-<h2>Gemeldete Helfer</h2>
-
-<t:block id="empty">Es sind noch keine Helfer gemeldet.</t:block>
-
-<t:grid source="gemeldeteHelfer" row="helfer" rowsPerPage="200" model="model" empty="block:empty">
-<t:parameter name="kannDoCell">
-	<t:output t:format="booleanFormat" t:value="helfer.kannDo" /> 
-</t:parameter>
-<t:parameter name="kannFrCell">
-	<t:output t:format="booleanFormat" t:value="helfer.kannFr" /> 
-</t:parameter>
-<t:parameter name="kannSaCell">
-	<t:output t:format="booleanFormat" t:value="helfer.kannSa" /> 
-</t:parameter>
-<t:parameter name="kannSoCell">
-	<t:output t:format="booleanFormat" t:value="helfer.kannSo" /> 
-</t:parameter>
-</t:grid>
-</t:timeif>
-
-</body>
-</html>
+</t:htmlborder>
