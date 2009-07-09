@@ -38,7 +38,7 @@
                     <h1 style="margin-left: 1em;"><t:pagelink class="homeLink" page="start">Tischtenniskreis Bielefeld / Halle</t:pagelink></h1>
                 </div>
                 <div id="banner">
-                    <a href="http://www.wttv.de/"> <img src="images/wttv.gif" /> </a>
+                    <a href="http://www.wttv.de/"> <img src="${context:images/wttv.gif}" /> </a>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -90,7 +90,7 @@
 
             <div id="powered_by">
                       <a href="http://tapestry.apache.org/" title="Powered by Tapestry 5" class="poweredBy" target="_blank">
-                        <img alt="Powered by Tapestry 5" width="200" src="http://tapestry.apache.org/tapestry5.1/images/tapestry_banner.gif"></img>
+                        <img alt="Powered by Tapestry 5" src="${context:images/tapestry.gif}" />
                       </a>
             </div> <!-- close powered_by -->
 
