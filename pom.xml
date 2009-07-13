@@ -126,6 +126,9 @@
 				<filtering>false</filtering>
 				<includes>
 					<include>**/*.script</include>
+					<include>**/*.css</include>
+					<include>**/*.js</include>
+					<include>**/*.png</include>
 				</includes>
 			</resource>
 		</resources>
@@ -139,7 +142,6 @@
                     <encoding>utf-8</encoding>
                     <source>1.5</source>
                     <target>1.5</target>
-                    <optimize>true</optimize>
                 </configuration>
             </plugin>
 

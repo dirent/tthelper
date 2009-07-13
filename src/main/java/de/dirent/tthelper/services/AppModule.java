@@ -5,12 +5,17 @@ import java.io.IOException;
 
 import nu.localhost.tapestry.acegi.services.SaltSourceService;
 import nu.localhost.tapestry.acegi.services.SecurityModule;
+import nu.localhost.tapestry.acegi.services.internal.AcegiWorker;
+import nu.localhost.tapestry.acegi.services.internal.SecurityChecker;
 
+import org.acegisecurity.annotation.Secured;
 import org.acegisecurity.providers.AuthenticationProvider;
 import org.acegisecurity.providers.encoding.PasswordEncoder;
 import org.acegisecurity.userdetails.UserDetailsService;
 import org.apache.tapestry5.Link;
 import org.apache.tapestry5.Translator;
+import org.apache.tapestry5.annotations.BeginRender;
+import org.apache.tapestry5.annotations.CleanupRender;
 import org.apache.tapestry5.hibernate.HibernateConfigurer;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.internal.services.RequestPageCache;
@@ -20,9 +25,12 @@ import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.InjectService;
 import org.apache.tapestry5.ioc.annotations.SubModule;
+import org.apache.tapestry5.model.MutableComponentModel;
 import org.apache.tapestry5.services.ApplicationGlobals;
 import org.apache.tapestry5.services.ApplicationInitializerFilter;
+import org.apache.tapestry5.services.ClassTransformation;
 import org.apache.tapestry5.services.ComponentClassResolver;
+import org.apache.tapestry5.services.ComponentClassTransformWorker;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.RequestExceptionHandler;
 import org.apache.tapestry5.services.RequestFilter;
@@ -39,6 +47,28 @@ import de.dirent.tthelper.validate.DateTranslator;
 @SubModule(SecurityModule.class)
 public class AppModule {
 	
+	
+	// Fix while tapestry-acegi is not compatible with T5.1
+    public static void contributeComponentClassTransformWorker(
+            OrderedConfiguration<ComponentClassTransformWorker> configuration, 
+            SecurityChecker securityChecker) {
+    	
+        final AcegiWorker acegiWorker = new AcegiWorker(securityChecker);
+        configuration.override("Acegi", new ComponentClassTransformWorker() {
+        	
+            public void transform( ClassTransformation transformation, MutableComponentModel model) {
+                
+            	Secured annotation = transformation.getAnnotation(Secured.class);
+                if (annotation != null) {
+                    model.addRenderPhase(BeginRender.class);
+                    model.addRenderPhase(CleanupRender.class);
+                }
+                acegiWorker.transform(transformation, model);
+            }
+        } );
+    }
+
+    
     public static void bind(ServiceBinder binder) {
 
         // Make bind() calls on the binder object to define most IoC services.

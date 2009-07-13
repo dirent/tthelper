@@ -94,6 +94,6 @@ public class CreateRanglistenSpieler extends MeldePage {
     	if( isNotAdmin() )
     		getPersistenceManager().removeRanglistenSpieler( id, getCurrentVerein() );
     	else 
-    		getPersistenceManager().removePokalMannschaft( id );
+    		getPersistenceManager().removeRanglistenSpieler( id );
     }  
 }

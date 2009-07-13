@@ -102,7 +102,6 @@ public class TTHelperDAO implements PersistenceManager {
 		
         RanglistenSpieler toBeDeleted = (RanglistenSpieler) query.uniqueResult();
 
-        removeRanglistenSpieler(id);
     	session.delete( toBeDeleted );
     	logger.info( "Deleted RanglistenSpieler " + toBeDeleted + "." );
 	}
