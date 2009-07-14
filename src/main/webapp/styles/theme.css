@@ -387,8 +387,7 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 }
 
 #body_column table.bodyTable td.position {
-	font-weight: bold;
-	width: 20%;
+	font-weight: normal;
 }
 
 

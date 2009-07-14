@@ -17,12 +17,12 @@
             <div id="top_menu_container">
                 <div class="date">Stand: 3. Juli 2009 - 9.35 Uhr</div>
                 <form id="searchform">
-                <ul>
+                <ul xml:space="preserve">
                     <li><t:pagelink page="termine">Termine</t:pagelink></li>
                     <li><t:pagelink page="vereine">Vereine</t:pagelink></li>
                     <li><t:pagelink page="vorstand">Vorstand</t:pagelink></li>
-                    <li><a href="download.html">Download</a></li>
-                    <li><a href="archiv.html">Archiv</a></li>
+                    <li><t:pagelink page="baustelle">Download</t:pagelink></li>
+                    <li><t:pagelink page="baustelle">Archiv</t:pagelink></li>
                     <li><a href="http://www.tthelper.de/fotoarchiv/" target="_blank">Fotoarchiv</a></li>
                     <li><a href="http://gb.dirent8080.de/gbuch.php" target="_blank">Gästebuch</a></li>
                     <li id="searchfield_container"><div id="searchfield_label">Suche:</div> <input id="searchfield" type="text" size="12" /></li>
@@ -54,9 +54,9 @@
                     <h5>Spielbetrieb - 2009/2010</h5>
                     <div class="content">
                         <ul class="left_menu">
-                            <li class="none"><a href="jugend0910.html">Jugend</a></li>
-                            <li class="none"><a href="spielbetrieb0910.html">Damen und Herren</a></li>
-                            <li class="none"><a href="senioren0910.html">Senioren</a></li>
+                            <li class="none"><t:pagelink page="baustelle">Jugend</t:pagelink></li>
+                            <li class="none"><t:pagelink page="baustelle">Damen und Herren</t:pagelink></li>
+                            <li class="none"><t:pagelink page="baustelle">Senioren</t:pagelink></li>
                         </ul>
                     </div>
                 </div>
@@ -67,8 +67,8 @@
                     <h5>Turniere</h5>
                     <div class="content">
                         <ul class="left_menu">
-                            <li class="none"><a href="turniere.html#km">Kreismeisterschaften</a></li>
-                            <li class="none"><a href="turniere.html#esv">ESV-Turnier</a></li>
+                            <li class="none"><t:pagelink page="turniere" anchor="km">Kreismeisterschaften</t:pagelink></li>
+                            <li class="none"><t:pagelink page="turniere" anchor="esv">ESV-Turnier</t:pagelink></li>
                         </ul>
                     </div>
                 </div>

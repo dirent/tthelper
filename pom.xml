@@ -133,7 +133,7 @@
 			</resource>
 		</resources>
     
-        <finalName>tthelper</finalName>
+        <finalName>kreis-homepage</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
