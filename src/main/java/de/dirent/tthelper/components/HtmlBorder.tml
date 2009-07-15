@@ -15,8 +15,8 @@
 
         <div id="top_menu">
             <div id="top_menu_container">
-                <div class="date">Stand: 3. Juli 2009 - 9.35 Uhr</div>
-                <form id="searchform">
+                <div class="date">Stand: 15. Juli 2009 - 14.29 Uhr</div>
+                <t:form t:id="searchform">
                 <ul xml:space="preserve">
                     <li><t:pagelink page="termine">Termine</t:pagelink></li>
                     <li><t:pagelink page="vereine">Vereine</t:pagelink></li>
@@ -25,9 +25,9 @@
                     <li><t:pagelink page="baustelle">Archiv</t:pagelink></li>
                     <li><a href="http://www.tthelper.de/fotoarchiv/" target="_blank">Fotoarchiv</a></li>
                     <li><a href="http://gb.dirent8080.de/gbuch.php" target="_blank">Gästebuch</a></li>
-                    <li id="searchfield_container"><div id="searchfield_label">Suche:</div> <input id="searchfield" type="text" size="12" /></li>
+                    <li id="searchfield_container"><div id="searchfield_label">Suche:</div> <t:textfield t:id="searchfield" value="phrase" size="12" /></li>
                 </ul>
-                </form>
+                </t:form>
                 <div class="clear"></div>
             </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="copyright">
             <p>Gestaltet und erstellt von Dirk Entgelmeier für den Tischtenniskreis Bielefeld/Halle<br />
             basierend auf dem Design des <a href="http://myfaces.apache.org/" target="_blank">Apache Myfaces Projekts</a></p>
-            <p class="impressumLine"><a href="impressum.html">Impressum</a></p>
+            <p class="impressumLine"><t:pagelink page="impressum">Impressum</t:pagelink></p>
         </div>
     </div>
 
