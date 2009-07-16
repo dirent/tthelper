@@ -16,6 +16,7 @@ import org.apache.tapestry5.Link;
 import org.apache.tapestry5.Translator;
 import org.apache.tapestry5.annotations.BeginRender;
 import org.apache.tapestry5.annotations.CleanupRender;
+import org.apache.tapestry5.annotations.Service;
 import org.apache.tapestry5.hibernate.HibernateConfigurer;
 import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.internal.services.RequestPageCache;
@@ -41,6 +42,8 @@ import org.slf4j.Logger;
 
 import de.dirent.tap5.infrastructure.exception.RedirectException;
 import de.dirent.tthelper.TTHelperDAO;
+import de.dirent.tthelper.internal.services.LuceneIndexInitializer;
+import de.dirent.tthelper.internal.services.LuceneIndexer;
 import de.dirent.tthelper.validate.DateTranslator;
 
 
@@ -77,7 +80,14 @@ public class AppModule {
         // invoking the constructor.
     }
     
-    public static PersistenceManager buildPersistenceManager( Session session ) {
+    public static FulltextIndexer buildFulltextIndexer( ApplicationGlobals globals, 
+    		PersistenceManager persistenceManager ) {
+    	
+    	return new LuceneIndexer( globals, persistenceManager );
+    }
+    
+    
+    public static PersistenceManager buildPersistenceManager( Session session, FulltextIndexer indexer ) {
     	
     	return new TTHelperDAO( session );
     }
@@ -90,10 +100,13 @@ public class AppModule {
     public static void contributeApplicationInitializer( OrderedConfiguration<ApplicationInitializerFilter> configuration,
             final PasswordEncoder passwordEncoder, 
             final SaltSourceService saltSource, 
-            final HibernateSessionManager hibernateSessionManager ) {
+            final HibernateSessionManager hibernateSessionManager,
+            final FulltextIndexer indexer ) {
     	
         configuration.add( "UserInitializer", 
         		new UserInitializerImpl(passwordEncoder, saltSource, hibernateSessionManager) );
+
+        configuration.add( "FulltextInitializer", new LuceneIndexInitializer( indexer ) );
     }
     
     public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,
