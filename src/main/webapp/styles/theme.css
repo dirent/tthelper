@@ -359,10 +359,12 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 
 #body_column table.bodyTable tr.a {
 	background: #F7F9F4;
+	vertical-align: top;
 }
 
 #body_column table.bodyTable tr.b {
 	background: #F2F5ED;
+	vertical-align: top;
 }
 
 #body_column table a.externalLink {
@@ -387,7 +389,8 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 }
 
 #body_column table.bodyTable td.position {
-	font-weight: normal;
+	font-weight: bold;
+	width: 20%;
 }
 
 
