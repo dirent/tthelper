@@ -1,0 +1,27 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+
+    <div class="section">
+		<h2>Neuen Termin anlegen</h2>
+	
+		<p>
+		<t:beaneditform t:id="termin" submitlabel="Ok" object="termin">
+		<t:parameter name="fromDate">
+			<t:label for="fromDate"/>
+			<t:datetimefield t:id="fromDate" label="Startdatum" value="termin.fromDate" datePattern="dd.MM.yyyy" />
+		</t:parameter>
+		<t:parameter name="toDate">
+			<t:label for="toDate"/>
+			<t:datetimefield t:id="toDate" label="Enddatum" value="termin.toDate" datePattern="dd.MM.yyyy" />
+		</t:parameter>
+		<t:parameter name="body">
+			<t:label for="body"/>
+			<t:textarea t:id="body" label="Text" rows="5" value="termin.body" />
+		</t:parameter>
+		</t:beaneditform>
+		</p>
+		
+	</div>
+	
+	
+</t:htmlborder>

@@ -8,6 +8,7 @@ import de.dirent.tthelper.entities.JugendRanglistenAusrichtung;
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
+import de.dirent.tthelper.entities.Termin;
 import de.dirent.tthelper.model.Verein;
 
 
@@ -45,4 +46,12 @@ public interface PersistenceManager {
 	// Helfermeldung
 	public void add( Helfer helfer );
 	public List<Helfer> getAllHelfer();
+	
+	
+	// Terminverwaltung
+	public void add( Termin termin );
+	/**
+	 * Gets all Termine with an toDate in the future
+	 */
+	public List<Termin> getTermine();
 }

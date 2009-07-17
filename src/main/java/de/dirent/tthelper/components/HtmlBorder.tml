@@ -90,7 +90,7 @@
 
             <div id="powered_by">
                       <a href="http://tapestry.apache.org/" title="Powered by Tapestry 5" class="poweredBy" target="_blank">
-                        <img alt="Powered by Tapestry 5" src="${context:images/tapestry.gif}" />
+                        <img alt="Powered by Tapestry 5" src="${context:images/tapestry.gif}"/>
                       </a>
             </div> <!-- close powered_by -->
 

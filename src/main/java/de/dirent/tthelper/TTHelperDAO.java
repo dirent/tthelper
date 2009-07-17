@@ -13,6 +13,7 @@ import de.dirent.tthelper.entities.JugendRanglistenAusrichtung;
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
+import de.dirent.tthelper.entities.Termin;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.services.PersistenceManager;
 
@@ -229,6 +230,19 @@ public class TTHelperDAO implements PersistenceManager {
 	public List<Helfer> getAllHelfer() {
 		
 		return session.createQuery( "SELECT x FROM Helfer x" ).list();
+	}
+	
+	
+	// Terminverwaltung
+	public void add( Termin termin ) {
+
+		session.save( termin );
+		logger.info( "New Termin was successfully added." );
+	}
+
+	public List<Termin> getTermine() {
+		
+		return session.createQuery( "SELECT x FROM Termin x where x.toDate >= current_date order by x.toDate asc" ).list();
 	}
 	
 	

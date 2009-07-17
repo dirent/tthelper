@@ -305,7 +305,8 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 /* body_column -------------------------------------------------------------- */
 #body_column p {
 	margin: 15px 15px 0px 0px;
-    font-size: 1.1em;
+    font-size: 1.15em;
+    color: #333333;
 }
 
 #body_column .section,#body_column dl {
@@ -393,6 +394,26 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 	width: 20%;
 }
 
+#body_column .t-beaneditor {
+	clear: right;
+}
+
+#body_column .t-beaneditor-row {
+	clear: right;
+	margin: 0.5em;
+	text-align: left;
+	vertical-align: middle;
+}
+
+#body_column .t-beaneditor-row label {
+	clear: right;
+	width: 100px;
+	margin-right: 1em;
+}
+
+#body {
+	width:75%;
+}
 
 /* source sections ---------------------------------------------------------- */
 #body_column .source,code {
