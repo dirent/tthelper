@@ -242,7 +242,16 @@ public class TTHelperDAO implements PersistenceManager {
 
 	public List<Termin> getTermine() {
 		
-		return session.createQuery( "SELECT x FROM Termin x where x.toDate >= current_date order by x.toDate asc" ).list();
+		long millis = System.currentTimeMillis();
+		
+		try {
+		
+			return session.createQuery( "SELECT x FROM Termin x where x.toDate >= current_date order by x.toDate asc" ).list();
+			
+		} finally {
+			
+			logger.info( "querying termine needed " + (System.currentTimeMillis()-millis) + "ms." );
+		}
 	}
 	
 	
