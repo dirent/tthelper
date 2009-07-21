@@ -1,0 +1,20 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+        <div class="section">
+            <h2>Spielbetrieb der Seniorinnen und Senioren in der Saison 2009 / 2010</h2>
+        </div>
+
+        <div class="section">
+
+            <h3>Senioren Europameisterschaften 2009 in Porec / Kroatien</h3>
+
+            <p>
+                <ul>
+                    <li><a class="newWindow" href="http://www.tthelper.de/download/senioren/seniorenem09_infoblatt.pdf" target="_blank">Infoblatt von Ingrid Müller</a></li>
+                    <li><a class="newWindow" href="http://www.tthelper.de/fotoarchiv/thumbnails.php?album=28" target="_blank">Fotoalbum</a> (zusammengestellt von Ingrid Müller)</li>
+                </ul>
+            </p>
+
+        </div>
+
+</t:htmlborder>

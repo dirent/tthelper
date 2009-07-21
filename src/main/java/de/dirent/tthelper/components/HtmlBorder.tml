@@ -15,14 +15,14 @@
 
         <div id="top_menu">
             <div id="top_menu_container">
-                <div class="date">Stand: 17. Juli 2009 - 22.31 Uhr</div>
+                <div class="date">Stand: 21. Juli 2009 - 11.14 Uhr</div>
                 <t:form t:id="searchform">
                 <ul xml:space="preserve">
                     <li><t:pagelink page="termine">Termine</t:pagelink></li>
                     <li><t:pagelink page="vereine">Vereine</t:pagelink></li>
                     <li><t:pagelink page="vorstand">Vorstand</t:pagelink></li>
-                    <li><t:pagelink page="baustelle">Download</t:pagelink></li>
-                    <li><t:pagelink page="baustelle">Archiv</t:pagelink></li>
+                    <li><t:pagelink page="download">Download</t:pagelink></li>
+                    <li><t:pagelink page="archiv">Archiv</t:pagelink></li>
                     <li><a href="http://www.tthelper.de/fotoarchiv/" target="_blank">Fotoarchiv</a></li>
                     <li><a href="http://gb.dirent8080.de/gbuch.php" target="_blank">Gästebuch</a></li>
                     <li id="searchfield_container"><div id="searchfield_label">Suche:</div> <t:textfield t:id="searchfield" value="phrase" size="12" /></li>
@@ -54,9 +54,9 @@
                     <h5>Spielbetrieb - 2009/2010</h5>
                     <div class="content">
                         <ul class="left_menu">
-                            <li class="none"><t:pagelink page="baustelle">Jugend</t:pagelink></li>
-                            <li class="none"><t:pagelink page="baustelle">Damen und Herren</t:pagelink></li>
-                            <li class="none"><t:pagelink page="baustelle">Senioren</t:pagelink></li>
+                            <li class="none"><t:pagelink page="spielbetrieb/jugend0910">Jugend</t:pagelink></li>
+                            <li class="none"><t:pagelink page="spielbetrieb/erwachsene0910">Damen und Herren</t:pagelink></li>
+                            <li class="none"><t:pagelink page="spielbetrieb/senioren0910">Senioren</t:pagelink></li>
                         </ul>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                             <li><a class="newWindow" href="http://wttv.click-tt.de/cgi-bin/WebObjects/ClickWTTV.woa/wa/leaguePage?championship=K181+09%2F10" target="_blank">click-tt</a></li>
                             <li><a class="externalLink" href="http://www.wttv.de/">WTTV</a></li>
                             <li><a class="newWindow" href="http://www.tt-owl.de/" target="_blank">Bezirk OWL</a></li>
-                            <li><a class="newWindow" href="http://www.wttv.de/kreis/bielefeld-halle/index.html" target="_blank">alte Homepage</a></li>
+                            <li><a class="newWindow" href="http://www.wttv.de/kreis/bielefeld-halle/index_old.html" target="_blank">alte Homepage</a></li>
                         </ul>
                     </div>
                 </div>

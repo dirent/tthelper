@@ -1,0 +1,38 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+        <div class="section">
+        
+            <h2>Download-Bereich</h2>
+            
+            <p>Hier können allgemeine Dokumente und Einladungen herunter geladen werden. 
+            Rundschreiben sind im Bereich
+            'Spielbetrieb' eingeordnet, Ausschreibungen für Turniere wie 
+            beispielsweise die Kreismeisterschaften unter 'Turniere'.</p>
+            
+        </div>
+
+        <div class="section">
+
+            <h3>Satzungen</h3>
+
+            <p>
+                <ul>
+                    <li><a class="newWindow" href="http://www.tthelper.de/download/kreissatzung.pdf" target="_blank">Satzung des TT-Kreises Bielefeld / Halle</a></li>
+                </ul>
+            </p>
+
+        </div>
+
+        <div class="section">
+
+            <h3>Einzugsermächtigung</h3>
+
+            <p>
+                <ul>
+                    <li><a class="newWindow" href="http://www.tthelper.de/download/einzugsermaechtigung.pdf" target="_blank">Einzugsermächtigung für den Kassenwart</a></li>
+                </ul>
+            </p>
+
+        </div>
+
+</t:htmlborder>

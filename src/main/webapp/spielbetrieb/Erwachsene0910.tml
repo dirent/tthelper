@@ -1,0 +1,20 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+        <div class="section">
+            <h2>Spielbetrieb der Damen und Herren in der Saison 2009 / 2010</h2>
+        </div>
+
+        <div class="section">
+
+            <h3 id="herren_kreisrangliste">Herren Kreisrangliste</h3>
+
+            <p>
+                <ul>
+                    <li><a class="newWindow" href="http://www.tthelper.de/download/erwachsene/krl0910_herren_runde1_einladung.pdf" target="_blank">Einladung zur Runde 1</a>  (3. und 2. Kreisklasse)</li>
+                    <li><a class="newWindow" href="http://www.tthelper.de/download/erwachsene/krl0910_herren_runde2_einladung.pdf" target="_blank">Einladung zur Runde 2</a>  (bis Kreisliga)</li>
+                </ul>
+            </p>
+
+        </div>
+
+</t:htmlborder>
