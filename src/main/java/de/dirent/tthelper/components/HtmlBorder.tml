@@ -15,7 +15,7 @@
 
         <div id="top_menu">
             <div id="top_menu_container">
-                <div class="date">Stand: 21. Juli 2009 - 11.14 Uhr</div>
+                <div class="date">Stand: 26. Juli 2009 - 15.29 Uhr</div>
                 <t:form t:id="searchform">
                 <ul xml:space="preserve">
                     <li><t:pagelink page="termine">Termine</t:pagelink></li>
