@@ -5,71 +5,12 @@
         <p>Auf dieser Seite werden Neuigkeiten rund um Tischtennis in Bielefeld und dem Altkreis Halle veröffentlicht.</p>
     </div>
 
-    <div class="section">
-        <h3>26. Juli 2009 Herren Kreisrangliste</h3>
-        
-        <div class="section"><p>
-        Bei den ersten beiden Runden haben sich einige kleinere Änderungen ergeben. Die 
-        aktualisierten Einladungen stehen <t:pagelink page="spielbetrieb/erwachsene0910" anchor="herren_kreisrangliste">zum Download</t:pagelink> bereit.
-        </p></div>
-        
-    </div>
 
+	<t:loop source="meldungen" value="meldung">
     <div class="section">
-        <h3>25. Juli 2009 Senioren EM in Porec / Kroatien</h3>
-        
-        <div class="section"><p>
-		<a href="http://www.tthelper.de/fotoarchiv/displayimage.php?album=28&amp;pos=0" target="_blank">
-		<img align="right" style="margin:5px;" src="http://www.tthelper.de/fotoarchiv/albums/turniere/senioren-em-2009/thumb_seniorenem_teilnehmer.jpg" title="Teilnehmer an der Senioren EM"/></a>
-
-		Vor knapp einem Monat fanden in Porec / Kroatien die Senioren Europameisterschaften statt - mit dabei einige Spielerinnen
-		und Spieler aus dem Kreis. Ingrid Müller hat ein 
-		<a href="http://www.tthelper.de/download/senioren/seniorenem09_infoblatt.pdf" class="newWindow" target="_blank">ausführliches Infoblatt</a> 
-		zusammengestellt und 
-		<a href="http://www.tthelper.de/fotoarchiv/thumbnails.php?album=28" class="newWindow" target="_blank">ein Fotoalbum</a> 
-		im Fotoarchiv angelegt.  
-        </p>
-        </div>
-        
+        <h3>${publishDate} ${meldung.headline}</h3>
+        <div class="section"><p><t:outputraw value="meldung.body" /></p></div>
     </div>
-
-    <div class="section">
-        <h3>21. Juli 2009 Einladung zur Herren Kreisrangliste</h3>
-        
-        <div class="section"><p>
-        Die erste Runde der Herren Kreisrangliste startet mit sieben Gruppen 
-        direkt nach den Sommerferien in der Woche vom 17. bis 21. August
-        (<a href="http://www.tthelper.de/download/erwachsene/krl0910_herren_runde1_einladung.pdf" class="newWindow" target="_blank">zur Einladung</a>).
-         Die zweite Runde (offen bis Kreisliga) findet dann kurz darauf vom 7. bis 11. September statt
-         (<a href="http://www.tthelper.de/download/erwachsene/krl0910_herren_runde2_einladung.pdf" class="newWindow" target="_blank">zur Einladung</a>).
-        </p></div>
-        
-    </div>
-
-    <div class="section">
-        <h3>19. Juli 2009 Start der 'neuen' Homepage</h3>
-        <p>Nach fast acht Jahren war es mal wieder an der Zeit, das Design der Kreis-Homepage
-        gründlich aufzufrischen. Gleichzeitig
-        wurde die Struktur überarbeitet: Im Kopfbereich befinden sich Links
-        auf allgemeine Informationen wie beispielsweise der Terminkalender
-        oder Vereinsadressen. Links zum Spielbetrieb sind nun
-        im linken Bereich angeordnet.
-        </p>
-    </div>
-
-    <div class="section">
-        <h3>19. Juli 2009 Spielpläne zur Saison 2009 / 2010</h3>
-        <p>Seit ein paar Tagen sind die -vorläufigen- Spielpläne auf Kreisebene für die
-		neue Saison in click-TT eingestellt 
-		(<a href="http://wttv.click-tt.de/cgi-bin/WebObjects/ClickWTTV.woa/wa/leaguePage?championship=K181+09%2F10" target="_blank" class="newWindow">www.wttv.click-tt.de</a>). 
-		Alle Vereinsverantwortlichen werden hiermit gebeten, die sie betreffenden Daten zu prüfen.
-		Eventuelle Fehler oder Unstimmigkeiten sind bitte umgehend, aber
-		spätestens bis zum 30.7.  an den Kreisvorsitzenden Holger Schwan mitzuteilen.</p>
-		<p>Ab 1.8. sollen die Pläne dann endgültig sein. Da durch Korrekturen einzelne
-		Spielpläne eventuell neu erstellt werden müssen, müssen dann auch die zugehörigen 
-		SMS-Codes ggf. neu erzeugt werden. Für den Spielbetrieb sollten also erst die 
-		endgültigen Spielplan-Daten ab 1.8. verwendet werden!
-        </p>
-    </div>
+	</t:loop>
 
 </t:htmlborder>

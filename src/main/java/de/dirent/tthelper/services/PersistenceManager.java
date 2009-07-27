@@ -5,6 +5,7 @@ import java.util.List;
 
 import de.dirent.tthelper.entities.Helfer;
 import de.dirent.tthelper.entities.JugendRanglistenAusrichtung;
+import de.dirent.tthelper.entities.Meldung;
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
@@ -54,4 +55,11 @@ public interface PersistenceManager {
 	 * Gets all Termine with an toDate in the future
 	 */
 	public List<Termin> getTermine();
+	
+	// Meldungsverwaltung
+	public void add( Meldung meldung );
+	/**
+	 * Gets the Meldungen of current month
+	 */
+	public List<Meldung> getMonthlyMeldungen();
 }

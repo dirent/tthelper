@@ -30,7 +30,7 @@ public class Meldung extends AbstractEntity implements Cloneable {
 	}
 
 	
-	@Validate( "required" )
+	@Validate( "required,maxlength=256" )
 	public String getHeadline() {
 		
 		return this.headline;

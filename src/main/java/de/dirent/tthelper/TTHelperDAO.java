@@ -5,11 +5,14 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.joda.time.DateTime;
+import org.joda.time.format.ISODateTimeFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import de.dirent.tthelper.entities.Helfer;
 import de.dirent.tthelper.entities.JugendRanglistenAusrichtung;
+import de.dirent.tthelper.entities.Meldung;
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.entities.RanglistenAusrichtung;
 import de.dirent.tthelper.entities.RanglistenSpieler;
@@ -251,6 +254,31 @@ public class TTHelperDAO implements PersistenceManager {
 		} finally {
 			
 			logger.info( "querying termine needed " + (System.currentTimeMillis()-millis) + "ms." );
+		}
+	}
+	
+	
+	// Meldungsverwaltung
+	public void add( Meldung meldung ) {
+
+		session.save( meldung );
+		logger.info( "New Meldung was successfully added." );
+	}
+
+	public List<Meldung> getMonthlyMeldungen() {
+		
+		long millis = System.currentTimeMillis();
+		
+		try {
+					
+			DateTime lastMonth = new DateTime().minusMonths(1);
+		
+			return session.createQuery( "SELECT x FROM Meldung x where x.publishDate >= '" + 
+					ISODateTimeFormat.date().print( lastMonth ) + "' order by x.publishDate desc" ).list();
+			
+		} finally {
+			
+			logger.info( "querying monthly meldungen needed " + (System.currentTimeMillis()-millis) + "ms." );
 		}
 	}
 	

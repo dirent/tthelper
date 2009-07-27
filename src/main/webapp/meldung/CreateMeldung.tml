@@ -1,0 +1,23 @@
+<t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+
+    <div class="section">
+		<h2>Neue Meldung anlegen</h2>
+	
+		<p>
+		<t:beaneditform t:id="meldung" submitlabel="Ok" object="meldung">
+		<t:parameter name="publicDate">
+			<t:label for="publishDate"/>
+			<t:datetimefield t:id="publishDate" label="Datum" value="meldung.publishDate" datePattern="dd.MM.yyyy" />
+		</t:parameter>
+		<t:parameter name="body">
+			<t:label for="body"/>
+			<t:textarea t:id="body" label="Text" rows="5" value="meldung.body" />
+		</t:parameter>
+		</t:beaneditform>
+		</p>
+		
+	</div>
+	
+	
+</t:htmlborder>
