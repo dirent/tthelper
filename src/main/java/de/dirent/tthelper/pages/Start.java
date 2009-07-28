@@ -4,15 +4,12 @@ package de.dirent.tthelper.pages;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
-import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.annotations.Property;
-import org.apache.tapestry5.ioc.annotations.Inject;
 
 import de.dirent.tthelper.entities.Meldung;
-import de.dirent.tthelper.entities.Termin;
 
 
 public class Start extends TTHelperPage {
@@ -21,15 +18,11 @@ public class Start extends TTHelperPage {
 	private Meldung meldung;
 	
 	
-	@Inject
-	private ComponentResources resources;
-	
 	public String getPublishDate() {
 		
 		if( meldung == null ) return "";
 
-		
-		DateFormat df = new SimpleDateFormat( "dd.MMMM yyyy",  resources.getLocale() );
+		DateFormat df = new SimpleDateFormat( "dd. MMMM yyyy",  Locale.GERMAN );
 		return df.format( meldung.getPublishDate() );
 	}
 	
