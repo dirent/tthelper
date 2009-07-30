@@ -337,7 +337,7 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 }
 
 #body_column ul li {
-	padding: 0px 0px 0px 15px;
+	padding: 0.1em 0px 0.3em 15px;
 	background: url("../images/theme/main_space_list.gif") no-repeat left 5px;
 }
 
