@@ -352,7 +352,16 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 	background: white;
 }
 
-#body_column table.bodyTable th,table.bodyTable tr,table.bodyTable td {
+#body_column table.bodyTableCompact {
+	border-collapse: collapse;
+	padding: 2px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 1em;
+	color: #333333;
+	background: white;
+}
+
+#body_column table.bodyTable th, table.bodyTable tr, table.bodyTable td {
 	margin: 0px;
 	border: 1px solid white;
 	padding: 0px 7px 0px 7px;
@@ -368,23 +377,47 @@ ul.left_menu ul li.expanded ul li.none a.selected {
 	vertical-align: top;
 }
 
+#body_column table.bodyTableCompact {
+	margin: 0.2em 0px 10px 0px;
+	border-collapse: collapse;
+	padding: 2px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 1em;
+	color: #333333;
+	background: white;
+}
+
+#body_column table.bodyTableCompact tr.a {
+	background: #F7F9F4;
+	vertical-align: top;
+}
+
+#body_column table.bodyTableCompact tr.b {
+	background: #F2F5ED;
+	vertical-align: top;
+}
+
+#body_column table.bodyTableCompact td.position {
+	font-weight: bold;
+}
+
 #body_column table a.externalLink {
 	background: none;
 	padding-right: 0px;
 }
 
-#body_column table.bodyTable th {
+#body_column table.bodyTable th, #body_column table.bodyTableCompact th {
 	padding: 7px 7px 5px 7px;
 	background: #CDDCB8 url("../images/theme/table_head_dark.png") repeat-x;
 }
 
-#body_column table.bodyTable td {
+#body_column table.bodyTable td, #body_column table.bodyTableCompact td {
 	padding: 7px 7px 5px 7px;
     font-size: 0.9em;
     line-height: 1.2em;
 }
 
-#body_column table.bodyTable a {
+#body_column table.bodyTable a, #body_column table.bodyTableCompact a {
     background: url(../images/theme/newwindow.png) right top no-repeat;
     padding-right: 18px;
 }
