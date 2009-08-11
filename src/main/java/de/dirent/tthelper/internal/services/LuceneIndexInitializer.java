@@ -20,7 +20,7 @@ public class LuceneIndexInitializer implements ApplicationInitializerFilter {
 	protected static final Logger logger = LoggerFactory.getLogger( LuceneIndexInitializer.class );
 
 	
-	FulltextIndexer indexer;
+	final FulltextIndexer indexer;
 	
 	public LuceneIndexInitializer( FulltextIndexer indexer ) {
 	

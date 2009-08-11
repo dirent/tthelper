@@ -56,10 +56,20 @@ public interface PersistenceManager {
 	 */
 	public List<Termin> getTermine();
 	
+	/**
+	 * Gets maxresults Termine starting at firstResult
+	 */
+	public List<Termin> getAllTermine( int firstResult, int maxResults );
+	
+	
 	// Meldungsverwaltung
 	public void add( Meldung meldung );
 	/**
 	 * Gets the Meldungen of current month
 	 */
 	public List<Meldung> getMonthlyMeldungen();
+	/**
+	 * Gets maxresults Meldungen starting at firstResult
+	 */
+	public List<Meldung> getAllMeldungen( int firstResult, int maxResults );
 }

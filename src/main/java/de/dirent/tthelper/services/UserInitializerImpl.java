@@ -22,9 +22,10 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
 	
     protected static final Logger logger = LoggerFactory.getLogger( UserInitializerImpl.class );
 
-    private PasswordEncoder passwordEncoder;
-    private SaltSource saltSource;
-    private HibernateSessionManager manager;
+	
+	final PasswordEncoder passwordEncoder;
+    final SaltSource saltSource;
+    final HibernateSessionManager manager;
     
     public UserInitializerImpl(PasswordEncoder passwordEncoder, 
     		SaltSource saltSource, 

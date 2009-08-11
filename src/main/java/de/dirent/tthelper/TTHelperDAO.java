@@ -243,6 +243,15 @@ public class TTHelperDAO implements PersistenceManager {
 		logger.info( "New Termin was successfully added." );
 	}
 
+	public List<Termin> getAllTermine( int firstResult, int maxResults ) {
+		
+		Query query = session.createQuery( "SELECT x FROM Termin x" );
+		query.setFirstResult( firstResult );
+		query.setMaxResults( maxResults );
+		
+		return query.list(); 
+	}
+	
 	public List<Termin> getTermine() {
 		
 		long millis = System.currentTimeMillis();
@@ -281,7 +290,17 @@ public class TTHelperDAO implements PersistenceManager {
 			logger.info( "querying monthly meldungen needed " + (System.currentTimeMillis()-millis) + "ms." );
 		}
 	}
+
+	public List<Meldung> getAllMeldungen( int firstResult, int maxResults ) {
+		
+		Query query = session.createQuery( "SELECT x FROM Meldung x" );
+		query.setFirstResult( firstResult );
+		query.setMaxResults( maxResults );
+		
+		return query.list(); 
+	}
 	
+
 	
 	public static boolean isBlank( String value ) {
 		

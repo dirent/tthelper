@@ -80,8 +80,8 @@ public class AppModule {
         // invoking the constructor.
     }
     
-    public static FulltextIndexer buildFulltextIndexer( ApplicationGlobals globals, 
-    		PersistenceManager persistenceManager ) {
+    public static FulltextIndexer buildFulltextIndexer( final ApplicationGlobals globals, 
+    		final PersistenceManager persistenceManager ) {
     	
     	return new LuceneIndexer( globals, persistenceManager );
     }
