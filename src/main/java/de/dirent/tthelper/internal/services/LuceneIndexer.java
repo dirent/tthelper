@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.lucene.analysis.de.GermanAnalyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriter.MaxFieldLength;
-import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.queryParser.MultiFieldQueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
@@ -25,6 +24,7 @@ import de.dirent.tthelper.entities.AbstractEntity;
 import de.dirent.tthelper.entities.Meldung;
 import de.dirent.tthelper.entities.Termin;
 import de.dirent.tthelper.model.FulltextHit;
+import de.dirent.tthelper.model.FulltextSearchResult;
 import de.dirent.tthelper.services.FulltextIndexer;
 import de.dirent.tthelper.services.PersistenceManager;
 
@@ -61,101 +61,105 @@ public class LuceneIndexer implements FulltextIndexer {
 		
 		long millis = System.currentTimeMillis();
 
-		try {
-        
-			IndexWriter writer = null;
+		IndexWriter writer = null;
+		int documentCount = 0;
 
-			if( !indexRoot.exists() ) {
-				
-				indexRoot.mkdir();
-	
-				writer = new IndexWriter( indexRoot, 
-						new GermanAnalyzer(), 
-						true, 
-						MaxFieldLength.UNLIMITED );
-				
-				int firstResult = 0;
-				int maxResults = 100;
+		if( !indexRoot.exists() ) {
+			
+			indexRoot.mkdir();
 
-				
-				// index Termin instances in blocks a 100				
-				List<Termin> termine = new ArrayList<Termin>();
-				
-				do {
-					
-					termine = persistenceManager.getAllTermine( firstResult, maxResults );
-					firstResult += termine.size();
-					
-					for( Termin termin : termine ) {
-					
-				        Document doc = new Document();
-
-				        doc.add( new Field( FULLTEXT_ID_NAME, createFulltextId(termin), Field.Store.YES, Field.Index.ANALYZED ) );
-				        doc.add( new Field( FULLTEXT_BODY_NAME, termin.getBody(), Field.Store.YES, Field.Index.ANALYZED ) );
-
-				        writer.addDocument( doc );
-					}
-					
-				} while( termine == null  ||  termine.isEmpty() );
-				
+			writer = new IndexWriter( indexRoot, 
+					new GermanAnalyzer(), 
+					true, 
+					MaxFieldLength.UNLIMITED );
+			
+			int firstResult = 0;
+			int maxResults = 100;
 
 			
-				// index Meldung instances in blocks a 100				
-				List<Meldung> meldungen = new ArrayList<Meldung>();
-				
-				do {
-					
-					meldungen = persistenceManager.getAllMeldungen( firstResult, maxResults );
-					firstResult += meldungen.size();
-					
-					for( Meldung meldung : meldungen ) {
-					
-				        Document doc = new Document();
-
-				        doc.add( new Field( FULLTEXT_ID_NAME, createFulltextId(meldung), Field.Store.YES, Field.Index.ANALYZED ) );
-				        doc.add( new Field( FULLTEXT_HEADLINE_NAME, meldung.getHeadline(), Field.Store.YES, Field.Index.ANALYZED ) );
-				        doc.add( new Field( FULLTEXT_BODY_NAME, meldung.getBody(), Field.Store.YES, Field.Index.ANALYZED ) );
-
-				        writer.addDocument( doc );
-					}
-					
-				} while( termine == null  ||  termine.isEmpty() );
-				
-			} else {
+			// index Termin instances in blocks a 100				
+			List<Termin> termine = new ArrayList<Termin>();
 			
-				writer = new IndexWriter( indexRoot, 
-						new GermanAnalyzer(), 
-						false, 
-						MaxFieldLength.UNLIMITED );
-			}
-			
-			writer.optimize();
-			writer.close();
+			do {
+				
+				termine = persistenceManager.getAllTermine( firstResult, maxResults );
+				firstResult += termine.size();
+				
+				for( Termin termin : termine ) {
+				
+			        Document doc = new Document();
 
-		} finally {
-			logger.info( "Initializing fulltext index needed " + (System.currentTimeMillis()-millis) + "ms." );
+			        doc.add( new Field( FULLTEXT_ID_NAME, createFulltextId(termin), Field.Store.YES, Field.Index.ANALYZED ) );
+			        doc.add( new Field( FULLTEXT_BODY_NAME, termin.getBody(), Field.Store.YES, Field.Index.ANALYZED ) );
+
+			        writer.addDocument( doc );
+			        documentCount++;
+				}
+				
+			} while( termine == null  ||  termine.isEmpty() );
+			
+
+		
+			// index Meldung instances in blocks a 100				
+			List<Meldung> meldungen = new ArrayList<Meldung>();
+			firstResult = 0;
+			
+			do {
+				
+				meldungen = persistenceManager.getAllMeldungen( firstResult, maxResults );
+				firstResult += meldungen.size();
+				
+				for( Meldung meldung : meldungen ) {
+				
+			        Document doc = new Document();
+
+			        doc.add( new Field( FULLTEXT_ID_NAME, createFulltextId(meldung), Field.Store.YES, Field.Index.ANALYZED ) );
+			        doc.add( new Field( FULLTEXT_HEADLINE_NAME, meldung.getHeadline(), Field.Store.YES, Field.Index.ANALYZED ) );
+			        doc.add( new Field( FULLTEXT_BODY_NAME, meldung.getBody(), Field.Store.YES, Field.Index.ANALYZED ) );
+
+			        writer.addDocument( doc );
+			        documentCount++;
+				}
+				
+			} while( termine == null  ||  termine.isEmpty() );
+			
+		} else {
+		
+			writer = new IndexWriter( indexRoot, 
+					new GermanAnalyzer(), 
+					false, 
+					MaxFieldLength.UNLIMITED );
 		}
+		
+		writer.optimize();
+		writer.close();
+
+		logger.info( "Initializing fulltext index with " + documentCount + " documents needed " + (System.currentTimeMillis()-millis) + "ms." );
 	}
 	
 	
-	public List<FulltextHit> query( String phrase, int maxResults ) {
+	public FulltextSearchResult query( String phrase, int maxResults ) {
 		
         long millis = System.currentTimeMillis();
-		List<FulltextHit> result = new ArrayList<FulltextHit>();
+		List<FulltextHit> fulltextHits = new ArrayList<FulltextHit>();
+        long totalHits = 0;
         
         try {
         	
             Directory fsDir = FSDirectory.getDirectory( this.indexRoot );
             IndexSearcher is = new IndexSearcher(fsDir);
-            String queryString = "body:(" + phrase + ")";
-            Query query = new QueryParser( "body", new StandardAnalyzer() ).parse( queryString );
+            String queryString = phrase;
+            Query query = new MultiFieldQueryParser( 
+            		new String[] { FULLTEXT_HEADLINE_NAME, FULLTEXT_BODY_NAME }, new GermanAnalyzer() ).parse( queryString );
                         
             TopDocs topDocs = is.search( query, maxResults );
             
             for( int i=0; i<topDocs.scoreDocs.length; i++ ) {
             
-            	result.add( new FulltextHit( is.doc( topDocs.scoreDocs[i].doc ) ) );
+            	fulltextHits.add( new FulltextHit( is.doc( topDocs.scoreDocs[i].doc ) ) );
             }
+            
+            totalHits = topDocs.totalHits;
             
         } catch( Exception e ) {
             
@@ -166,7 +170,7 @@ public class LuceneIndexer implements FulltextIndexer {
         	logger.info( "Fulltext query with phrase '" + phrase + "' needed " + (System.currentTimeMillis()-millis)  + "ms." );
         }
         
-        return result;
+        return new FulltextSearchResult( phrase, totalHits, fulltextHits );
 	}
 	
 	

@@ -1,7 +1,23 @@
 <t:htmlborder xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
 
         <div class="section">
-            <h2 class="infoLine">Die Volltextsuche ist noch nicht aktiviert.</h2>
+            <h2>Suchergebnisse</h2>
         </div>
+
+		<t:block id="empty"><div class="section">
+        	<div class="section"><p>Es wurde nichts gefunden.</p></div>
+    	</div></t:block>
+        
+        <t:if test="result.phrase"><div class="section">
+            <p>Die Suche ergab ${totalHits} Treffer. Es werden nur die ersten 25 Treffer angezeigt.</p>
+		</div></t:if>
+            
+		<t:loop source="result.hits" value="fulltextHit" empty="block:empty">
+		<div class="section">
+			<h3>${entity}</h3>
+        	<div class="section"><p><t:outputraw value="fulltextHit.abstract" /></p></div>
+    	</div>
+		</t:loop>
+        
 
 </t:htmlborder>

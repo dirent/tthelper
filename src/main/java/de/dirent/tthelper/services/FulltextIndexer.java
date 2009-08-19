@@ -1,8 +1,7 @@
 package de.dirent.tthelper.services;
 
-import java.util.List;
 
-import de.dirent.tthelper.model.FulltextHit;
+import de.dirent.tthelper.model.FulltextSearchResult;
 
 
 public interface FulltextIndexer {
@@ -15,5 +14,5 @@ public interface FulltextIndexer {
 	
 	public void initializeFulltextIndex() throws Exception;
 	
-	public List<FulltextHit> query( String phrase, int maxResults );
+	public FulltextSearchResult query( String phrase, int maxResults );
 }
