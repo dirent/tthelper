@@ -43,6 +43,11 @@
             <artifactId>hsqldb</artifactId>
             <version>1.8.0.7</version>
         </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
 		
         <!-- Spring dependencies -->
         <dependency>
@@ -175,16 +180,10 @@
       <url>http://tapestry.formos.com/maven-snapshot-repository/</url>
     </repository>
 	-->
-	    
+
     <repository>
-      <id>codehaus.snapshots</id>
-      <url>http://snapshots.repository.codehaus.org</url>
-    </repository>
-    <!-- For access to the selenium JARs. -->
-    <repository>
-      <id>openqa</id>
-      <name>OpenQA Maven Repository</name>
-      <url>http://maven.openqa.org/</url>
+        <id>central.maven</id>
+        <url>http://central.maven.org/maven2/</url>
     </repository>
     <repository>
     	<id>localhost.nu</id>
