@@ -1,9 +1,9 @@
 package de.dirent.tthelper.pages;
 
 
-import org.apache.tapestry.ioc.annotations.Inject;
-import org.apache.tapestry.ioc.annotations.Value;
-import org.apache.tapestry.services.Request;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.ioc.annotations.Value;
+import org.apache.tapestry5.services.Request;
 
 
 public class Login {

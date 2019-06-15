@@ -5,7 +5,7 @@ import java.text.Format;
 import java.util.List;
 
 import org.acegisecurity.annotation.Secured;
-import org.apache.tapestry.annotations.Property;
+import org.apache.tapestry5.annotations.Property;
 
 import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.pages.SecuredPage;

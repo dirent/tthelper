@@ -5,13 +5,12 @@ import java.text.Format;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.tapestry.Translator;
-import org.apache.tapestry.annotations.InjectPage;
-import org.apache.tapestry.annotations.Property;
-import org.apache.tapestry.annotations.SetupRender;
+import org.apache.tapestry5.Translator;
+import org.apache.tapestry5.annotations.InjectPage;
+import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SetupRender;
 
 import de.dirent.tthelper.entities.Helfer;
-import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.pages.Start;
 import de.dirent.tthelper.pages.TTHelperPage;
 import de.dirent.tthelper.utils.BooleanFormat;

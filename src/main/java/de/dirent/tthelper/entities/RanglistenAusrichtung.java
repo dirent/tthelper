@@ -3,7 +3,7 @@ package de.dirent.tthelper.entities;
 
 import javax.persistence.Entity;
 
-import org.apache.tapestry.beaneditor.Validate;
+import org.apache.tapestry5.beaneditor.Validate;
 
 import de.dirent.tthelper.model.Verein;
 

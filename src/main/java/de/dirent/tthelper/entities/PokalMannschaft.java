@@ -5,8 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 
-import org.apache.tapestry.beaneditor.NonVisual;
-import org.apache.tapestry.beaneditor.Validate;
+import org.apache.tapestry5.beaneditor.NonVisual;
+import org.apache.tapestry5.beaneditor.Validate;
 
 import de.dirent.tthelper.model.PokalWettbewerb;
 import de.dirent.tthelper.model.Verein;

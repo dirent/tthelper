@@ -2,9 +2,9 @@ package de.dirent.tthelper.pages;
 
 
 import org.acegisecurity.userdetails.UserDetailsService;
-import org.apache.tapestry.annotations.ApplicationState;
-import org.apache.tapestry.ioc.annotations.Inject;
-import org.apache.tapestry.services.RequestGlobals;
+import org.apache.tapestry5.annotations.ApplicationState;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.RequestGlobals;
 
 import de.dirent.tthelper.entities.UserDetailsBean;
 import de.dirent.tthelper.model.Verein;

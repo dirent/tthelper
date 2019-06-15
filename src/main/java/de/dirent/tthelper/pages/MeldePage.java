@@ -1,8 +1,8 @@
 package de.dirent.tthelper.pages;
 
 
-import org.apache.tapestry.ioc.annotations.Inject;
-import org.apache.tapestry.services.RequestGlobals;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.RequestGlobals;
 
 
 public class MeldePage extends SecuredPage {

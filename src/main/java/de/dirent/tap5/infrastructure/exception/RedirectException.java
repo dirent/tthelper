@@ -1,7 +1,7 @@
 package de.dirent.tap5.infrastructure.exception;
 
 
-import org.apache.tapestry.Link;
+import org.apache.tapestry5.Link;
 
 
 public class RedirectException extends RuntimeException {

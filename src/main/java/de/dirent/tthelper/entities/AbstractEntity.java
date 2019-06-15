@@ -23,7 +23,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import org.apache.tapestry.beaneditor.NonVisual;
+import org.apache.tapestry5.beaneditor.NonVisual;
 
 /**
  * @author James Carman

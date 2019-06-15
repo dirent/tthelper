@@ -4,8 +4,8 @@ package de.dirent.tthelper.services;
 import java.io.File;
 import java.util.Properties;
 
-import org.apache.tapestry.hibernate.HibernateConfigurer;
-import org.apache.tapestry.services.ApplicationGlobals;
+import org.apache.tapestry5.hibernate.HibernateConfigurer;
+import org.apache.tapestry5.services.ApplicationGlobals;
 import org.hibernate.cfg.Configuration;
 
 

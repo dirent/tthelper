@@ -5,9 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-import org.apache.tapestry.annotations.Parameter;
-import org.apache.tapestry.ioc.annotations.Inject;
-import org.apache.tapestry.services.RequestGlobals;
+import org.apache.tapestry5.annotations.Parameter;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.RequestGlobals;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

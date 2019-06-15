@@ -3,10 +3,10 @@ package de.dirent.tthelper.pages;
 
 import nu.localhost.tapestry.acegi.services.LogoutService;
 
-import org.apache.tapestry.annotations.InjectPage;
-import org.apache.tapestry.annotations.Property;
-import org.apache.tapestry.annotations.SetupRender;
-import org.apache.tapestry.ioc.annotations.Inject;
+import org.apache.tapestry5.annotations.InjectPage;
+import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.ioc.annotations.Inject;
 
 import de.dirent.tthelper.pages.pokalmannschaft.AdminPokalMannschaft;
 import de.dirent.tthelper.pages.pokalmannschaft.CreatePokalMannschaft;

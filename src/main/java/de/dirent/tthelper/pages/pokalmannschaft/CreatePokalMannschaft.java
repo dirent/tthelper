@@ -3,19 +3,17 @@ package de.dirent.tthelper.pages.pokalmannschaft;
 
 import java.util.List;
 
-import org.apache.tapestry.ComponentResources;
-import org.apache.tapestry.annotations.Persist;
-import org.apache.tapestry.annotations.Property;
-import org.apache.tapestry.annotations.SetupRender;
-import org.apache.tapestry.beaneditor.BeanModel;
-import org.apache.tapestry.ioc.annotations.Inject;
-import org.apache.tapestry.services.BeanModelSource;
-import org.apache.tapestry.services.RequestGlobals;
+import org.apache.tapestry5.ComponentResources;
+import org.apache.tapestry5.annotations.Persist;
+import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.beaneditor.BeanModel;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.BeanModelSource;
 
 import de.dirent.tthelper.entities.PokalMannschaft;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.MeldePage;
-import de.dirent.tthelper.pages.TTHelperPage;
 
 
 public class CreatePokalMannschaft extends MeldePage {
@@ -70,7 +68,7 @@ public class CreatePokalMannschaft extends MeldePage {
     private final BeanModel<PokalMannschaft> model; 
     
     {
-        model = beanModelSource.create( PokalMannschaft.class, true, resources );
+        model = beanModelSource.create( PokalMannschaft.class, true, resources.getMessages() );
 
         model.add("delete", null);
     }    

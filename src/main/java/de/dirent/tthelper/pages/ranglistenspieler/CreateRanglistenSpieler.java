@@ -2,24 +2,20 @@ package de.dirent.tthelper.pages.ranglistenspieler;
 
 
 import java.text.Format;
-import java.util.Date;
 import java.util.List;
 
-import org.apache.tapestry.ComponentResources;
-import org.apache.tapestry.Translator;
-import org.apache.tapestry.annotations.Persist;
-import org.apache.tapestry.annotations.Property;
-import org.apache.tapestry.annotations.SetupRender;
-import org.apache.tapestry.beaneditor.BeanModel;
-import org.apache.tapestry.ioc.annotations.Inject;
-import org.apache.tapestry.services.BeanModelSource;
+import org.apache.tapestry5.ComponentResources;
+import org.apache.tapestry5.annotations.Persist;
+import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.annotations.SetupRender;
+import org.apache.tapestry5.beaneditor.BeanModel;
+import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.BeanModelSource;
 
 import de.dirent.tthelper.entities.RanglistenSpieler;
 import de.dirent.tthelper.model.Verein;
 import de.dirent.tthelper.pages.MeldePage;
-import de.dirent.tthelper.pages.TTHelperPage;
 import de.dirent.tthelper.utils.BooleanFormat;
-import de.dirent.tthelper.validate.DateTranslator;
 
 
 public class CreateRanglistenSpieler extends MeldePage {
@@ -73,7 +69,7 @@ public class CreateRanglistenSpieler extends MeldePage {
     private final BeanModel model; 
     
     {
-        model = beanModelSource.create( RanglistenSpieler.class, true, resources );
+        model = beanModelSource.create( RanglistenSpieler.class, true, resources.getMessages() );
 
         model.add( "delete", null );
     }    
@@ -87,11 +83,6 @@ public class CreateRanglistenSpieler extends MeldePage {
     public Format getBooleanFormat() {
     	
     	return booleanFormat;
-    }
-    
-    public Translator<Date> getDateTranslator() {
-    	
-    	return new DateTranslator( "dd.MM.yyyy" );
     }
     
     

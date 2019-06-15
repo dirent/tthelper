@@ -26,21 +26,22 @@
 <body>
 <h1>Online-Services des TT-Kreises Bielefeld-Halle</h1>
 
+<p>
+Sie befinden sich im <strong>öffentlichen</strong> Bereich. 
+<t:pagelink page="startsecured">Zum geschützten Bereich wechseln.</t:pagelink>
+</p>
+
 
 <h2>Helfermeldung für die Deutschen Tischtennismeisterschaften 2009 in Bielefeld</h2>
 
-<p>Die Meldefrist ist abgelaufen.</p>
-
-<p style="display:none;"><t:actionlink t:id="HelferMeldung">Ja, ich möchte bei den Deutschen Meisterschaften 2009 in Bielefeld mithelfen</t:actionlink></p>
-
-<p style="width:100%; margin-top:1em; padding-bottom:1em; margin-bottom:1em; border-bottom: 1px dotted gray;">Hinweise, Rückfragen und Probleme bitte an <a href="mailto:ttkreis@bitel.net">ttkreis@bitel.net</a> richten.</p> 
-
+<t:timeif pattern="11/20/2008">
+<p><t:actionlink t:id="HelferMeldung">Ja, ich möchte bei den Deutschen Meisterschaften 2009 in Bielefeld mithelfen</t:actionlink></p>
 
 <h2>Gemeldete Helfer</h2>
 
 <t:block id="empty">Es sind noch keine Helfer gemeldet.</t:block>
 
-<t:grid source="gemeldeteHelfer" row="helfer" model="model" empty="block:empty">
+<t:grid source="gemeldeteHelfer" row="helfer" rowsPerPage="200" model="model" empty="block:empty">
 <t:parameter name="kannDoCell">
 	<t:output t:format="booleanFormat" t:value="helfer.kannDo" /> 
 </t:parameter>
@@ -54,6 +55,7 @@
 	<t:output t:format="booleanFormat" t:value="helfer.kannSo" /> 
 </t:parameter>
 </t:grid>
+</t:timeif>
 
 </body>
 </html>

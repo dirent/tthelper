@@ -16,30 +16,36 @@ package de.dirent.tthelper.services;
 
 import java.io.IOException;
 
-import javax.servlet.ServletContext;
+import nu.localhost.tapestry.acegi.services.SaltSourceService;
 
 import org.acegisecurity.providers.AuthenticationProvider;
+import org.acegisecurity.providers.encoding.PasswordEncoder;
 import org.acegisecurity.userdetails.UserDetailsService;
-import org.apache.tapestry.Link;
-import org.apache.tapestry.hibernate.HibernateConfigurer;
-import org.apache.tapestry.internal.services.LinkFactory;
-import org.apache.tapestry.internal.services.RequestPageCache;
-import org.apache.tapestry.ioc.MappedConfiguration;
-import org.apache.tapestry.ioc.OrderedConfiguration;
-import org.apache.tapestry.ioc.ServiceBinder;
-import org.apache.tapestry.ioc.annotations.InjectService;
-import org.apache.tapestry.services.ApplicationGlobals;
-import org.apache.tapestry.services.ComponentClassResolver;
-import org.apache.tapestry.services.Request;
-import org.apache.tapestry.services.RequestExceptionHandler;
-import org.apache.tapestry.services.RequestFilter;
-import org.apache.tapestry.services.RequestHandler;
-import org.apache.tapestry.services.Response;
+import org.apache.tapestry5.Link;
+import org.apache.tapestry5.Translator;
+import org.apache.tapestry5.hibernate.HibernateConfigurer;
+import org.apache.tapestry5.internal.services.LinkFactory;
+import org.apache.tapestry5.internal.services.RequestPageCache;
+import org.apache.tapestry5.ioc.Configuration;
+import org.apache.tapestry5.ioc.MappedConfiguration;
+import org.apache.tapestry5.ioc.OrderedConfiguration;
+import org.apache.tapestry5.ioc.ServiceBinder;
+import org.apache.tapestry5.ioc.annotations.InjectService;
+import org.apache.tapestry5.services.AliasContribution;
+import org.apache.tapestry5.services.ApplicationGlobals;
+import org.apache.tapestry5.services.ApplicationInitializerFilter;
+import org.apache.tapestry5.services.ComponentClassResolver;
+import org.apache.tapestry5.services.Request;
+import org.apache.tapestry5.services.RequestExceptionHandler;
+import org.apache.tapestry5.services.RequestFilter;
+import org.apache.tapestry5.services.RequestHandler;
+import org.apache.tapestry5.services.Response;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 
 import de.dirent.tap5.infrastructure.exception.RedirectException;
 import de.dirent.tthelper.TTHelperDAO;
+import de.dirent.tthelper.validate.DateTranslator;
 
 /**
  * This module is automatically included as part of the Tapestry IoC Registry, it's a good place to
@@ -49,10 +55,6 @@ public class AppModule {
 	
     public static void bind(ServiceBinder binder) {
 
-        binder.bind( PersistenceManager.class, TTHelperDAO.class );
-        
-        binder.bind( UserDetailsService.class, UserDetailsServiceImpl.class );
-        
         // Make bind() calls on the binder object to define most IoC services.
         // Use service builder methods (example below) when the implementation
         // is provided inline, or requires more initialization than simply
@@ -67,6 +69,25 @@ public class AppModule {
     public static UserDetailsService buildUserDetailsService( Session session ) {
     	
     	return new UserDetailsServiceImpl( session );
+    }
+    
+    public static SaltSourceService buildSimpleSaltSource() throws Exception {
+    	
+        return new SimpleSaltSource();
+    }
+    
+    public static void contributeAliasOverrides(@InjectService("SimpleSaltSource") SaltSourceService saltSource,
+            Configuration<AliasContribution> configuration) {
+        configuration.add(AliasContribution.create(SaltSourceService.class, saltSource));
+    }
+    
+    public static void contributeApplicationInitializer( OrderedConfiguration<ApplicationInitializerFilter> configuration,
+            final PasswordEncoder passwordEncoder, 
+            final SaltSourceService saltSource, 
+            final Session session) {
+    	
+        configuration.add( "UserInitializer", 
+        		new UserInitializerImpl(passwordEncoder, saltSource, session) );
     }
     
     public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,
@@ -96,10 +117,12 @@ public class AppModule {
         configuration.add("acegi.failure.url", "/login/failed");
         configuration.add( "acegi.password.encoder", 
         		"org.acegisecurity.providers.encoding.Md5PasswordEncoder" );
-        configuration.add("acegi.password.saltsource", "org.acegisecurity.providers.dao.salt.SystemWideSaltSource");
-        configuration.add("acegi.password.salt", "");
     }
     
+    public static void contributeFieldTranslatorSource( Configuration<Translator> configuration ) {
+
+    	configuration.add( new DateTranslator( "dd.MM.yyyy" ) );
+    }
 
     /**
      * This is a service definition, the service will be named "TimingFilter". The interface,

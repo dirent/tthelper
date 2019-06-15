@@ -84,7 +84,7 @@
 <t:beaneditform t:id="spieler" submitlabel="Ok" object="spieler">
 <t:parameter name="birthDate">
 	<t:label for="birthDate"/>
-	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" translate="dateTranslator" value="spieler.birthDate" />
+	<t:textfield t:id="birthDate" label="Geburtsdatum (Tag.Monat.Jahr)" value="spieler.birthDate" />
 </t:parameter>
 <t:parameter name="verein">
 	<t:label for="verein"/>
