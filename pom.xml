@@ -13,6 +13,13 @@
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-hibernate</artifactId>
             <version>5.0.18</version>
+            <!-- exclude jars incompatible with Java 8 -->
+			<exclusions>
+				<exclusion>
+					<groupId>javassist</groupId>
+					<artifactId>javassist</artifactId>
+				</exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>hsqldb</groupId>
@@ -24,7 +31,11 @@
             <artifactId>jta</artifactId>
             <version>1.1</version>
         </dependency>
-		
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.18.2-GA</version>
+        </dependency>		
         <!-- Tapestry Acegi dependencies -->
 		<dependency>
 			<groupId>org.acegisecurity</groupId>
