@@ -1,17 +1,3 @@
-// Copyright 2007 The Apache Software Foundation
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 package de.dirent.tthelper.services;
 
 import java.io.IOException;
@@ -24,6 +10,7 @@ import org.acegisecurity.userdetails.UserDetailsService;
 import org.apache.tapestry5.Link;
 import org.apache.tapestry5.Translator;
 import org.apache.tapestry5.hibernate.HibernateConfigurer;
+import org.apache.tapestry5.hibernate.HibernateSessionManager;
 import org.apache.tapestry5.internal.services.LinkFactory;
 import org.apache.tapestry5.internal.services.RequestPageCache;
 import org.apache.tapestry5.ioc.Configuration;
@@ -31,7 +18,6 @@ import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.InjectService;
-import org.apache.tapestry5.services.AliasContribution;
 import org.apache.tapestry5.services.ApplicationGlobals;
 import org.apache.tapestry5.services.ApplicationInitializerFilter;
 import org.apache.tapestry5.services.ComponentClassResolver;
@@ -70,24 +56,14 @@ public class AppModule {
     	
     	return new UserDetailsServiceImpl( session );
     }
-    
-    public static SaltSourceService buildSimpleSaltSource() throws Exception {
-    	
-        return new SimpleSaltSource();
-    }
-    
-    public static void contributeAliasOverrides(@InjectService("SimpleSaltSource") SaltSourceService saltSource,
-            Configuration<AliasContribution> configuration) {
-        configuration.add(AliasContribution.create(SaltSourceService.class, saltSource));
-    }
-    
+        
     public static void contributeApplicationInitializer( OrderedConfiguration<ApplicationInitializerFilter> configuration,
             final PasswordEncoder passwordEncoder, 
             final SaltSourceService saltSource, 
-            final Session session) {
+            final HibernateSessionManager hibernateSessionManager ) {
     	
         configuration.add( "UserInitializer", 
-        		new UserInitializerImpl(passwordEncoder, saltSource, session) );
+        		new UserInitializerImpl(passwordEncoder, saltSource, hibernateSessionManager) );
     }
     
     public static void contributeProviderManager(OrderedConfiguration<AuthenticationProvider> configuration,
