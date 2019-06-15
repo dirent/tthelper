@@ -1,3 +1,6 @@
+/.settings
 /db
 /sql
 /target
+.classpath
+.project
