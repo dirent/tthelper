@@ -45,7 +45,7 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
     	// create the user db for vereine in Bielefeld-Halle
     	long millis = System.currentTimeMillis();
     	
-		checkUser( "dirk", "test", Verein.SVG, "webmaster@dirent.de", true );
+		checkUser( "dirk", "test", Verein.SVG, "webmaster@dirent.de", true, true );
     	// add more users here...
     	
 		manager.commit();
@@ -62,12 +62,13 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
     		String password, 
     		Verein verein, 
     		String email,
-    		boolean isAdmin ) {
+			boolean isAdmin,
+			boolean isAuthor ) {
     	
 		query.setParameter( "username", username );        
         if( query.uniqueResult() == null ) {
 
-			createUser( username, password, verein, email, isAdmin );
+			createUser( username, password, verein, email, isAdmin, isAuthor );
         }
     }
     
@@ -76,7 +77,8 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
     		String password, 
     		Verein verein, 
     		String email,
-    		boolean isAdmin ) {
+			boolean isAdmin,
+			boolean isAuthor ) {
     	
 		logger.info( "Create initial user " + username );
 
@@ -86,7 +88,8 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
         user.setVerein( verein );
         user.setEmail( email );
 		user.addRole("ROLE_USER");
-        if( isAdmin ) user.addRole("ROLE_ADMIN");
+		if( isAdmin ) user.addRole("ROLE_ADMIN");
+		if( isAuthor ) user.addRole("ROLE_AUTHOR");
 
         manager.getSession().save(user);
     }
