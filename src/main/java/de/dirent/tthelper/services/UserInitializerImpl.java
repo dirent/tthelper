@@ -8,6 +8,8 @@ import org.apache.tapestry5.services.ApplicationInitializer;
 import org.apache.tapestry5.services.ApplicationInitializerFilter;
 import org.apache.tapestry5.services.Context;
 import org.hibernate.Query;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.dirent.tthelper.entities.UserDetailsBean;
 import de.dirent.tthelper.model.Verein;
@@ -18,6 +20,8 @@ import de.dirent.tthelper.model.Verein;
  */
 public class UserInitializerImpl implements ApplicationInitializerFilter {
 	
+    protected static final Logger logger = LoggerFactory.getLogger( UserInitializerImpl.class );
+
     private PasswordEncoder passwordEncoder;
     private SaltSource saltSource;
     private HibernateSessionManager manager;
@@ -46,7 +50,7 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
     	
 		manager.commit();
 		
-		System.out.println( "Initializing user db needed " + (System.currentTimeMillis()-millis)  + "ms." );
+		logger.debug( "Initializing user db needed " + (System.currentTimeMillis()-millis)  + "ms." );
 		
         applicationInitializer.initializeApplication(context);
     }
@@ -74,7 +78,7 @@ public class UserInitializerImpl implements ApplicationInitializerFilter {
     		String email,
     		boolean isAdmin ) {
     	
-		System.out.println( "Create initial user " + username );
+		logger.info( "Create initial user " + username );
 
 		final UserDetailsBean user = new UserDetailsBean();
     	user.setUsername(username);
