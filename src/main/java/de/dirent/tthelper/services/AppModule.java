@@ -117,7 +117,8 @@ public class AppModule {
     public static void contributeHibernateSessionSource( OrderedConfiguration<HibernateConfigurer> config,
     		ApplicationGlobals globals ) {
     	
-    	config.add( "TTHelper", new TTHelperHibernateConfigurer( globals ), "before:Default*" );
+    	// needed if we use hypersonic
+    	//config.add( "TTHelper", new TTHelperHibernateConfigurer( globals ), "before:Default*" );
     }
 
     public static void contributeApplicationDefaults(
